@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## ⚠️ Backend
+
+The backend for this project lives in a separate private repository and **cannot be made public due to security reasons** (API keys, credentials, and sensitive business logic). If you need access to the backend, please reach out to the repository owner directly.
+
 ## Getting Started
 
 First, run the development server:
