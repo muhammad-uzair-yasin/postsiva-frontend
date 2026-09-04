@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Persona Editor | Postsiva</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#ffdad6",
+              "secondary-fixed-dim": "#54dcbf",
+              "primary-fixed-dim": "#ccbeff",
+              "on-tertiary-fixed-variant": "#3f4758",
+              "on-secondary": "#00382e",
+              "inverse-primary": "#6542d1",
+              "primary-container": "#6b49d8",
+              "secondary": "#54dcbf",
+              "outline-variant": "#484554",
+              "on-secondary-fixed": "#00201a",
+              "on-tertiary-fixed": "#141c2b",
+              "tertiary-container": "#5d6577",
+              "on-primary-fixed-variant": "#4c23b9",
+              "tertiary-fixed-dim": "#bfc6db",
+              "primary": "#ccbeff",
+              "on-primary": "#350097",
+              "surface-container-highest": "#323440",
+              "on-secondary-fixed-variant": "#005143",
+              "outline": "#938ea0",
+              "on-surface-variant": "#cac3d6",
+              "tertiary-fixed": "#dbe2f8",
+              "surface-variant": "#323440",
+              "on-tertiary-container": "#dbe3f8",
+              "on-primary-fixed": "#1f0060",
+              "on-background": "#e1e1f1",
+              "inverse-on-surface": "#2e303c",
+              "surface": "#11131e",
+              "surface-container-high": "#272935",
+              "on-error": "#690005",
+              "error-container": "#93000a",
+              "surface-dim": "#11131e",
+              "on-secondary-container": "#003b30",
+              "surface-container": "#1d1f2a",
+              "on-tertiary": "#283040",
+              "on-surface": "#e1e1f1",
+              "surface-bright": "#373845",
+              "surface-container-low": "#191b26",
+              "secondary-container": "#01af94",
+              "primary-fixed": "#e7deff",
+              "background": "#11131e",
+              "inverse-surface": "#e1e1f1",
+              "surface-tint": "#ccbeff",
+              "secondary-fixed": "#74f9da",
+              "on-primary-container": "#e7deff",
+              "surface-container-lowest": "#0b0e18",
+              "error": "#ffb4ab",
+              "tertiary": "#bfc6db"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-range {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 4px;
+            background: #1d1f2a;
+            border-radius: 5px;
+            outline: none;
+        }
+        .custom-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #54dcbf;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(84, 220, 191, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#11131E]/70 backdrop-blur-xl flex items-center justify-between px-8 h-16 w-full shadow-[0_8px_32px_rgba(107,73,216,0.08)]">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black text-[#E1E1F1] tracking-tighter">Postsiva</span>
+<div class="hidden md:flex gap-6">
+<a class="text-[#CAC3D6] hover:text-[#E1E1F1] transition-colors font-manrope antialiased tracking-tight" href="#">Dashboard</a>
+<a class="text-[#CAC3D6] hover:text-[#E1E1F1] transition-colors font-manrope antialiased tracking-tight" href="#">Analytics</a>
+<a class="text-[#CAC3D6] hover:text-[#E1E1F1] transition-colors font-manrope antialiased tracking-tight" href="#">Community</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#CAC3D6] hover:bg-[#1D1F2A] rounded-lg transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-[#CAC3D6] hover:bg-[#1D1F2A] rounded-lg transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/20">
+<img alt="User profile avatar" data-alt="Close up professional male headshot avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzVOr1VZU4Ldy5fXguuN3G9iqrmPPqU0doPk7-yx6A_Vsp-CbicbzbdjPN2CzOVpBNT-p49iPPMUx5sm8ux8rJBbKJzsY_xhn4FMgZA_P_Lw3CnnISFYAoZscsBSdVBB3PJE0PZC2W3tPZXe6C9z3OPIHQWsLthpZon4tltCdAj5vY5BOdDu89jt53chjHyDCR7Xwbkik3WEaxaiemUTl5ZhoapLByqckp_NIixkiitOEke0pqYCMNmlGkJUI_IOBqqHR8PsZbyf0u"/>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 bg-gradient-to-b from-[#1D1F2A] to-transparent h-px w-full"></div>
+</nav>
+<!-- Main Content Area -->
+<main class="pt-24 pb-32 px-4 md:px-8 max-w-7xl mx-auto flex flex-col lg:flex-row gap-8">
+<!-- Left Column: Editor Controls -->
+<div class="flex-1 space-y-8">
+<header class="mb-10">
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2">Persona Editor</h1>
+<p class="text-on-surface-variant">Sculpt the identity and voice of your digital twin.</p>
+</header>
+<!-- Section 1: Core Traits -->
+<section class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-secondary">psychology</span>
+<h2 class="text-xl font-bold">Core Traits</h2>
+</div>
+<div class="space-y-10">
+<div class="space-y-4">
+<div class="flex justify-between text-xs font-bold uppercase tracking-widest text-on-surface-variant">
+<span>Serious</span>
+<span>Funny</span>
+</div>
+<input class="custom-range" max="100" min="0" type="range" value="30"/>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between text-xs font-bold uppercase tracking-widest text-on-surface-variant">
+<span>Professional</span>
+<span>Casual</span>
+</div>
+<input class="custom-range" max="100" min="0" type="range" value="75"/>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between text-xs font-bold uppercase tracking-widest text-on-surface-variant">
+<span>Concise</span>
+<span>Explorative</span>
+</div>
+<input class="custom-range" max="100" min="0" type="range" value="45"/>
+</div>
+</div>
+</section>
+<!-- Section 2: Vocabulary & Constraints -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Key Vocabulary -->
+<section class="bg-surface-container p-6 rounded-xl border border-outline-variant/5">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">auto_stories</span>
+<h2 class="text-lg font-bold">Key Vocabulary</h2>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-highest px-3 py-1.5 rounded-lg text-sm flex items-center gap-2">
+                            Leverage <span class="material-symbols-outlined text-[16px] cursor-pointer">close</span>
+</span>
+<span class="bg-surface-container-highest px-3 py-1.5 rounded-lg text-sm flex items-center gap-2">
+                            Synergy <span class="material-symbols-outlined text-[16px] cursor-pointer">close</span>
+</span>
+<span class="bg-surface-container-highest px-3 py-1.5 rounded-lg text-sm flex items-center gap-2">
+                            Scalable <span class="material-symbols-outlined text-[16px] cursor-pointer">close</span>
+</span>
+<button class="border border-dashed border-outline-variant px-3 py-1.5 rounded-lg text-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            + Add Word
+                        </button>
+</div>
+</section>
+<!-- No-Go's -->
+<section class="bg-surface-container p-6 rounded-xl border border-outline-variant/5">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-error">block</span>
+<h2 class="text-lg font-bold">No-Go's</h2>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-error-container/20 text-error px-3 py-1.5 rounded-lg text-sm flex items-center gap-2">
+                            Politics <span class="material-symbols-outlined text-[16px] cursor-pointer">close</span>
+</span>
+<span class="bg-error-container/20 text-error px-3 py-1.5 rounded-lg text-sm flex items-center gap-2">
+                            Profanity <span class="material-symbols-outlined text-[16px] cursor-pointer">close</span>
+</span>
+<button class="border border-dashed border-outline-variant px-3 py-1.5 rounded-lg text-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            + Add Restriction
+                        </button>
+</div>
+</section>
+</div>
+<!-- Section 3: Platform Tweaks -->
+<section class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary">tune</span>
+<h2 class="text-xl font-bold">Platform-Specific Tweaks</h2>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-[#1DA1F2]/10 flex items-center justify-center text-[#1DA1F2]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<h3 class="font-bold">X (formerly Twitter)</h3>
+<p class="text-sm text-on-surface-variant">Punchy, viral-baiting, thread-focused.</p>
+</div>
+</div>
+<input checked="" class="w-10 h-5 bg-surface-container-highest rounded-full appearance-none checked:bg-secondary relative transition-colors cursor-pointer before:content-[''] before:absolute before:w-4 before:h-4 before:bg-on-surface before:rounded-full before:top-0.5 before:left-0.5 checked:before:translate-x-5 before:transition-transform" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-[#0077B5]/10 flex items-center justify-center text-[#0077B5]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">work</span>
+</div>
+<div>
+<h3 class="font-bold">LinkedIn</h3>
+<p class="text-sm text-on-surface-variant">Thought leadership, formal, achievement-based.</p>
+</div>
+</div>
+<input class="w-10 h-5 bg-surface-container-highest rounded-full appearance-none checked:bg-secondary relative transition-colors cursor-pointer before:content-[''] before:absolute before:w-4 before:h-4 before:bg-on-surface before:rounded-full before:top-0.5 before:left-0.5 checked:before:translate-x-5 before:transition-transform" type="checkbox"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Live Preview Sidebar -->
+<aside class="w-full lg:w-[400px]">
+<div class="sticky top-24 space-y-6">
+<div class="bg-surface-container-high/40 backdrop-blur-2xl p-6 rounded-2xl border border-outline-variant/20 shadow-2xl">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">visibility</span>
+<span class="font-bold text-sm uppercase tracking-widest text-on-surface-variant">Live Preview</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary/20 text-secondary text-[10px] font-bold">DRAFT</span>
+</div>
+<!-- Preview Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl space-y-4 border border-outline-variant/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary p-0.5">
+<div class="w-full h-full rounded-full bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-fixed-dim">smart_toy</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-sm">TechStrategist_AI</h4>
+<p class="text-[11px] text-on-surface-variant">2 minutes ago • LinkedIn</p>
+</div>
+</div>
+<p class="text-sm leading-relaxed text-on-surface/90">
+                            The future of SaaS isn't just about features; it's about <span class="text-secondary font-semibold">leverage</span>. By integrating AI personas into your workflow, you create a <span class="text-secondary font-semibold">scalable synergy</span> that traditional models can't match. 🚀<br/><br/>
+                            How are you optimizing your content strategy this quarter? Let's discuss in the comments. #AI #SaaS #Growth
+                        </p>
+<div class="pt-4 border-t border-outline-variant/5 flex gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">favorite</span>
+<span class="material-symbols-outlined text-lg">chat_bubble</span>
+<span class="material-symbols-outlined text-lg">share</span>
+</div>
+</div>
+<div class="mt-8 space-y-4">
+<button class="w-full py-4 bg-primary-container text-on-primary-container rounded-xl font-bold flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(107,73,216,0.3)] active:scale-95 transition-all">
+<span class="material-symbols-outlined">save</span>
+                            Save Persona Settings
+                        </button>
+<button class="w-full py-4 bg-transparent border border-outline-variant/30 text-on-surface rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-surface-container-highest transition-all">
+<span class="material-symbols-outlined">refresh</span>
+                            Regenerate Preview
+                        </button>
+</div>
+</div>
+<!-- Helper Tip -->
+<div class="bg-secondary/5 border border-secondary/20 p-4 rounded-xl flex gap-3">
+<span class="material-symbols-outlined text-secondary">lightbulb</span>
+<p class="text-xs text-on-surface-variant leading-normal">
+<span class="text-secondary font-bold">Pro-tip:</span> LinkedIn personas benefit from slightly more "Explorative" traits and professional vocabulary.
+                    </p>
+</div>
+</div>
+</aside>
+</main>
+<!-- BottomNavBar -->
+<div class="fixed bottom-8 left-0 right-0 z-[100] flex justify-center gap-8">
+<nav class="bg-[#272935]/80 backdrop-blur-2xl fixed bottom-6 left-1/2 -translate-x-1/2 w-auto min-w-[320px] rounded-full px-6 py-3 border border-[#484554]/15 shadow-[0_20px_50px_rgba(107,73,216,0.2)] flex justify-center gap-8">
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] p-2 hover:text-[#54DCBF] transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#6B49D8] text-[#E7DEFF] rounded-full p-3 scale-110 -translate-y-2 shadow-[0_0_15px_rgba(107,73,216,0.5)] active:scale-90 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Personas</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] p-2 hover:text-[#54DCBF] transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined">bolt</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] p-2 hover:text-[#54DCBF] transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign Up | Postsiva</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#01af94",
+                        "on-surface": "#e1e1f1",
+                        "on-tertiary-container": "#dbe3f8",
+                        "on-error": "#690005",
+                        "primary-container": "#6b49d8",
+                        "on-tertiary": "#283040",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#e7deff",
+                        "on-tertiary-fixed": "#141c2b",
+                        "on-primary": "#350097",
+                        "tertiary-container": "#5d6577",
+                        "surface-tint": "#ccbeff",
+                        "inverse-on-surface": "#2e303c",
+                        "tertiary-fixed": "#dbe2f8",
+                        "primary": "#ccbeff",
+                        "surface": "#11131e",
+                        "secondary-fixed-dim": "#54dcbf",
+                        "on-primary-fixed-variant": "#4c23b9",
+                        "secondary": "#54dcbf",
+                        "on-primary-fixed": "#1f0060",
+                        "tertiary": "#bfc6db",
+                        "inverse-surface": "#e1e1f1",
+                        "inverse-primary": "#6542d1",
+                        "on-primary-container": "#e7deff",
+                        "outline": "#938ea0",
+                        "background": "#11131e",
+                        "surface-dim": "#11131e",
+                        "on-tertiary-fixed-variant": "#3f4758",
+                        "on-surface-variant": "#cac3d6",
+                        "primary-fixed-dim": "#ccbeff",
+                        "on-secondary-container": "#003b30",
+                        "surface-variant": "#323440",
+                        "surface-container-high": "#272935",
+                        "surface-bright": "#373845",
+                        "secondary-fixed": "#74f9da",
+                        "on-secondary": "#00382e",
+                        "on-secondary-fixed-variant": "#005143",
+                        "on-background": "#e1e1f1",
+                        "outline-variant": "#484554",
+                        "surface-container-lowest": "#0b0e18",
+                        "surface-container": "#1d1f2a",
+                        "on-secondary-fixed": "#00201a",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#323440",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#191b26",
+                        "tertiary-fixed-dim": "#bfc6db"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(29, 31, 42, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .mesh-gradient {
+            background: radial-gradient(at top left, #6B49D8 0%, transparent 40%),
+                        radial-gradient(at bottom right, #01AF94 0%, transparent 40%),
+                        #11131E;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex items-stretch">
+<!-- Left Side: Dark, Glowing Branding Section -->
+<section class="hidden lg:flex w-1/2 mesh-gradient relative items-center justify-center p-12 overflow-hidden">
+<!-- Floating Elements for Architectural Depth -->
+<div class="absolute top-20 left-20 w-64 h-64 bg-primary-container/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-20 right-20 w-96 h-96 bg-secondary-container/10 rounded-full blur-[150px]"></div>
+<div class="relative z-10 flex flex-col items-start max-w-lg">
+<div class="mb-12">
+<img alt="Postsiva Logo" class="h-12 w-auto" data-alt="Postsiva geometric abstract logo mark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2eES2ps3FGWXfSGhhltZ7j6cESgl0_o_IFzKzXzmi_EoC_P6ztxuk9fKyWPHnveDBVgmfPqo-aGcfmxAVVa3YtlveELODwj9nlnZEje-D1tLy0jzSuAF9Ua6d4o7JY9ghMD_0hST4EUKOlKydfeAmbBRvG1wKnp9PcLqszS0vap0cLacB5Eq1Yu5XpvZaM3U-otyke0fFggd_l6zWOec9_a8qBYEF_nZKi71IXcEYZTh3y1aYjLSxtiCwGQnbSSw2L_qwvSwx5xWj"/>
+</div>
+<h1 class="text-6xl font-extrabold tracking-tight text-on-surface mb-6 leading-tight">
+                Engineer your <br/>
+<span class="text-secondary">Social Presence.</span>
+</h1>
+<p class="text-xl text-on-surface-variant leading-relaxed opacity-80">
+                The digital command center for modern architects of social influence. Precision tools for a noisy world.
+            </p>
+<div class="mt-16 flex items-center gap-4">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border-2 border-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-secondary">person</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high border-2 border-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-primary">person</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high border-2 border-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-secondary-container">person</span>
+</div>
+</div>
+<span class="text-sm font-medium text-on-surface-variant">Joined by 2,400+ creators</span>
+</div>
+</div>
+<!-- Subtle Pattern Overlay -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#CAC3D6 1px, transparent 1px); background-size: 32px 32px;"></div>
+</section>
+<!-- Right Side: Form Section -->
+<section class="w-full lg:w-1/2 bg-surface-container-lowest flex items-center justify-center p-6 md:p-12 lg:p-24 overflow-y-auto">
+<div class="w-full max-w-md">
+<!-- Mobile Logo (Hidden on Desktop) -->
+<div class="lg:hidden mb-8 flex justify-center">
+<img alt="Postsiva Logo" class="h-10 w-auto" data-alt="Postsiva geometric abstract logo mark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu4CTlNhV-25NtqZMy1-je7eO-GRqQWJz0fC5ijSpF_zSkvHKkEhpmxLPj0cQSk-nIKFZiHvm7Z29kLTPSp_lT9-a2T-QnDSn1WpMQppmhEXJZKeSHTM1qJTIHyYSxrD7-98n3ROTBgnr3Wi9eypV7TgbKpyWxxFvz2SUBMyOtDaHP4EaO6q_jJMDpwMPiRDmWodFmlC19j96pMDgpytxk-3KE7BvddB-YVNTXZEWfSqW7byJXXnWpLtgQ4aeT4BCDp0xartHAIiGg"/>
+</div>
+<div class="mb-10 text-center lg:text-left">
+<h2 class="text-3xl font-bold text-on-surface tracking-tight mb-2">Create your account</h2>
+<p class="text-on-surface-variant">Start your 14-day free architectural journey.</p>
+</div>
+<!-- Social Sign Up -->
+<div class="mb-8">
+<button class="w-full flex items-center justify-center gap-3 bg-surface-container py-3.5 px-4 rounded-xl font-semibold text-on-surface hover:bg-surface-container-high transition-all duration-300 border border-outline-variant/10">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+                    Continue with Google
+                </button>
+</div>
+<div class="relative flex items-center mb-8">
+<div class="flex-grow border-t border-outline-variant/10"></div>
+<span class="flex-shrink mx-4 text-xs font-bold text-outline uppercase tracking-widest">Or with email</span>
+<div class="flex-grow border-t border-outline-variant/10"></div>
+</div>
+<!-- Signup Form -->
+<form class="space-y-5">
+<!-- Workspace Name -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant ml-1" for="workspace">Workspace Name (Optional)</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-lg group-focus-within:text-secondary transition-colors">domain</span>
+</div>
+<input class="w-full bg-surface-container-low border-0 rounded-xl py-3.5 pl-11 pr-4 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-secondary/50 focus:bg-surface-container transition-all" id="workspace" placeholder="Acme Studios" type="text"/>
+</div>
+</div>
+<!-- Two Column Row for Names (Adapted for requested 'First Name' only) -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant ml-1" for="firstname">First Name</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-lg group-focus-within:text-secondary transition-colors">badge</span>
+</div>
+<input class="w-full bg-surface-container-low border-0 rounded-xl py-3.5 pl-11 pr-4 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-secondary/50 focus:bg-surface-container transition-all" id="firstname" placeholder="Enter your first name" type="text"/>
+</div>
+</div>
+<!-- Email Address -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant ml-1" for="email">Email Address</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-lg group-focus-within:text-secondary transition-colors">alternate_email</span>
+</div>
+<input class="w-full bg-surface-container-low border-0 rounded-xl py-3.5 pl-11 pr-4 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-secondary/50 focus:bg-surface-container transition-all" id="email" placeholder="name@company.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant ml-1" for="password">Password</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-lg group-focus-within:text-secondary transition-colors">lock</span>
+</div>
+<input class="w-full bg-surface-container-low border-0 rounded-xl py-3.5 pl-11 pr-12 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-secondary/50 focus:bg-surface-container transition-all" id="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-4 flex items-center text-outline hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+</div>
+<p class="text-[10px] text-outline mt-1 ml-1">Must be at least 8 characters with a symbol.</p>
+</div>
+<!-- Terms -->
+<div class="flex items-start gap-3 py-2">
+<input class="mt-1 rounded bg-surface-container-low border-outline-variant text-primary focus:ring-primary focus:ring-offset-surface" id="terms" type="checkbox"/>
+<label class="text-xs text-on-surface-variant leading-tight" for="terms">
+                        I agree to the <a class="text-secondary hover:underline" href="#">Terms of Service</a> and <a class="text-secondary hover:underline" href="#">Privacy Policy</a>.
+                    </label>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary-container text-on-primary-container font-bold py-4 rounded-xl shadow-[0_8px_32px_rgba(107,73,216,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 mt-4" type="submit">
+                    Create Account
+                </button>
+<p class="text-center text-sm text-on-surface-variant mt-8">
+                    Already have an account? <a class="text-secondary font-bold hover:underline" href="#">Sign in</a>
+</p>
+</form>
+</div>
+</section>
+<!-- Shared Footer Navigation (Suppressed for focused Transactional Page) -->
+<!-- Applying "Shell Visibility & Relevance" Filter: Suppression active for Sign-up screen -->
+</body></html>

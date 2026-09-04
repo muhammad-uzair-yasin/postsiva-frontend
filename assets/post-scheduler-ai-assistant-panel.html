@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Postsiva | AI Multi-Channel Composer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed-variant": "#005143",
+                        "primary": "#ccbeff",
+                        "surface": "#11131e",
+                        "surface-variant": "#323440",
+                        "on-surface": "#e1e1f1",
+                        "secondary": "#54dcbf",
+                        "tertiary-fixed": "#dbe2f8",
+                        "primary-fixed-dim": "#ccbeff",
+                        "on-primary": "#350097",
+                        "on-secondary-fixed": "#00201a",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#283040",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#323440",
+                        "secondary-fixed": "#74f9da",
+                        "outline": "#938ea0",
+                        "secondary-fixed-dim": "#54dcbf",
+                        "surface-bright": "#373845",
+                        "tertiary": "#bfc6db",
+                        "background": "#11131e",
+                        "on-tertiary-fixed": "#141c2b",
+                        "on-primary-fixed": "#1f0060",
+                        "surface-dim": "#11131e",
+                        "on-primary-container": "#e7deff",
+                        "tertiary-fixed-dim": "#bfc6db",
+                        "surface-tint": "#ccbeff",
+                        "on-secondary": "#00382e",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "surface-container-high": "#272935",
+                        "surface-container": "#1d1f2a",
+                        "primary-container": "#6b49d8",
+                        "on-primary-fixed-variant": "#4c23b9",
+                        "inverse-on-surface": "#2e303c",
+                        "primary-fixed": "#e7deff",
+                        "on-background": "#e1e1f1",
+                        "on-tertiary-container": "#dbe3f8",
+                        "inverse-surface": "#e1e1f1",
+                        "secondary-container": "#01af94",
+                        "outline-variant": "#484554",
+                        "surface-container-lowest": "#0b0e18",
+                        "surface-container-low": "#191b26",
+                        "on-tertiary-fixed-variant": "#3f4758",
+                        "on-secondary-container": "#003b30",
+                        "inverse-primary": "#6542d1",
+                        "tertiary-container": "#5d6577",
+                        "on-surface-variant": "#cac3d6"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #484554; border-radius: 10px; }
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-hidden">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#11131E]/70 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full shadow-[0_8px_32px_rgba(107,73,216,0.08)]">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<img alt="Postsiva Logo" class="h-8 w-8 object-contain" data-alt="Postsiva geometric brand logo symbol" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd5CNVfL73lHVWBRFynQFC6H38QAXF5jQU_Tc6nraqmwCdR4-R99z5qpmPAi4tAPsr0-KpaQ376h3uqvMgEREMn3eiz1oACRozjtrLhFsWeTKwup52eHFtp2S3Y8IjGRCwRh0V9jxxLe9yrxE75moYMm9n_9in2gVwqJdCFurriwjlWntJIz5RAR8mfT0-715ueYnRindZYqZb9rGzHwPcpKdMzOWdd6obnHKQshBZ1h3L2E-yhPFgQYYRRjrhuQkyfMGHG9fPVKmW"/>
+<span class="text-xl font-bold tracking-tighter text-[#E1E1F1] font-headline">Postsiva</span>
+</div>
+<div class="hidden md:flex items-center gap-6 font-manrope text-sm tracking-tight">
+<a class="text-[#CAC3D6] hover:text-[#E1E1F1] transition-colors" href="#">Dashboard</a>
+<a class="text-[#CAC3D6] hover:text-[#E1E1F1] transition-colors" href="#">Analytics</a>
+<a class="text-[#6B49D8] font-semibold border-b-2 border-[#6B49D8] pb-1" href="#">Schedule</a>
+<a class="text-[#CAC3D6] hover:text-[#E1E1F1] transition-colors" href="#">Library</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#CAC3D6] hover:bg-[#1D1F2A] rounded-lg transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-[#CAC3D6] hover:bg-[#1D1F2A] rounded-lg transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="User professional portrait avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYbcKc5GmTzY_E8oByjptDez-QmT0_KmLv-gIRDfoLCYZiBntRzIT16nArrRpK4YuIZlMPZKfVrJqnrfMfTMBBi4uxkkvCmA8BwOVZLzAwrj8Q4srg52QfwDBTSgZjAjrhO8Z4zZobEiIaiyT-pFnaCZchfjNL0b-j_G563md-QLN6hzFA5FRax8DilICWrtO7l6QlWL6LMFv8ZYBjOa_0FmnrO8A9YoKyYVMhxCNjTqalDNc5Br2hHFhXqr0yVf-XM42GnRJmMSCB"/>
+</div>
+</div>
+</nav>
+<main class="flex h-screen pt-16 pb-24 overflow-hidden">
+<!-- Left: Composer Workspace (Multi-Channel) -->
+<section class="flex-1 flex flex-col overflow-hidden bg-surface">
+<!-- Channel Selector Bar -->
+<div class="px-8 py-4 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center border-2 border-surface shadow-lg">
+<span class="material-symbols-outlined text-[16px] text-white">social_leaderboard</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-sky-500 flex items-center justify-center border-2 border-surface shadow-lg">
+<span class="material-symbols-outlined text-[16px] text-white">crossword</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 flex items-center justify-center border-2 border-surface shadow-lg">
+<span class="material-symbols-outlined text-[16px] text-white">photo_camera</span>
+</div>
+</div>
+<span class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant">Multi-Channel Composer</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-4 py-1.5 rounded-lg text-xs font-bold bg-surface-container-high border border-outline-variant/15 text-on-surface hover:bg-surface-variant transition-colors">Drafts</button>
+<button class="px-4 py-1.5 rounded-lg text-xs font-bold bg-primary-container text-on-primary-container shadow-[0_0_15px_rgba(107,73,216,0.3)] hover:opacity-90 transition-all active:scale-95">Schedule Post</button>
+</div>
+</div>
+<div class="flex-1 flex overflow-hidden">
+<!-- Editor Canvas -->
+<div class="flex-[1.2] p-8 overflow-y-auto custom-scrollbar">
+<div class="max-w-3xl mx-auto space-y-8">
+<!-- Rich Text Area -->
+<div class="bg-surface-container rounded-xl p-6 shadow-sm border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-4 pb-4 border-b border-outline-variant/10">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">format_bold</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">format_italic</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">tag</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">sentiment_satisfied</button>
+<div class="h-4 w-px bg-outline-variant/20 mx-2"></div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">attach_file</button>
+</div>
+<textarea class="w-full h-64 bg-transparent border-none focus:ring-0 text-lg leading-relaxed text-on-surface placeholder:text-on-surface-variant/40 resize-none" placeholder="What's the message? Start typing or use AI commands..."></textarea>
+</div>
+<!-- Media Preview Slot -->
+<div class="grid grid-cols-2 gap-4">
+<div class="aspect-square bg-surface-container-lowest rounded-xl border-2 border-dashed border-outline-variant/20 flex flex-col items-center justify-center group hover:border-primary/40 transition-all cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">add_a_photo</span>
+</div>
+<span class="text-xs font-medium text-on-surface-variant">Add Media</span>
+</div>
+<div class="aspect-square relative group rounded-xl overflow-hidden shadow-xl">
+<img alt="Generated Content" class="w-full h-full object-cover" data-alt="Abstract vibrant geometric wave pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBDIyKgKMmQMYOzXADdtYMFcSGGClR9g4XpyK9F9B54uhZHbGiDnEM9-Un_3FpRzAfp3dlcmTpQCQDjrU-XMrRjSNmNZLImnw4NKWEMQjVwIN6QsQ_z2WUSKKYoZv5-laJ3vEypAOI7DaPFPCKEYuOLZ6BDEPgqP5RARRKu7BXD7vSBVfkNtCFSXgEi6Et9CGduDh5D-s4YBJRLS7F8XAj9VBKLEOA6yOu1kiq13bp5vCUJz41kqUSow-RQ9CuC8zkc1l0iQevvuX0"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+<button class="p-2 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Preview Rail -->
+<div class="w-96 bg-surface-container-low border-l border-outline-variant/15 flex flex-col overflow-hidden">
+<div class="p-4 border-b border-outline-variant/15">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Live Previews</h3>
+</div>
+<div class="flex-1 overflow-y-auto p-6 space-y-10 custom-scrollbar">
+<!-- X Preview -->
+<div class="space-y-3">
+<div class="flex items-center gap-2 text-[10px] font-bold text-on-surface-variant/60 uppercase tracking-tighter">
+<span class="material-symbols-outlined text-sm">crossword</span> Platform Preview
+                            </div>
+<div class="bg-black rounded-xl p-4 border border-outline-variant/10">
+<div class="flex gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container"></div>
+<div class="flex-1">
+<div class="flex items-center gap-1 mb-1">
+<span class="font-bold text-sm">Postiva AI</span>
+<span class="text-xs text-gray-500">@postsiva_app · 1m</span>
+</div>
+<p class="text-sm mb-3">Harnessing the power of Digital Architect v1.0 to streamline our entire content pipeline. Efficiency redefined. 🚀</p>
+<div class="aspect-video rounded-lg overflow-hidden border border-white/5">
+<img alt="X Preview" class="w-full h-full object-cover" data-alt="Abstract purple and teal gradient background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrUM37qSqsBppjpMBYm3Nw1_1ZNGAVXOIhitGmGzPQ5qXwLMSMtuGe06w2JVwFjk8Z54T9SQKw-niaUask-Z9OLGRzvvv8M6qRxKWk0Xkenj7oIGk6AsHOa3Oc7o1RzsxgKvajppkBZH3QmALlPnFlGxjEtXE_MNKbfrCkwl9W3eqtjsNSkD8k5z2oXe7Xfr1t-dOKTdYc8ohB3VevUcvR3sgZ3GIOSkdTBNcfdq8kZQU8ODVFf8Ti6hrI_Kp75A66l32ngPPxBYF3"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Instagram Preview -->
+<div class="space-y-3">
+<div class="flex items-center gap-2 text-[10px] font-bold text-on-surface-variant/60 uppercase tracking-tighter">
+<span class="material-symbols-outlined text-sm">photo_camera</span> Instagram Preview
+                            </div>
+<div class="bg-black rounded-xl overflow-hidden border border-outline-variant/10">
+<div class="p-3 flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 to-purple-600 p-[2px]">
+<div class="w-full h-full rounded-full bg-black border border-black"></div>
+</div>
+<span class="text-xs font-bold">postsiva_app</span>
+</div>
+<div class="aspect-square bg-surface-container-highest">
+<img alt="Insta Preview" class="w-full h-full object-cover" data-alt="Deep abstract geometric landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBYeWq3Y8PkOhpd_Y5FVijFac3qxeLWfuRrENOkoKv-hL9CZjCoQcvX60hB-ACMpsIGmrY_765XoOurzjXPj9-UzOVb99_tWuQpec6ZnoaM9JKutqGJUdrXF1zind6UFUPaptmGs-TvT5nEr3ofjh_Mz3nbw9B926cuBBwAB6s9Cw18rfRODmUyklq569wZEkGWsoUIw1rX6P3ggC81PqjJLzyRBt9Ld2IykisCT7fPaTRA1QUkD4zS0PsL5-RlXgNTepLS7rE-3Mz"/>
+</div>
+<div class="p-3 space-y-2">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-xl">favorite</span>
+<span class="material-symbols-outlined text-xl">chat_bubble</span>
+<span class="material-symbols-outlined text-xl">send</span>
+</div>
+<p class="text-[13px]"><span class="font-bold">postsiva_app</span> Harnessing the power of Digital Architect v1.0...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right: AI Toolkit Sidebar -->
+<aside class="h-screen w-80 fixed right-0 border-l border-[#484554]/15 bg-[#191B26] flex flex-col py-8 px-4 shadow-[-10px_0_30px_rgba(0,0,0,0.5)] z-40">
+<div class="mb-8">
+<div class="flex items-center gap-3 mb-1">
+<div class="w-10 h-10 rounded-xl bg-[#6B49D8] flex items-center justify-center shadow-[0_0_20px_rgba(107,73,216,0.4)]">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-[#6B49D8] font-headline uppercase leading-none">AI Toolkit</h2>
+<span class="font-manrope text-[10px] font-medium text-[#54DCBF] uppercase tracking-tighter">Digital Architect v1.0</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-8 overflow-y-auto custom-scrollbar pr-2">
+<!-- Section 1: Idea to Content -->
+<div class="space-y-4">
+<div class="flex items-center gap-2 text-[#54DCBF] font-manrope text-xs font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">lightbulb</span> Idea to Content
+                    </div>
+<div class="bg-surface-container-lowest rounded-xl p-3 border border-outline-variant/10">
+<textarea class="w-full h-24 bg-transparent border-none focus:ring-0 text-xs text-on-surface-variant placeholder:text-on-surface-variant/30 resize-none p-0" placeholder="Describe your post idea here..."></textarea>
+<button class="w-full mt-2 py-2 rounded-lg bg-[#6B49D8]/20 text-[#CCBEFF] text-[10px] font-bold uppercase tracking-widest hover:bg-[#6B49D8]/30 transition-all active:translate-x-1">
+                            Generate Copy
+                        </button>
+</div>
+</div>
+<!-- Section 2: Media to Content -->
+<div class="space-y-4">
+<div class="flex items-center gap-2 text-[#CAC3D6] font-manrope text-xs font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">perm_media</span> Media to Content
+                    </div>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex flex-col items-center gap-2 p-3 rounded-xl bg-[#1D1F2A]/50 border border-outline-variant/10 hover:border-[#54DCBF]/40 transition-all group">
+<span class="material-symbols-outlined text-[#54DCBF] group-hover:scale-110 transition-transform">image</span>
+<span class="text-[9px] font-bold text-on-surface-variant uppercase text-center">Image to Post</span>
+</button>
+<button class="flex flex-col items-center gap-2 p-3 rounded-xl bg-[#1D1F2A]/50 border border-outline-variant/10 hover:border-[#54DCBF]/40 transition-all group">
+<span class="material-symbols-outlined text-[#54DCBF] group-hover:scale-110 transition-transform">video_library</span>
+<span class="text-[9px] font-bold text-on-surface-variant uppercase text-center">Video to Post</span>
+</button>
+</div>
+</div>
+<!-- Section 3: AI Image Lab -->
+<div class="space-y-4">
+<div class="flex items-center gap-2 text-[#CAC3D6] font-manrope text-xs font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">auto_awesome</span> AI Image Lab
+                    </div>
+<div class="space-y-3">
+<div class="bg-gradient-to-br from-[#6B49D8]/10 to-transparent border border-[#6B49D8]/20 rounded-xl p-3 hover:border-[#6B49D8]/40 transition-all cursor-pointer group">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-bold text-[#E1E1F1] uppercase">Magic Generator</span>
+<span class="material-symbols-outlined text-[#6B49D8] text-sm" style="font-variation-settings: 'FILL' 1;">flare</span>
+</div>
+<p class="text-[9px] text-[#CAC3D6] leading-relaxed">Turn your text caption into a high-converting visual asset instantly.</p>
+</div>
+<div class="bg-[#1D1F2A]/30 border border-outline-variant/10 rounded-xl p-3 hover:border-[#54DCBF]/30 transition-all cursor-pointer">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] font-bold text-[#E1E1F1] uppercase">AI Inpainting</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">brush</span>
+</div>
+<p class="text-[9px] text-[#CAC3D6] leading-relaxed">Select areas to add, remove or modify objects in your images.</p>
+</div>
+</div>
+</div>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant/10">
+<button class="w-full py-3 rounded-xl bg-gradient-to-r from-[#6B49D8] to-[#54DCBF] text-on-primary-fixed font-black text-xs uppercase tracking-[0.15em] shadow-[0_10px_30px_rgba(107,73,216,0.3)] active:scale-95 transition-all">
+                    Upgrade to Pro
+                </button>
+<div class="flex justify-around mt-6">
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-[#CAC3D6] group-hover:text-[#E1E1F1] text-xl">help_outline</span>
+<span class="text-[8px] uppercase font-bold text-[#CAC3D6]">Help</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-[#CAC3D6] group-hover:text-[#E1E1F1] text-xl">chat_bubble_outline</span>
+<span class="text-[8px] uppercase font-bold text-[#CAC3D6]">Feedback</span>
+</button>
+</div>
+</div>
+</aside>
+</main>
+<!-- Bottom Navigation Bar (Floating Pill) -->
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-auto min-w-[400px] rounded-full px-6 py-3 z-50 bg-[#323440]/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(107,73,216,0.2)] flex items-center gap-8">
+<button class="flex flex-col items-center justify-center text-[#CAC3D6] p-3 hover:text-[#54DCBF] transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#CAC3D6] p-3 hover:text-[#54DCBF] transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest mt-1">Calendar</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-[#6B49D8] text-[#E7DEFF] rounded-full p-4 shadow-[0_0_15px_rgba(107,73,216,0.5)] active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="add_circle" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest mt-1">Compose</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#CAC3D6] p-3 hover:text-[#54DCBF] transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="folder_special">folder_special</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest mt-1">Assets</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#CAC3D6] p-3 hover:text-[#54DCBF] transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest mt-1">Team</span>
+</button>
+</nav>
+<!-- Floating AI Command Overlay (Subtle Gradient Background Texture) -->
+<div class="fixed inset-0 pointer-events-none z-0">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(at_top_left,_#6B49D8_0%,_transparent_40%)] opacity-10"></div>
+<div class="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(at_bottom_right,_#54DCBF_0%,_transparent_30%)] opacity-5"></div>
+</div>
+</body></html>

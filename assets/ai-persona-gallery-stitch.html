@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Persona Engine | AI Management Suite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#54dcbf",
+                        "primary-fixed-dim": "#ccbeff",
+                        "on-tertiary-fixed-variant": "#3f4758",
+                        "on-secondary": "#00382e",
+                        "inverse-primary": "#6542d1",
+                        "primary-container": "#6b49d8",
+                        "secondary": "#54dcbf",
+                        "outline-variant": "#484554",
+                        "on-secondary-fixed": "#00201a",
+                        "on-tertiary-fixed": "#141c2b",
+                        "tertiary-container": "#5d6577",
+                        "on-primary-fixed-variant": "#4c23b9",
+                        "tertiary-fixed-dim": "#bfc6db",
+                        "primary": "#ccbeff",
+                        "on-primary": "#350097",
+                        "surface-container-highest": "#323440",
+                        "on-secondary-fixed-variant": "#005143",
+                        "outline": "#938ea0",
+                        "on-surface-variant": "#cac3d6",
+                        "tertiary-fixed": "#dbe2f8",
+                        "surface-variant": "#323440",
+                        "on-tertiary-container": "#dbe3f8",
+                        "on-primary-fixed": "#1f0060",
+                        "on-background": "#e1e1f1",
+                        "inverse-on-surface": "#2e303c",
+                        "surface": "#11131e",
+                        "surface-container-high": "#272935",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "surface-dim": "#11131e",
+                        "on-secondary-container": "#003b30",
+                        "surface-container": "#1d1f2a",
+                        "on-tertiary": "#283040",
+                        "on-surface": "#e1e1f1",
+                        "surface-bright": "#373845",
+                        "surface-container-low": "#191b26",
+                        "secondary-container": "#01af94",
+                        "primary-fixed": "#e7deff",
+                        "background": "#11131e",
+                        "inverse-surface": "#e1e1f1",
+                        "surface-tint": "#ccbeff",
+                        "secondary-fixed": "#74f9da",
+                        "on-primary-container": "#e7deff",
+                        "surface-container-lowest": "#0b0e18",
+                        "error": "#ffb4ab",
+                        "tertiary": "#bfc6db"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #11131e;
+            color: #e1e1f1;
+            font-family: 'Manrope', sans-serif;
+        }
+        .persona-card-gradient {
+            background: radial-gradient(circle at top right, rgba(107, 73, 216, 0.15), transparent);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+<!-- TopNavBar (Styled from SCREEN_20) -->
+<header class="fixed top-0 w-full z-50 bg-[#11131E]/70 backdrop-blur-xl border-b border-outline-variant/10 shadow-[0_20px_40px_-15px_rgba(107,73,216,0.08)]">
+<div class="flex justify-between items-center w-full px-6 py-3 max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<img alt="Logo" class="w-8 h-8" data-alt="Postsiva geometric abstract purple logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCmErdPDx7LIi1qAYuqAa_66TGgZXpmrZWNpVehPNrvJNWH0vaRZvXJr6XVWbYqhieHWEoFPgsJSWvMauzmFhFM5THVi-F6zHxfHns5oqhjk_uBsPkVyTOSrxnIZS3b6Q_uzKVKlV15x5bVTebRZeTC1o5XiuoKpb7VqDr6ohtwuXXNVVdW71Rrcarb7jbGHqbNI2-YMdhDucssDZ1cQju0iDBjmsDQIfbZn24358R1NtTpkf_tmSnbSNjUlyDgrzppTS0IqKY8Y--"/>
+<span class="text-2xl font-black tracking-tighter text-[#E1E1F1] font-manrope antialiased">Postsiva</span>
+</div>
+<nav class="hidden md:flex items-center gap-1 overflow-x-auto no-scrollbar ml-4">
+<a class="px-4 py-2 text-sm font-medium text-on-surface-variant hover:text-on-surface tracking-tight transition-all" href="#">Dashboard</a>
+<a class="px-4 py-2 text-sm font-medium text-on-surface-variant hover:text-on-surface tracking-tight transition-all" href="#">Analytics</a>
+<a class="px-4 py-2 text-sm font-bold text-secondary border-b-2 border-secondary tracking-tight transition-all" href="#">Personas</a>
+<a class="px-4 py-2 text-sm font-medium text-on-surface-variant hover:text-on-surface tracking-tight transition-all" href="#">Community</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center bg-surface-container-lowest rounded-full px-4 py-1.5 border border-outline-variant/15">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface ml-2 w-48" placeholder="Search..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-[#CAC3D6]">
+<span class="material-symbols-outlined cursor-pointer hover:text-[#54DCBF] transition-colors">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-[#54DCBF] transition-colors">help_outline</span>
+<img alt="User Profile Avatar" class="w-8 h-8 rounded-full border border-primary-container/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgjp3HvNagZZGHDwFyweMchbuDZuc_XpDAyh7f-fnxprCOtoW8XHHV28aDt6b8fl0fxADKuNd1w1QrucPRSh3Aca3MVx6rOrOcpwPE97KqTlHHVYjj-UIXQMSD8-qQ9sYyiQkgcD-SMXrU_Z-tMCdoihQ7DOP2ZIzIw_xXYCXHKiHlClxeWvfbH6ZnRgprcAPHG166xJ_KZOE2EUptWgFO7x5gMXSbnTwZUiIzgbCvvVac8bte2VsJzZzBbpbI26xgPJSgllLmLrdD"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas (Full Width) -->
+<main class="pt-16 min-h-screen">
+<div class="max-w-7xl mx-auto p-8">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2">Persona Gallery</h1>
+<p class="text-on-surface-variant max-w-xl">Manage your digital fleet. Each persona is engineered with unique tonal weights and cross-platform optimization strategies.</p>
+</div>
+<div class="flex gap-4">
+<div class="bg-surface-container-low px-4 py-2 rounded-xl flex items-center gap-2 border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary">bolt</span>
+<span class="text-sm font-bold">12 / 20 Personas Active</span>
+</div>
+<button class="py-2 px-6 bg-primary-container text-on-primary-container rounded-xl font-bold flex items-center justify-center gap-2 shadow-[0_8px_20px_rgba(107,73,216,0.2)] hover:brightness-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined">add</span>
+                        New Persona
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Card 1: The Professional -->
+<div class="group relative bg-surface-container rounded-2xl p-6 border border-outline-variant/10 hover:border-primary-container/40 transition-all duration-300 persona-card-gradient shadow-xl overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-2xl bg-[#2E303C] p-0.5 border border-outline-variant/20 group-hover:scale-105 transition-transform duration-500">
+<img alt="The Professional persona avatar" class="w-full h-full object-cover rounded-[14px]" data-alt="A refined, professional portrait of a man in a navy suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmNVZ9BAdKxaZFdTVvCZOiWVv5zpD-3U0vZg5oTrrNc537DQFGSXnUapMDvCUsAW69a-NULnnfoLacUf6e_t1rbg28InQiTqyoh1qwg-BZX-iocdVLtRTnz0xQbs_KpfVxHZlYo0_8lRSwBfvVMNCdiwsXDln6h-xgywnfwWX63pXFkHjfbPPQXOCSQkTEbjlQYDL5_-xL9kU_CFEFrDH7-mdiIike-DGAgk2iGXcSbVEv6Fam1z1gM5Fo-H-1p1-wwyiD2QIkh6CC"/>
+</div>
+<span class="bg-secondary-container/20 text-secondary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Optimized</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-2">The Professional</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Authoritative, data-driven, and meticulously polite. Perfect for B2B engagement and LinkedIn thought leadership.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-4">
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-lg text-on-surface-variant/60" title="LinkedIn">business_center</span>
+<span class="material-symbols-outlined text-lg text-on-surface-variant/60" title="X / Twitter">campaign</span>
+</div>
+<button class="text-primary font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Configure <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 2: The Witty Specialist -->
+<div class="group relative bg-surface-container rounded-2xl p-6 border border-outline-variant/10 hover:border-secondary/40 transition-all duration-300 persona-card-gradient shadow-xl overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-2xl bg-[#2E303C] p-0.5 border border-outline-variant/20 group-hover:scale-105 transition-transform duration-500">
+<img alt="The Witty Specialist persona avatar" class="w-full h-full object-cover rounded-[14px]" data-alt="A vibrant, creative portrait of a woman with neon lighting accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkeoZkloVB13ijBydgqps7U6NXxxjxP9QflzO43euT2N5oOWjNGpkCfFLFL1RcYbBJWS-lgbbgccGgaa7_fZzI4X82MNJLrQNhIU3LKv4ZFNlAvgjCHU9Zj_kzj-cPD_MWEOVqtCzRARu74xRn6AWOYRBDmwXRzP3iF6U_k_lu56NgR_xpd-OEuTloFpEjpVWJIgbruGXIaVq8pJxKTTcBaglssBiAenfhi5Ok9Nyuekfel9vWSN-GbJ6oAoQoNkmzRueRKMDPD-gs"/>
+</div>
+<span class="bg-primary-container/20 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">High ROI</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-2">The Witty Specialist</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Sarcastic yet helpful. Specializes in viral hooks and engaging with technical communities on Reddit and X.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-4">
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-lg text-on-surface-variant/60" title="Reddit">forum</span>
+<span class="material-symbols-outlined text-lg text-on-surface-variant/60" title="X / Twitter">campaign</span>
+<span class="material-symbols-outlined text-lg text-on-surface-variant/60" title="Discord">sports_esports</span>
+</div>
+<button class="text-primary font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Configure <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 3: The Storyteller -->
+<div class="group relative bg-surface-container rounded-2xl p-6 border border-outline-variant/10 hover:border-primary-container/40 transition-all duration-300 persona-card-gradient shadow-xl overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-2xl bg-[#2E303C] p-0.5 border border-outline-variant/20 group-hover:scale-105 transition-transform duration-500">
+<img alt="The Storyteller persona avatar" class="w-full h-full object-cover rounded-[14px]" data-alt="A moody, cinematic portrait of a creative individual with glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrp85NLGwYQ-WUqLoLIPaaGACv6UHTJ5h3sYzEi2wl8YSBP19UoXKmvaeMhzCLk2mVEVywJQO98FIJd9J8KVoiM4wL84yYhFrSjJ3Y6xMb-u6kx8Qk6Xt4qzmkJEik63CItzro0NWjMl3JEhXSamuPf_KyiOJ_1nyjI2rt3ZkrqSkI6LLUbTgyOD3oX2hYABBHw6cZN5PZ0jIs-1L8SCLguO8EmjW2pQ2w2sv8nW8g5cKjmCQfNLlW-uPs1qRrJsWJb9tC_55WgHx2"/>
+</div>
+<span class="bg-surface-container-high text-on-surface-variant text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Draft</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-2">The Storyteller</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Emotional, narrative-driven, and highly visual. Crafted for Instagram and long-form substack updates.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-4">
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-lg text-on-surface-variant/60" title="Instagram">photo_camera</span>
+<span class="material-symbols-outlined text-lg text-on-surface-variant/60" title="Blog">article</span>
+</div>
+<button class="text-primary font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Configure <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 4: Minimalist Tech -->
+<div class="group relative bg-surface-container rounded-2xl p-6 border border-outline-variant/10 hover:border-secondary/40 transition-all duration-300 persona-card-gradient shadow-xl overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 rounded-2xl bg-[#2E303C] p-0.5 border border-outline-variant/20 group-hover:scale-105 transition-transform duration-500 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<span class="bg-secondary-container/20 text-secondary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Active</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-2">The Architect</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Direct, technical, and objective. Built to deliver documentation and complex technical updates with zero fluff.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-4">
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-lg text-on-surface-variant/60">code</span>
+<span class="material-symbols-outlined text-lg text-on-surface-variant/60">hub</span>
+</div>
+<button class="text-primary font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Configure <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Create New Card -->
+<div class="group relative bg-surface-container-low rounded-2xl p-6 border-2 border-dashed border-outline-variant/20 hover:border-primary/40 transition-all duration-300 flex flex-col items-center justify-center text-center min-h-[320px] cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-3xl text-primary">add_circle</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface mb-1">Create New Persona</h3>
+<p class="text-on-surface-variant text-sm max-w-[200px]">Define a new digital identity from custom tonal presets.</p>
+</div>
+</div>
+<!-- Dashboard Stats / Analytics -->
+<section class="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-8 bg-surface-container-low rounded-3xl p-8 border border-outline-variant/5">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-bold">Performance Analytics</h2>
+<select class="bg-surface border-none text-sm rounded-lg focus:ring-secondary">
+<option>Last 30 Days</option>
+<option>Last 7 Days</option>
+</select>
+</div>
+<div class="h-64 flex items-end justify-between gap-4 px-4">
+<div class="w-full bg-primary-container/20 rounded-t-lg h-[40%] hover:bg-primary-container/40 transition-all"></div>
+<div class="w-full bg-primary-container/20 rounded-t-lg h-[65%] hover:bg-primary-container/40 transition-all"></div>
+<div class="w-full bg-primary-container/20 rounded-t-lg h-[55%] hover:bg-primary-container/40 transition-all"></div>
+<div class="w-full bg-secondary-container/20 rounded-t-lg h-[85%] border-t-2 border-secondary hover:bg-secondary-container/40 transition-all"></div>
+<div class="w-full bg-primary-container/20 rounded-t-lg h-[60%] hover:bg-primary-container/40 transition-all"></div>
+<div class="w-full bg-primary-container/20 rounded-t-lg h-[75%] hover:bg-primary-container/40 transition-all"></div>
+<div class="w-full bg-primary-container/20 rounded-t-lg h-[95%] hover:bg-primary-container/40 transition-all"></div>
+</div>
+<div class="mt-8 flex justify-between text-xs text-on-surface-variant font-bold uppercase tracking-widest px-2">
+<span>Mon</span><span>Tue</span><span>Wed</span><span class="text-secondary">Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+<div class="lg:col-span-4 space-y-6">
+<div class="bg-[#272935] p-6 rounded-2xl shadow-xl border border-outline-variant/10">
+<h4 class="font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">trending_up</span>
+                            Trending Tones
+                        </h4>
+<ul class="space-y-4">
+<li class="flex items-center justify-between">
+<span class="text-sm">Technical Sarcasm</span>
+<span class="text-xs font-bold text-secondary">+24%</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="text-sm">Empathetic Leadership</span>
+<span class="text-xs font-bold text-secondary">+18%</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="text-sm">Minimalist News</span>
+<span class="text-xs font-bold text-on-error-container">-2%</span>
+</li>
+</ul>
+</div>
+<div class="bg-primary-container p-6 rounded-2xl relative overflow-hidden group">
+<div class="relative z-10">
+<h4 class="font-black text-xl text-on-primary-container mb-2 leading-tight">Generate Content with AI</h4>
+<p class="text-sm text-primary-fixed-dim/80 mb-4">Select a persona and start generating high-impact posts instantly.</p>
+<button class="w-full py-2 bg-on-primary-container text-primary-container font-black rounded-lg active:scale-95 transition-all">Quick Launch</button>
+</div>
+<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-9xl opacity-10 rotate-12 group-hover:rotate-0 transition-transform duration-700">auto_awesome</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Space for Floating Nav -->
+<div class="h-32"></div>
+</main>
+<!-- Floating Bottom Navigation (Styled from SCREEN_20) -->
+<nav class="fixed bottom-8 left-1/2 -translate-x-1/2 rounded-full px-8 py-3 z-50 bg-[#272935]/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(107,73,216,0.15)] flex gap-8 items-center justify-around w-max border border-outline-variant/10">
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] opacity-60 hover:opacity-100 hover:text-[#54DCBF] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl">grid_view</span>
+<span class="text-[10px] font-bold font-['Manrope'] uppercase tracking-widest mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] opacity-60 hover:opacity-100 hover:text-[#54DCBF] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl">insights</span>
+<span class="text-[10px] font-bold font-['Manrope'] uppercase tracking-widest mt-1">Analytics</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#6B49D8] text-[#E7DEFF] rounded-full p-3 scale-110 shadow-[0_0_15px_rgba(107,73,216,0.5)] active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#54DCBF] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl">settings</span>
+<span class="text-[10px] font-bold font-['Manrope'] uppercase tracking-widest mt-1">Settings</span>
+</a>
+</nav>
+</body></html>

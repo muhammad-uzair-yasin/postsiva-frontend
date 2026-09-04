@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Postsiva | Post Scheduler</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#11131e",
+                        "primary-container": "#6b49d8",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#cac3d6",
+                        "outline": "#938ea0",
+                        "on-secondary-container": "#003b30",
+                        "on-primary": "#350097",
+                        "inverse-on-surface": "#2e303c",
+                        "secondary-fixed": "#74f9da",
+                        "primary-fixed-dim": "#ccbeff",
+                        "surface-bright": "#373845",
+                        "on-secondary": "#00382e",
+                        "tertiary-container": "#5d6577",
+                        "surface-variant": "#323440",
+                        "on-background": "#e1e1f1",
+                        "inverse-surface": "#e1e1f1",
+                        "primary-fixed": "#e7deff",
+                        "on-tertiary-container": "#dbe3f8",
+                        "surface-container": "#1d1f2a",
+                        "surface": "#11131e",
+                        "tertiary": "#bfc6db",
+                        "surface-container-highest": "#323440",
+                        "tertiary-fixed-dim": "#bfc6db",
+                        "surface-dim": "#11131e",
+                        "surface-container-lowest": "#0b0e18",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#01af94",
+                        "on-secondary-fixed-variant": "#005143",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#ccbeff",
+                        "secondary-fixed-dim": "#54dcbf",
+                        "on-surface": "#e1e1f1",
+                        "tertiary-fixed": "#dbe2f8",
+                        "inverse-primary": "#6542d1",
+                        "on-tertiary-fixed": "#141c2b",
+                        "surface-container-high": "#272935",
+                        "on-secondary-fixed": "#00201a",
+                        "secondary": "#54dcbf",
+                        "outline-variant": "#484554",
+                        "primary": "#ccbeff",
+                        "on-primary-container": "#e7deff",
+                        "surface-container-low": "#191b26",
+                        "on-tertiary-fixed-variant": "#3f4758",
+                        "on-tertiary": "#283040",
+                        "on-primary-fixed-variant": "#4c23b9",
+                        "on-primary-fixed": "#1f0060"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #11131e; color: #e1e1f1; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(29, 31, 42, 0.7); backdrop-filter: blur(20px); }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-primary-container/30">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#11131E]/70 backdrop-blur-xl flex justify-between items-center px-6 py-4 w-full shadow-[0_8px_32px_0_rgba(107,73,216,0.08)]">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black tracking-tighter text-[#6B49D8]">Postsiva</span>
+<div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container border border-outline-variant/15">
+<span class="material-symbols-outlined text-sm text-secondary">layers</span>
+<span class="text-sm font-medium text-on-surface">Main Workspace</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<button class="p-2 text-[#CAC3D6] hover:text-[#54DCBF] transition-colors duration-300 active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-[#CAC3D6] hover:text-[#54DCBF] transition-colors duration-300 active:scale-95">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-primary-container/30">
+<img alt="User profile avatar" data-alt="Close up portrait of a smiling young professional man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUjWqPjuy0gDi3z0q6vo-YfaTnE-0VUHNDoiz-xIWGEakFpQJgEJ5w4bDop7viJ20fjgLb-v7wk1oKhBLoqvmIWUHU-bgEUiwWfoCc8yveu15LKqZEpHLMBAyUrxRW6wqyRbLR3yzmTRfKDmlGE6XaBJU3TSNXaO_djlA8K5-mo8aGLPOZkLkze9eABEjplOyLBRqzOZsI7j_fJ-j1IEPoGy0jWqKWNYMX_v9nY0sTOA6TYdE4S0K-s7_eiwfgj5k1toibea716ziv"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-6 flex flex-col lg:flex-row gap-6 max-w-[1600px] mx-auto min-h-screen">
+<!-- Left Column: Composer -->
+<section class="flex-1 flex flex-col gap-6">
+<div class="bg-surface-container rounded-2xl p-6 shadow-xl border border-outline-variant/5">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-lg font-bold text-on-surface tracking-tight">Create Post</h2>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="emoji_emotions">emoji_emotions</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="alternate_email">alternate_email</span>
+</button>
+</div>
+</div>
+<div class="relative group">
+<textarea class="w-full h-48 bg-surface-container-lowest border-none rounded-xl p-4 text-on-surface placeholder:text-outline/50 focus:ring-2 focus:ring-secondary/20 transition-all resize-none font-body leading-relaxed" placeholder="What's on your mind? Capture your audience's attention..."></textarea>
+<div class="absolute bottom-4 right-4 text-xs text-outline/40 font-medium">0 / 2200</div>
+</div>
+<!-- Media Upload Area -->
+<div class="mt-6 border-2 border-dashed border-outline-variant/20 rounded-xl p-8 flex flex-col items-center justify-center gap-3 bg-surface-container-low/30 hover:bg-surface-container-low/50 transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="cloud_upload">cloud_upload</span>
+</div>
+<div class="text-center">
+<p class="text-on-surface font-semibold">Drop your media here</p>
+<p class="text-sm text-on-surface-variant">or <span class="text-secondary font-medium">browse files</span> (Max 20MB)</p>
+</div>
+</div>
+</div>
+<!-- Multi-Platform Preview -->
+<div class="bg-surface-container rounded-2xl p-6 shadow-xl border border-outline-variant/5 flex-1">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-lg font-bold text-on-surface tracking-tight">Live Preview</h2>
+<div class="flex bg-surface-container-low p-1 rounded-xl">
+<button class="px-4 py-1.5 rounded-lg text-xs font-bold bg-primary-container text-white shadow-lg">INSTAGRAM</button>
+<button class="px-4 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant hover:text-on-surface">X / TWITTER</button>
+<button class="px-4 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant hover:text-on-surface">FACEBOOK</button>
+</div>
+</div>
+<div class="flex justify-center">
+<!-- Instagram Mockup -->
+<div class="w-full max-w-sm aspect-[4/5] bg-surface-container-lowest rounded-3xl overflow-hidden border border-outline-variant/10 shadow-2xl">
+<div class="p-3 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 p-[1.5px]">
+<div class="w-full h-full rounded-full bg-surface-container-lowest border border-surface-container-lowest overflow-hidden">
+<img alt="Avatar" data-alt="Small round professional headshot avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL3Q7_DM3iOtyupiGCjSCCfbtf5wig41K8aavIWMbKJAy3Sl7B6_LAuF9JrgTXh7st-Zu018MR8000oVOKnds84bqlr9FdJYPwPJGbihRyrCGrMfUccqhBlzvo8saX27kJ191jR-IibvOIiQkR5AMnI6HJ6yOGw3q64BhqZ6wveT53eOw9nbQ_VrixJz6RcPu6pbySAXqNh9NAFDlo1Q3AaEOb95RGcw7s57Km1P8pAviUk-0H8DVaKCgc4_BoxJh5vRfcw3Yel-_g"/>
+</div>
+</div>
+<span class="text-xs font-bold text-on-surface">postsiva_app</span>
+<span class="material-symbols-outlined ml-auto text-on-surface-variant" data-icon="more_horiz">more_horiz</span>
+</div>
+<div class="aspect-square bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-outline/20 text-6xl" data-icon="image">image</span>
+</div>
+<div class="p-4 space-y-3">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface" data-icon="favorite">favorite</span>
+<span class="material-symbols-outlined text-on-surface" data-icon="chat_bubble">chat_bubble</span>
+<span class="material-symbols-outlined text-on-surface" data-icon="send">send</span>
+<span class="material-symbols-outlined text-on-surface ml-auto" data-icon="bookmark">bookmark</span>
+</div>
+<div class="h-2 w-24 bg-surface-container-low rounded-full"></div>
+<div class="space-y-2">
+<div class="h-2 w-full bg-surface-container-low rounded-full"></div>
+<div class="h-2 w-2/3 bg-surface-container-low rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Sidebar (Media & Scheduling) -->
+<aside class="w-full lg:w-80 flex flex-col gap-6">
+<!-- Scheduling Panel -->
+<div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/5 shadow-xl">
+<h3 class="text-md font-bold text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="schedule">schedule</span>
+                    Schedule
+                </h3>
+<div class="space-y-4">
+<div>
+<label class="text-[10px] uppercase tracking-widest font-black text-outline mb-2 block">Date</label>
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest text-on-surface font-medium border border-outline-variant/10">
+<span>Oct 24, 2023</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="calendar_today">calendar_today</span>
+</div>
+</div>
+<div>
+<label class="text-[10px] uppercase tracking-widest font-black text-outline mb-2 block">Time</label>
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest text-on-surface font-medium border border-outline-variant/10">
+<span>09:45 AM</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="schedule">schedule</span>
+</div>
+</div>
+<button class="w-full py-4 rounded-xl bg-secondary-container text-on-secondary-container font-bold flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(1,175,148,0.25)] hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+                        Smart Schedule
+                    </button>
+<button class="w-full py-4 rounded-xl bg-primary-container text-on-primary-container font-bold shadow-[0_4px_20px_rgba(107,73,216,0.25)] hover:scale-[1.02] active:scale-95 transition-all">
+                        Schedule Post
+                    </button>
+</div>
+</div>
+<!-- Media Library -->
+<div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/5 shadow-xl flex-1 flex flex-col">
+<h3 class="text-md font-bold text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="photo_library">photo_library</span>
+                    Media Library
+                </h3>
+<div class="grid grid-cols-2 gap-3 overflow-y-auto max-h-[400px] scrollbar-hide pr-1">
+<div class="aspect-square rounded-xl overflow-hidden group relative cursor-pointer">
+<img alt="Abstract" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Abstract purple and blue fluid digital art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_9OH_dYpKC_AdV0aR2IXmSzFCkJDhDzoBhcBi9W39Qlv_fIv20VIxFbUzkDdcllwFYP_i4xqxqaPn9auFarn7o2eK0siE-H3pk3EsMJQ3ONI8MEoA2q8Agdp_3vbNw3UTVTRH65ImsFOoMqFC2DU6angAKTG3VhY3Z7Fgc-Wq50MBbY4J7Jhskx7OlTtWegsHocWcdR_m_bnpjG8C9rrfPhgce39Pns9uknFlh1zej_IxN0EtauDmeWfh0feUWntLyn0-QKnkw-Jn"/>
+<div class="absolute inset-0 bg-primary-container/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden group relative cursor-pointer">
+<img alt="Tech" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Clean minimal React JS code on a monitor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI7KOiOIi52ViNQVI2-CjUOjdmgEc8KpdvGwEhZNeJHhsKDwG5Q2_NxLAzHpYnGvIazuCbSEbOsQkxYSO58eCr-eOC_Wkita0NGzRGH2OuTVEyzF94u_aolrCFJwC1Juzzi9JsJAsv6RLKuGMS-EE47SSTY0o3p4eJsU1_sfXg0APhTDccm7tjZIKuv7Mq5Um4aCSKg6iLXTNnCOcovT9iwBy6sFucli8NKSIRHgwZBfXKfi4uMMqRhil9h4lolzrAFZrMNb8l2ble"/>
+<div class="absolute inset-0 bg-primary-container/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden group relative cursor-pointer">
+<img alt="Retro" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Vintage computer hardware and electronics aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC00WiITTgXQucnYNSIPXCFg6kCBxhw4yRdS3PGlVoFFUR1p0HQ9x57GxQMIskmcR6oJOHqTKghYSxUhXJQdhrWu_AMUQVO1dBLYVR-9n-m4CgP9jqYgJ7Y4GrCLnmltsPsecQqoi5es2qxz5YPwo6pp6cyclduPDB08BOqcNAMBQTc6brmVuDZIrlFEB43BkZeGXE4WLZEIZMJ5gqJFvxK-PGtRpjCUKPs9wUtmsQ-TpMED-WPVZ-PmtmTccvutbqvoxZ3jo_ZgaZn"/>
+<div class="absolute inset-0 bg-primary-container/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden group relative cursor-pointer">
+<img alt="Global" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Earth from space with digital network lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSXLtUMgFUaYXyJfsVSGUv1S5uEohDigajox122xJpZy-_rnhyUFGQiNQIYRIfF__3N85TLy_S2Z4CRXO0hF9c2VTlwro2nNDC0qc7Bh6Eb_G7w_TWUyRgmGypO31LRprN3nljDlJ_0aUMJCMZzD_-ppMy1MZw-MQUtADAxL-HxILLz3CWrloaD2KOfWMQrSBFs4hRjHj6mZboo6Wq5Y62Vl9zMgHg4-dkXY5wTSGbNs0CBZJcKSaby_ajzi8KUpBZY28HwgYPIXt2"/>
+<div class="absolute inset-0 bg-primary-container/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+</div>
+<button class="mt-4 w-full py-3 rounded-xl border border-outline-variant/20 text-on-surface-variant font-medium text-sm flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                    Upload New
+                </button>
+</div>
+</aside>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-lg rounded-3xl z-50 border border-[#484554]/15 bg-[#272935]/80 backdrop-blur-2xl flex justify-around items-center px-4 py-2 shadow-[0_20px_50px_rgba(107,73,216,0.2)]">
+<div class="flex flex-col items-center justify-center text-[#CAC3D6] p-2 hover:text-[#54DCBF] transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-bold mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#CAC3D6] p-2 hover:text-[#54DCBF] transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-bold mt-1">Stats</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#6B49D8] text-white rounded-2xl p-3 scale-110 -translate-y-2 shadow-[0_0_15px_rgba(107,73,216,0.5)] transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-bold mt-1">Create</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#CAC3D6] p-2 hover:text-[#54DCBF] transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-bold mt-1">Inbox</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#CAC3D6] p-2 hover:text-[#54DCBF] transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-bold mt-1">Audience</span>
+</div>
+</nav>
+</body></html>

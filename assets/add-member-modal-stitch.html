@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Invite Team Member - Postsiva</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#1f0060",
+              "inverse-primary": "#6542d1",
+              "secondary": "#54dcbf",
+              "primary-container": "#6b49d8",
+              "primary": "#ccbeff",
+              "inverse-surface": "#e1e1f1",
+              "surface": "#11131e",
+              "on-tertiary": "#283040",
+              "surface-tint": "#ccbeff",
+              "on-secondary-fixed-variant": "#005143",
+              "inverse-on-surface": "#2e303c",
+              "surface-container-highest": "#323440",
+              "on-primary-container": "#e7deff",
+              "primary-fixed-dim": "#ccbeff",
+              "secondary-fixed": "#74f9da",
+              "on-tertiary-fixed": "#141c2b",
+              "outline-variant": "#484554",
+              "surface-container-low": "#191b26",
+              "surface-bright": "#373845",
+              "on-tertiary-fixed-variant": "#3f4758",
+              "on-primary": "#350097",
+              "tertiary-container": "#5d6577",
+              "secondary-fixed-dim": "#54dcbf",
+              "surface-variant": "#323440",
+              "on-error-container": "#ffdad6",
+              "on-error": "#690005",
+              "on-secondary-fixed": "#00201a",
+              "on-primary-fixed-variant": "#4c23b9",
+              "surface-container-high": "#272935",
+              "on-tertiary-container": "#dbe3f8",
+              "error": "#ffb4ab",
+              "surface-container": "#1d1f2a",
+              "tertiary": "#bfc6db",
+              "secondary-container": "#01af94",
+              "tertiary-fixed": "#dbe2f8",
+              "surface-dim": "#11131e",
+              "primary-fixed": "#e7deff",
+              "on-surface-variant": "#cac3d6",
+              "on-background": "#e1e1f1",
+              "on-surface": "#e1e1f1",
+              "on-secondary": "#00382e",
+              "background": "#11131e",
+              "tertiary-fixed-dim": "#bfc6db",
+              "on-secondary-container": "#003b30",
+              "outline": "#938ea0",
+              "surface-container-lowest": "#0b0e18",
+              "error-container": "#93000a"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #11131E;
+            font-family: 'Manrope', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(29, 31, 42, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen overflow-hidden">
+<!-- Background: Blurred Workspace Selection Portal -->
+<main class="fixed inset-0 z-0 flex flex-col blur-md opacity-40 scale-105 pointer-events-none">
+<!-- TopNavBar Mock -->
+<nav class="flex justify-between items-center px-8 h-16 w-full bg-[#11131E]/70 backdrop-blur-xl fixed top-0 z-50">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black tracking-tighter text-[#E1E1F1]">Postsiva</span>
+<div class="hidden md:flex gap-6">
+<span class="font-manrope tracking-tight text-sm text-[#CAC3D6]">Dashboard</span>
+<span class="font-manrope tracking-tight text-sm text-[#6B49D8] border-b-2 border-[#6B49D8] pb-1">Workspaces</span>
+<span class="font-manrope tracking-tight text-sm text-[#CAC3D6]">Analytics</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#CAC3D6]">notifications</span>
+<img class="w-8 h-8 rounded-full" data-alt="User avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkjmEqEnMTampkjDZBiSC30gYibTIn_Dm5LIqUvhSJAljEf5t8rIPz7zmpodk7eqXccPeow-68r4pGPS4OrCCh7izHw0ryd8X1iEEmafcBDCkPUiFbFVpGxqZgiexXrZwBQjDosfXiDTfEj7U2Sh568LRPVOFo84WoybWY5o7WOXyV_bPlbvP_A0_KVP8n7cIQpk3ElDIFTYPy-NmKxkuIssVLeiO96owot0I5GSkb8RN53LucTWPQT3g0YJNVZuko1lBwcMKYxj6D"/>
+</div>
+</nav>
+<section class="mt-24 px-8 max-w-7xl mx-auto w-full">
+<h1 class="text-4xl font-extrabold tracking-tight mb-8">Workspaces</h1>
+<div class="grid grid-cols-3 gap-6">
+<div class="h-64 rounded-xl bg-surface-container border border-outline-variant/15 p-6 flex flex-col justify-between">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white">rocket_launch</span>
+</div>
+<div>
+<h3 class="text-xl font-bold">Marketing Team</h3>
+<p class="text-on-surface-variant text-sm">12 Active Members</p>
+</div>
+</div>
+<div class="h-64 rounded-xl bg-surface-container border border-outline-variant/15 p-6 flex flex-col justify-between">
+<div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white">design_services</span>
+</div>
+<div>
+<h3 class="text-xl font-bold">Creative HQ</h3>
+<p class="text-on-surface-variant text-sm">8 Active Members</p>
+</div>
+</div>
+<div class="h-64 rounded-xl border-2 border-dashed border-outline-variant/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-outline-variant">add</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
+<!-- Modal Content -->
+<div class="relative w-full max-w-2xl bg-surface-container-high rounded-[2rem] shadow-[0_40px_100px_rgba(107,73,216,0.15)] overflow-hidden border border-outline-variant/10">
+<!-- Glow Accent -->
+<div class="absolute -top-24 -left-24 w-64 h-64 bg-primary-container/20 rounded-full blur-[80px]"></div>
+<div class="relative p-8 md:p-10 flex flex-col gap-8">
+<!-- Header -->
+<header class="flex justify-between items-start">
+<div>
+<h2 class="text-2xl font-extrabold tracking-tight text-on-surface mb-1">Invite Team Member</h2>
+<p class="text-on-surface-variant text-sm">Grant access to the Postsiva workspace.</p>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">close</span>
+</button>
+</header>
+<!-- Invitation Form -->
+<form class="grid grid-cols-1 md:grid-cols-12 gap-4">
+<div class="md:col-span-7">
+<label class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 ml-1">Email Address</label>
+<input class="w-full bg-surface-container-lowest border-0 ring-1 ring-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary focus:shadow-[0_0_15px_rgba(84,220,191,0.2)] transition-all outline-none" placeholder="colleague@company.com" type="email"/>
+</div>
+<div class="md:col-span-5">
+<label class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 ml-1">Workspace Role</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest border-0 ring-1 ring-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary outline-none cursor-pointer">
+<option>Viewer</option>
+<option>Editor</option>
+<option>Admin</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-on-surface-variant">unfold_more</span>
+</div>
+</div>
+<div class="md:col-span-12 mt-2">
+<button class="w-full bg-primary-container text-on-primary-container font-bold py-4 rounded-xl shadow-[0_8px_20px_rgba(107,73,216,0.3)] hover:scale-[1.01] active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="button">
+<span>Send Invitation</span>
+<span class="material-symbols-outlined text-lg">send</span>
+</button>
+</div>
+</form>
+<!-- Current Team Section -->
+<section class="flex flex-col gap-4">
+<div class="flex items-center justify-between border-b border-outline-variant/10 pb-2">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Current Team</h3>
+<span class="text-xs text-secondary font-medium">3 Members Active</span>
+</div>
+<div class="space-y-4 max-h-48 overflow-y-auto pr-2 custom-scrollbar">
+<!-- Member Item -->
+<div class="flex items-center justify-between group">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-10 h-10 rounded-xl object-cover ring-2 ring-transparent group-hover:ring-primary-container/30 transition-all" data-alt="Team member portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDL_7MQjAbsIHoDNg5zJZiVOMl-57G3td29eFWpIkre8e5V4FVC663IwoDUG9FSbQLIw22xLdVOmwVtXzBeVj3mShBRd2TYXP9wj5-VIt_Oi951yHc3B8gMpkEKfAxyUJB7qppnY25qNuffF6CCfPtJoUqTOhfbKQy0saSHsrGXN2-VQsQDEBWCtdTs1mVw60BayyPBD1Da5-wS0wkRYNJJdva1acKhpzqGsw-D94YHwSODt1A0GsOwA54nK6Ora1_Kk5u3dDferrd"/>
+<div class="absolute -bottom-1 -right-1 w-3 h-3 bg-secondary rounded-full border-2 border-surface-container-high"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface">Alex Rivera</span>
+<span class="text-xs text-on-surface-variant">alex.rivera@postsiva.ai</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="px-3 py-1 bg-primary-container/10 text-primary text-[10px] font-bold uppercase tracking-wider rounded-full">Admin</span>
+<button class="text-on-surface-variant opacity-0 group-hover:opacity-100 hover:text-error transition-all">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Member Item -->
+<div class="flex items-center justify-between group">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-10 h-10 rounded-xl object-cover" data-alt="Team member portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhOkBFotztjt1cFJOeta7Q6ho3zcq9p1Tv0JuQVOSoVZkbJMyDnzGDVx0dLOnSM3-SGxhvydY1wbItIxW4om3hnGtqKgQU5GHrLK9jQTSBA0djQ5ieYfxp8UpXrLoKrYkeUJAQd1O7rjDznEN0c9iI_NDp7qgwmdMKmzbTs_NILS68gqE4xvBixUJyemEyVEZiU_oQQ2Ojh59mlhv4xjAeJN2-LFXPX7K3sw-zNsecbRkreVqSgJPmfIh9uLbD_U4VpM_UcqpAjYot"/>
+<div class="absolute -bottom-1 -right-1 w-3 h-3 bg-secondary rounded-full border-2 border-surface-container-high"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface">Sarah Jenkins</span>
+<span class="text-xs text-on-surface-variant">s.jenkins@postsiva.ai</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="px-3 py-1 bg-secondary-container/10 text-secondary text-[10px] font-bold uppercase tracking-wider rounded-full">Editor</span>
+<button class="text-on-surface-variant opacity-0 group-hover:opacity-100 hover:text-error transition-all">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Member Item -->
+<div class="flex items-center justify-between group">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-10 h-10 rounded-xl object-cover" data-alt="Team member portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwjM_6RUxcVMXrws6eZCxju8n268KN1buB70WyygWB-_KeMfC24nkq79Z9ypyTExOgCJGl-kdLQW4lQOmOYdnKNg3ogxdF4DWdO2NI71gg3zT-2cay42oI4v9qOh2MEJdHikTo6EPnCiuNUo73C9JprvnVbZ3T-fVzI6tF8eWUS7ojXIObfZA6DVWoi2L04wGbloDuSzAmYtWVbk3sKraIsO0Pb-rwtdjLuvYQ3LHMS8pbFhCMPVzlC0p399C3aZ92Nu23wdIguMuF"/>
+<div class="absolute -bottom-1 -right-1 w-3 h-3 bg-surface-bright rounded-full border-2 border-surface-container-high"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface">Jordan Wu</span>
+<span class="text-xs text-on-surface-variant">jordan@postsiva.ai</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold uppercase tracking-wider rounded-full">Viewer</span>
+<button class="text-on-surface-variant opacity-0 group-hover:opacity-100 hover:text-error transition-all">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Info -->
+<footer class="mt-2 text-center">
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">lock</span>
+                        Workspace security managed by Postsiva Enterprise
+                    </p>
+</footer>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Pill -->
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-[#272935]/80 backdrop-blur-2xl rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] border border-[#484554]/15 z-[110] px-4 flex justify-around items-center h-16 pointer-events-none opacity-50">
+<div class="flex flex-col items-center justify-center text-[#CAC3D6] px-6 py-2">
+<span class="material-symbols-outlined">home</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#6B49D8] text-white rounded-2xl px-6 py-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest mt-1">Team</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#CAC3D6] px-6 py-2">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest mt-1">Posts</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#CAC3D6] px-6 py-2">
+<span class="material-symbols-outlined">menu</span>
+<span class="font-manrope text-[10px] uppercase tracking-widest mt-1">More</span>
+</div>
+</nav>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(107, 73, 216, 0.3);
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(107, 73, 216, 0.5);
+        }
+    </style>
+</body></html>

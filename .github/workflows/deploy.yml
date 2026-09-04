@@ -1,0 +1,33 @@
+name: Deploy
+
+# DISABLED — using local deploy.sh script instead
+# on:
+#   push:
+#     branches: [main]
+#   workflow_dispatch:
+on:
+  workflow_dispatch:
+    inputs:
+      disabled:
+        description: "Workflow disabled — use ./deploy.sh instead"
+        required: false
+
+concurrency:
+  group: postsiva-frontend-production
+  cancel-in-progress: false
+
+jobs:
+  deploy-production:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy inactive frontend and switch after health checks
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          command_timeout: 20m
+          script: |
+            set -Eeuo pipefail
+            sudo /srv/postsiva/deploy/bin/deploy-frontend \
+              "${{ github.sha }}" "${{ github.run_id }}-${{ github.run_attempt }}"

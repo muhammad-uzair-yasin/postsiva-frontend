@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings | Postsiva</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#323440",
+                        "tertiary": "#bfc6db",
+                        "surface": "#11131e",
+                        "surface-container": "#1d1f2a",
+                        "primary-fixed": "#e7deff",
+                        "on-tertiary-container": "#dbe3f8",
+                        "on-background": "#e1e1f1",
+                        "inverse-surface": "#e1e1f1",
+                        "tertiary-container": "#5d6577",
+                        "surface-variant": "#323440",
+                        "on-secondary": "#00382e",
+                        "surface-bright": "#373845",
+                        "primary-fixed-dim": "#ccbeff",
+                        "secondary-fixed": "#74f9da",
+                        "on-primary": "#350097",
+                        "inverse-on-surface": "#2e303c",
+                        "outline": "#938ea0",
+                        "on-secondary-container": "#003b30",
+                        "on-surface-variant": "#cac3d6",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "primary-container": "#6b49d8",
+                        "background": "#11131e",
+                        "on-primary-fixed": "#1f0060",
+                        "on-tertiary-fixed-variant": "#3f4758",
+                        "on-tertiary": "#283040",
+                        "on-primary-fixed-variant": "#4c23b9",
+                        "surface-container-low": "#191b26",
+                        "primary": "#ccbeff",
+                        "on-primary-container": "#e7deff",
+                        "outline-variant": "#484554",
+                        "secondary": "#54dcbf",
+                        "on-secondary-fixed": "#00201a",
+                        "surface-container-high": "#272935",
+                        "on-tertiary-fixed": "#141c2b",
+                        "tertiary-fixed": "#dbe2f8",
+                        "inverse-primary": "#6542d1",
+                        "secondary-fixed-dim": "#54dcbf",
+                        "on-surface": "#e1e1f1",
+                        "surface-tint": "#ccbeff",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#005143",
+                        "secondary-container": "#01af94",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#0b0e18",
+                        "tertiary-fixed-dim": "#bfc6db",
+                        "surface-dim": "#11131e"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(29, 31, 42, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .glow-border:focus-within {
+            box-shadow: 0 0 12px rgba(84, 220, 191, 0.3);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen">
+<header class="sticky top-0 w-full z-50 bg-[#11131E]/70 backdrop-blur-xl shadow-[0_20px_40px_-15px_rgba(107,73,216,0.08)] border-b border-outline-variant/10">
+<div class="flex justify-between items-center w-full px-6 py-3 max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<img alt="Logo" class="w-8 h-8" data-alt="Postsiva geometric abstract purple logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCmErdPDx7LIi1qAYuqAa_66TGgZXpmrZWNpVehPNrvJNWH0vaRZvXJr6XVWbYqhieHWEoFPgsJSWvMauzmFhFM5THVi-F6zHxfHns5oqhjk_uBsPkVyTOSrxnIZS3b6Q_uzKVKlV15x5bVTebRZeTC1o5XiuoKpb7VqDr6ohtwuXXNVVdW71Rrcarb7jbGHqbNI2-YMdhDucssDZ1cQju0iDBjmsDQIfbZn24358R1NtTpkf_tmSnbSNjUlyDgrzppTS0IqKY8Y--"/>
+<span class="text-2xl font-black tracking-tighter text-[#E1E1F1] font-manrope antialiased tracking-tight">Postsiva</span>
+</div>
+<!-- Settings Tabs moved to header as requested -->
+<nav class="hidden md:flex items-center gap-1 overflow-x-auto no-scrollbar ml-4">
+<a class="px-4 py-2 text-sm font-bold text-secondary border-b-2 border-secondary tracking-tight transition-all" href="#profile">Profile</a>
+<a class="px-4 py-2 text-sm font-medium text-on-surface-variant hover:text-on-surface tracking-tight transition-all" href="#workspace">Workspace</a>
+<a class="px-4 py-2 text-sm font-medium text-on-surface-variant hover:text-on-surface tracking-tight transition-all" href="#social">Account</a>
+<a class="px-4 py-2 text-sm font-medium text-on-surface-variant hover:text-on-surface tracking-tight transition-all" href="#notifications">Notifications</a>
+<a class="px-4 py-2 text-sm font-medium text-on-surface-variant hover:text-on-surface tracking-tight transition-all" href="#">Billing</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center bg-surface-container-lowest rounded-full px-4 py-1.5 border border-outline-variant/15">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface ml-2 w-48" placeholder="Search settings..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-[#CAC3D6]">
+<span class="material-symbols-outlined cursor-pointer hover:text-[#54DCBF] transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-[#54DCBF] transition-colors" data-icon="help_outline">help_outline</span>
+<img alt="User Profile Avatar" class="w-8 h-8 rounded-full border border-primary-container/30" data-alt="Close up portrait of a professional man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnk0i1f7CraHR0JyAX4C5WxaCtNQOecQXSjx53uPXg58lvEetPjvi93fSXZQfunRn1wjSnhOTcv7XXxg2msVi0t_W9eMFutqW143Dq_qUkKwD75isNuRGZ1ySoGtvJTICox63bMoGje0bmJr4GimdlKnfJAZciIFWlgzx-H_TE-qErJuWW5OmMvnWWGhekLVTCQAfzDtjIwzBkqslurqJUGxDpNfqs1v197AJIOigWQDe8JxD-D6frNGaFL1Rk_1nR76HLp7-nJBiX"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex min-h-screen w-full">
+<!-- Main Content Area - Full Width -->
+<main class="flex-1 p-6 md:p-12 max-w-6xl mx-auto space-y-16 pb-48">
+<!-- Header for mobile navigation view -->
+<div class="md:hidden overflow-x-auto no-scrollbar flex border-b border-outline-variant/10 mb-8 -mx-6 px-6">
+<a class="px-4 py-3 text-sm font-bold text-secondary border-b-2 border-secondary whitespace-nowrap" href="#profile">Profile</a>
+<a class="px-4 py-3 text-sm font-medium text-on-surface-variant whitespace-nowrap" href="#workspace">Workspace</a>
+<a class="px-4 py-3 text-sm font-medium text-on-surface-variant whitespace-nowrap" href="#social">Account</a>
+<a class="px-4 py-3 text-sm font-medium text-on-surface-variant whitespace-nowrap" href="#notifications">Notifications</a>
+</div>
+<!-- Section: Profile Settings -->
+<section class="space-y-6" id="profile">
+<div class="flex items-baseline justify-between border-b border-outline-variant/10 pb-4">
+<h3 class="text-3xl font-extrabold tracking-tight text-on-surface">Profile Settings</h3>
+<span class="text-xs text-secondary font-bold uppercase tracking-widest">Identity</span>
+</div>
+<div class="bg-surface-container rounded-3xl p-8 shadow-2xl border border-outline-variant/5">
+<div class="flex flex-col md:flex-row gap-10 items-start">
+<div class="relative group cursor-pointer">
+<img alt="Avatar" class="w-36 h-36 rounded-3xl object-cover border-2 border-primary-container/20 group-hover:border-secondary transition-all" data-alt="Portrait of a smiling professional man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqKJ1JiRtlkvTrs4IuGOUBndFqZSx5nxonR3c5Lgm7qJr1aaP_UJRqz1qAHy3aNkEK8wVUmZURXUdFWhSFx0FGWQ0y8ZiVVfAluRFHsAQw8yyAhZ5g_o-3VogRd9Rlk_OtxmtYjmXvVtbnOF0bKACJ0o8pH3I2m1bo-rLm6HiTsT5Li1UCpfgLtKh0_JC_-x3ZDG7RR282jYLv5KmqxnZugt0fnGmXwX2_TVDL8W4WIbGyf3erDAL8C0_XixyhnT0oMCpQFyB7J66j"/>
+<div class="absolute inset-0 bg-surface/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity rounded-3xl">
+<span class="material-symbols-outlined text-on-surface" data-icon="photo_camera">photo_camera</span>
+</div>
+</div>
+<div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Full Name</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/15 rounded-xl px-4 py-4 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all text-on-surface glow-border" type="text" value="Alex Rivera"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Email Address</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/15 rounded-xl px-4 py-4 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all text-on-surface glow-border" type="email" value="alex@postsiva.io"/>
+</div>
+<div class="md:col-span-2 flex flex-col md:flex-row justify-end items-center gap-6 mt-4">
+<button class="text-on-surface-variant hover:text-on-surface text-sm font-bold transition-colors">Change Password</button>
+<button class="w-full md:w-auto px-10 py-3 bg-secondary-container text-on-secondary-container rounded-xl font-bold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-secondary-container/10">Save Changes</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Workspace Settings -->
+<section class="space-y-6" id="workspace">
+<div class="flex items-baseline justify-between border-b border-outline-variant/10 pb-4">
+<h3 class="text-3xl font-extrabold tracking-tight text-on-surface">Workspace Settings</h3>
+<span class="text-xs text-secondary font-bold uppercase tracking-widest">Collaboration</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-2 bg-surface-container rounded-3xl p-8 border border-outline-variant/5">
+<div class="space-y-8">
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Workspace Name</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/15 rounded-xl px-4 py-4 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none text-on-surface transition-all" type="text" value="Design Systems HQ"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Timezone</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant/15 rounded-xl px-4 py-4 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none text-on-surface transition-all">
+<option>Pacific Time (PT) - UTC-8</option>
+<option>Eastern Time (ET) - UTC-5</option>
+<option>Greenwich Mean Time (GMT)</option>
+</select>
+</div>
+</div>
+</div>
+<div class="bg-surface-container rounded-3xl p-8 border border-outline-variant/5 flex flex-col items-center justify-center text-center space-y-6">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider self-start">Workspace Logo</label>
+<div class="w-24 h-24 bg-primary-container/10 border-2 border-dashed border-primary-container/30 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="upload_file">upload_file</span>
+</div>
+<div class="space-y-2">
+<p class="text-xs text-on-surface-variant">SVG, PNG or JPG (max 2MB).</p>
+<button class="text-secondary text-sm font-bold hover:underline">Upload New Logo</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Social Account Connection -->
+<section class="space-y-6" id="social">
+<div class="flex items-baseline justify-between border-b border-outline-variant/10 pb-4">
+<h3 class="text-3xl font-extrabold tracking-tight text-on-surface">Connected Accounts</h3>
+<span class="text-xs text-secondary font-bold uppercase tracking-widest">Network</span>
+</div>
+<div class="bg-surface-container rounded-3xl overflow-hidden border border-outline-variant/5">
+<div class="divide-y divide-outline-variant/10">
+<!-- Instagram -->
+<div class="flex items-center justify-between p-6 hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center">
+<img alt="Instagram Icon" class="w-6 h-6" data-alt="Instagram brand icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRYh7ZcTc8II9-k9jqQYaDJlgUXJuW8-XYqBYm4bUwpLgDt22m7yzEgQU29vOy6hA-2tQwZHGU7kRpnzk-PWSnlYk3FQiAryVJIunFuT5fdlwqaBETNtr7l_IZoczc9fM-vY3Iq5b2hVNjkkwI5zJIt7yXciyWmUKL3tldH3-6NM1GfN92L7WB60ySIRVa221r7gvwzi8XITVdRZpiwsz8zMyknMV9C7rdPrVbZkCrFNJq9XzXzh-lV2ChUzD829Kbhg6XheMO4UPp"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Instagram</h4>
+<p class="text-sm text-secondary">@alex_creative_studio</p>
+</div>
+</div>
+<button class="px-5 py-2.5 border border-outline-variant/30 text-on-surface-variant text-xs font-bold rounded-xl hover:bg-error-container/20 hover:text-error transition-all">Disconnect Account</button>
+</div>
+<!-- X / Twitter -->
+<div class="flex items-center justify-between p-6 hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center border border-outline-variant/20">
+<img alt="X Icon" class="w-5 h-5" data-alt="X formerly twitter brand icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQPs1Rmi0UFlqJkCBSISOoDEkT6okDVTNYh7_8QnV7c0sUh8oAnpm25_wZBHL4RQ5yIYKul9v5gimsmiDEdqKAyt0R7AIbIQcmgKscqiK84-vtGrTd0RgSugKcmqZYBNFYakYG5z6q2kuj46TMeHJzDQBnMAukG6j0mnMIgdxYITMdQLbGsdo90_CqUNnx_kEIdU1nK1QXNAVIZibutPsYsGW3ezJh4F3If4scr--aaux55mCJKoTMQ9Hea1SDEOan-MmYbu1-avww"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">X / Twitter</h4>
+<p class="text-sm text-on-surface-variant opacity-60">Not connected</p>
+</div>
+</div>
+<button class="px-5 py-2.5 bg-primary-container text-on-primary-container text-xs font-bold rounded-xl hover:opacity-90 transition-all shadow-lg shadow-primary-container/10">Connect Account</button>
+</div>
+</div>
+<div class="p-8 bg-surface-container-low flex justify-center">
+<button class="flex items-center gap-2 text-secondary font-bold text-sm hover:gap-3 transition-all">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                        Add New Account
+                    </button>
+</div>
+</div>
+</section>
+<!-- Section: Notification Preferences -->
+<section class="space-y-6" id="notifications">
+<div class="flex items-baseline justify-between border-b border-outline-variant/10 pb-4">
+<h3 class="text-3xl font-extrabold tracking-tight text-on-surface">Notification Preferences</h3>
+<span class="text-xs text-secondary font-bold uppercase tracking-widest">Alerts</span>
+</div>
+<div class="bg-surface-container rounded-3xl p-8 border border-outline-variant/5">
+<div class="space-y-10">
+<div class="flex items-center justify-between">
+<div>
+<h4 class="font-bold text-on-surface text-lg">Email Notifications</h4>
+<p class="text-sm text-on-surface-variant">Receive weekly analytics and activity digests via email.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<h4 class="font-bold text-on-surface text-lg">Push Notifications</h4>
+<p class="text-sm text-on-surface-variant">Get instant alerts when a scheduled post goes live or fails.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Floating Bottom Navigation (Consistent with SCREEN_68) -->
+<nav class="fixed bottom-8 left-1/2 -translate-x-1/2 rounded-full px-8 py-3 z-50 bg-[#272935]/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(107,73,216,0.15)] flex gap-8 items-center justify-around w-max border border-outline-variant/10">
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] opacity-60 hover:opacity-100 hover:text-[#54DCBF] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="grid_view">grid_view</span>
+<span class="text-[10px] font-bold font-['Manrope'] uppercase tracking-widest mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] opacity-60 hover:opacity-100 hover:text-[#54DCBF] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="insights">insights</span>
+<span class="text-[10px] font-bold font-['Manrope'] uppercase tracking-widest mt-1">Analytics</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#6B49D8] text-[#E7DEFF] rounded-full p-3 scale-110 shadow-[0_0_15px_rgba(107,73,216,0.5)] active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="add_circle">add_circle</span>
+<span class="hidden">Create</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#54DCBF] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="settings">settings</span>
+<span class="text-[10px] font-bold font-['Manrope'] uppercase tracking-widest mt-1">Settings</span>
+</a>
+</nav>
+</body></html>

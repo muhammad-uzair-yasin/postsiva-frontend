@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-variant": "#323440",
+              "surface-bright": "#373845",
+              "surface-tint": "#ccbeff",
+              "inverse-primary": "#6542d1",
+              "secondary-fixed": "#74f9da",
+              "secondary-fixed-dim": "#54dcbf",
+              "on-error": "#690005",
+              "on-secondary-fixed": "#00201a",
+              "surface-container-low": "#191b26",
+              "primary-fixed": "#e7deff",
+              "outline-variant": "#484554",
+              "on-tertiary-container": "#dbe3f8",
+              "tertiary-fixed-dim": "#bfc6db",
+              "background": "#11131e",
+              "on-tertiary-fixed-variant": "#3f4758",
+              "secondary-container": "#01af94",
+              "primary": "#ccbeff",
+              "on-secondary-fixed-variant": "#005143",
+              "surface-container-highest": "#323440",
+              "surface-container-high": "#272935",
+              "inverse-on-surface": "#2e303c",
+              "surface-dim": "#11131e",
+              "secondary": "#54dcbf",
+              "on-secondary-container": "#003b30",
+              "outline": "#938ea0",
+              "inverse-surface": "#e1e1f1",
+              "on-primary-fixed-variant": "#4c23b9",
+              "on-primary-fixed": "#1f0060",
+              "on-primary-container": "#e7deff",
+              "on-surface": "#e1e1f1",
+              "surface": "#11131e",
+              "surface-container-lowest": "#0b0e18",
+              "on-secondary": "#00382e",
+              "on-background": "#e1e1f1",
+              "tertiary": "#bfc6db",
+              "on-tertiary-fixed": "#141c2b",
+              "error": "#ffb4ab",
+              "on-tertiary": "#283040",
+              "on-surface-variant": "#cac3d6",
+              "error-container": "#93000a",
+              "on-error-container": "#ffdad6",
+              "on-primary": "#350097",
+              "tertiary-fixed": "#dbe2f8",
+              "tertiary-container": "#5d6577",
+              "primary-fixed-dim": "#ccbeff",
+              "surface-container": "#1d1f2a",
+              "primary-container": "#6b49d8"
+            },
+            fontFamily: {
+              "headline": ["Manrope", "sans-serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .glass-panel {
+            background: rgba(29, 31, 42, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen selection:bg-secondary/30 selection:text-secondary">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-[#1D1F2A]/70 backdrop-blur-xl bg-gradient-to-b from-[#191B26] to-transparent shadow-[0_8px_32px_rgba(107,73,216,0.08)]">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<img alt="Postsiva Logo" class="h-8 w-auto" data-alt="Postsiva geometric abstract logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs4s-DqcZJjnj56Krb1BznS1uoMAWdw-3Z12Kha0R9GbzufthnLEqS0NxV09fOJJDf7_cTiPGRvP3nvprz1XNlg6i2S-svHIbxFuyi_eQjBZBTSaShiZbTdvIIUH0t-ob0-P-JCn6d4sEdvvSpQPSl5fsgLboUqvcaefiNTugvbRFm-KIGh9gFwMGtRbD5bhWORpjjDX1wDR_FAcxLRj0kEngfX6WdZbD-MV-BA3C34StTj5KlsOi17aE828NtXGXxI6HMzSEt6rXI"/>
+<span class="text-2xl font-black text-[#E1E1F1] tracking-tighter">Postsiva</span>
+</div>
+<div class="hidden md:flex items-center bg-surface-container-lowest px-4 py-2 rounded-xl border border-outline-variant/15 w-80 group focus-within:border-secondary/50 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full text-on-surface placeholder:text-outline" placeholder="Search platforms..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8 font-manrope text-sm font-medium tracking-tight">
+<a class="text-[#CAC3D6] hover:text-[#54DCBF] transition-colors duration-300" href="#">Analytics</a>
+<a class="text-[#CAC3D6] hover:text-[#54DCBF] transition-colors duration-300" href="#">Campaigns</a>
+<a class="text-[#6B49D8] font-bold" href="#">Connections</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#CAC3D6] hover:text-[#54DCBF] transition-colors active:scale-95">notifications</button>
+<button class="material-symbols-outlined text-[#CAC3D6] hover:text-[#54DCBF] transition-colors active:scale-95">settings</button>
+<div class="h-10 w-10 rounded-full bg-primary-container p-[2px]">
+<img alt="User profile" class="rounded-full bg-surface-container" data-alt="Professional user profile headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFRaHdqxG48sOtfeRrQRwyQUu10ClgF9_OxoQksrY-TISV7E6pSeyqO8hDORerpzQVqwWBJZeSoER5vtqxlVjpRUszYqgZCl3quczTT0bU4hB7FLpNUuqk7ykfo_locXw16LE78p7hSOniwrYjiEtJQNFlSWXuyFA0-yYAthnuhtvmVUmT5J2o4Kpae1T3oLhG-mif43XQkqyg44n-0W8RoqNLG2ZsXl6uzdUa2UWnXWH8dfpNLn_1XUUvx0FEYKIbDRPI4ROwqC27"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="relative pt-32 pb-40 px-6 max-w-7xl mx-auto min-h-screen">
+<!-- Ambient Light Effects -->
+<div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary-container/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+<div class="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-secondary/10 blur-[100px] rounded-full pointer-events-none -z-10"></div>
+<!-- Header Section -->
+<div class="text-center mb-16 space-y-4">
+<h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-on-surface leading-tight">
+                Connect Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">World</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto">
+                Select a platform to link your profile and start growing your presence across the digital landscape.
+            </p>
+</div>
+<!-- Platform Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Instagram Card -->
+<div class="group relative p-8 rounded-3xl bg-surface-container hover:bg-surface-container-high transition-all duration-500 border border-outline-variant/10 hover:border-primary/30 shadow-[0_4px_20px_rgba(0,0,0,0.1)] overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl -z-10 group-hover:bg-primary/20 transition-all"></div>
+<div class="flex flex-col items-center text-center space-y-6">
+<div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] flex items-center justify-center shadow-[0_0_20px_rgba(238,42,123,0.3)] group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="photo_camera" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-on-surface mb-2">Instagram</h3>
+<p class="text-sm text-on-surface-variant">Visual storytelling and community</p>
+</div>
+<button class="w-full py-3 px-6 rounded-xl bg-primary-container text-on-primary-container font-bold text-sm hover:shadow-[0_0_20px_rgba(107,73,216,0.4)] transition-all active:scale-95">Connect</button>
+</div>
+</div>
+<!-- X (Twitter) Card -->
+<div class="group relative p-8 rounded-3xl bg-surface-container hover:bg-surface-container-high transition-all duration-500 border border-outline-variant/10 hover:border-secondary/30 shadow-[0_4px_20px_rgba(0,0,0,0.1)] overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 blur-3xl -z-10 group-hover:bg-secondary/20 transition-all"></div>
+<div class="flex flex-col items-center text-center space-y-6">
+<div class="w-20 h-20 rounded-2xl bg-[#000000] border border-outline-variant/30 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.05)] group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="close" style="font-variation-settings: 'FILL' 0;">close</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-on-surface mb-2">X</h3>
+<p class="text-sm text-on-surface-variant">Real-time updates and conversations</p>
+</div>
+<button class="w-full py-3 px-6 rounded-xl bg-primary-container text-on-primary-container font-bold text-sm hover:shadow-[0_0_20px_rgba(107,73,216,0.4)] transition-all active:scale-95">Connect</button>
+</div>
+</div>
+<!-- LinkedIn Card -->
+<div class="group relative p-8 rounded-3xl bg-surface-container hover:bg-surface-container-high transition-all duration-500 border border-outline-variant/10 hover:border-primary/30 shadow-[0_4px_20px_rgba(0,0,0,0.1)] overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl -z-10 group-hover:bg-primary/20 transition-all"></div>
+<div class="flex flex-col items-center text-center space-y-6">
+<div class="w-20 h-20 rounded-2xl bg-[#0A66C2] flex items-center justify-center shadow-[0_0_20px_rgba(10,102,194,0.3)] group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="work" style="font-variation-settings: 'FILL' 1;">work</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-on-surface mb-2">LinkedIn</h3>
+<p class="text-sm text-on-surface-variant">Professional networking and insights</p>
+</div>
+<button class="w-full py-3 px-6 rounded-xl bg-primary-container text-on-primary-container font-bold text-sm hover:shadow-[0_0_20px_rgba(107,73,216,0.4)] transition-all active:scale-95">Connect</button>
+</div>
+</div>
+<!-- TikTok Card -->
+<div class="group relative p-8 rounded-3xl bg-surface-container hover:bg-surface-container-high transition-all duration-500 border border-outline-variant/10 hover:border-secondary/30 shadow-[0_4px_20px_rgba(0,0,0,0.1)] overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 blur-3xl -z-10 group-hover:bg-secondary/20 transition-all"></div>
+<div class="flex flex-col items-center text-center space-y-6">
+<div class="w-20 h-20 rounded-2xl bg-[#000000] border-r-4 border-b-4 border-secondary/50 flex items-center justify-center shadow-[0_0_20px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="music_note" style="font-variation-settings: 'FILL' 1;">music_note</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-on-surface mb-2">TikTok</h3>
+<p class="text-sm text-on-surface-variant">Short-form viral content</p>
+</div>
+<button class="w-full py-3 px-6 rounded-xl bg-primary-container text-on-primary-container font-bold text-sm hover:shadow-[0_0_20px_rgba(107,73,216,0.4)] transition-all active:scale-95">Connect</button>
+</div>
+</div>
+<!-- YouTube Card -->
+<div class="group relative p-8 rounded-3xl bg-surface-container hover:bg-surface-container-high transition-all duration-500 border border-outline-variant/10 hover:border-primary/30 shadow-[0_4px_20px_rgba(0,0,0,0.1)] overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl -z-10 group-hover:bg-primary/20 transition-all"></div>
+<div class="flex flex-col items-center text-center space-y-6">
+<div class="w-20 h-20 rounded-2xl bg-[#FF0000] flex items-center justify-center shadow-[0_0_20px_rgba(255,0,0,0.3)] group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-on-surface mb-2">YouTube</h3>
+<p class="text-sm text-on-surface-variant">Video content and streaming</p>
+</div>
+<button class="w-full py-3 px-6 rounded-xl bg-primary-container text-on-primary-container font-bold text-sm hover:shadow-[0_0_20px_rgba(107,73,216,0.4)] transition-all active:scale-95">Connect</button>
+</div>
+</div>
+<!-- Facebook Card -->
+<div class="group relative p-8 rounded-3xl bg-surface-container hover:bg-surface-container-high transition-all duration-500 border border-outline-variant/10 hover:border-secondary/30 shadow-[0_4px_20px_rgba(0,0,0,0.1)] overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 blur-3xl -z-10 group-hover:bg-secondary/20 transition-all"></div>
+<div class="flex flex-col items-center text-center space-y-6">
+<div class="w-20 h-20 rounded-2xl bg-[#1877F2] flex items-center justify-center shadow-[0_0_20px_rgba(24,119,242,0.3)] group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="groups" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-on-surface mb-2">Facebook</h3>
+<p class="text-sm text-on-surface-variant">Global reach and community pages</p>
+</div>
+<button class="w-full py-3 px-6 rounded-xl bg-primary-container text-on-primary-container font-bold text-sm hover:shadow-[0_0_20px_rgba(107,73,216,0.4)] transition-all active:scale-95">Connect</button>
+</div>
+</div>
+</div>
+<!-- Footnote -->
+<div class="mt-20 text-center text-on-surface-variant/60 text-sm">
+<p>Can't find your platform? <a class="text-secondary hover:underline underline-offset-4" href="#">Suggest a new integration</a></p>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Floating Pill) -->
+<nav class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex gap-4 items-center justify-around bg-[#323440]/80 backdrop-blur-2xl w-auto min-w-[320px] rounded-full px-6 py-3 border border-[#484554]/15 shadow-[0_20px_50px_rgba(107,73,216,0.15)]">
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] p-3 hover:bg-[#1D1F2A] rounded-full transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] p-3 hover:bg-[#1D1F2A] rounded-full transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-widest mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#6B49D8] text-[#E7DEFF] rounded-full p-3 shadow-[0_0_15px_rgba(107,73,216,0.5)] active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-widest mt-1">Create</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] p-3 hover:bg-[#1D1F2A] rounded-full transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-widest mt-1">Activity</span>
+</a>
+</nav>
+</body></html>

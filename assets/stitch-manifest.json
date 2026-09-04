@@ -1,0 +1,259 @@
+{
+  "projectId": "16344899061593404018",
+  "screens": [
+    {
+      "title": "AI Persona Editor",
+      "screenId": "ac83018f1a1b4a389510992b82c0b899",
+      "resourceName": "projects/16344899061593404018/screens/ac83018f1a1b4a389510992b82c0b899",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2404",
+      "localFiles": {
+        "screenshot": "ai-persona-editor-screenshot.png",
+        "html": "ai-persona-editor.html"
+      },
+      "nextRoute": "/personas/editor"
+    },
+    {
+      "title": "Login Page (Unified Style)",
+      "screenId": "c84a1e3635f14b60b36c1e16aa4da9e3",
+      "resourceName": "projects/16344899061593404018/screens/c84a1e3635f14b60b36c1e16aa4da9e3",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2048",
+      "localFiles": {
+        "screenshot": "login-page-screenshot.png",
+        "html": "login-page.html"
+      },
+      "nextRoute": "/login"
+    },
+    {
+      "title": "Signup Page (Unified Style)",
+      "screenId": "26055a8095f848bca12802dc16c15a26",
+      "resourceName": "projects/16344899061593404018/screens/26055a8095f848bca12802dc16c15a26",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2048",
+      "localFiles": {
+        "screenshot": "signup-page-screenshot.png",
+        "html": "signup-page.html"
+      },
+      "nextRoute": "/signup"
+    },
+    {
+      "title": "Enhanced Workspace Selection Portal",
+      "screenId": "58585f557302454d8e7d1725bbb15efe",
+      "resourceName": "projects/16344899061593404018/screens/58585f557302454d8e7d1725bbb15efe",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2048",
+      "localFiles": {
+        "screenshot": "workspace-selection-portal-screenshot.png",
+        "html": "workspace-selection-portal.html"
+      },
+      "nextRoute": "/workspaces"
+    },
+    {
+      "title": "Edit Workspace Modal",
+      "screenId": "09f18159ae9d46b28614de6341bd2922",
+      "resourceName": "projects/16344899061593404018/screens/09f18159ae9d46b28614de6341bd2922",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2048",
+      "localFiles": {
+        "screenshot": "workspace-edit-modal-screenshot.png",
+        "html": "workspace-edit-modal.html"
+      },
+      "nextRoute": "/workspaces/edit"
+    },
+    {
+      "title": "Social Inbox - Full Width Navigation",
+      "screenId": "f5a7eced57a44de59e23be72e110c8cc",
+      "resourceName": "projects/16344899061593404018/screens/f5a7eced57a44de59e23be72e110c8cc",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2048",
+      "localFiles": {
+        "screenshot": "social-inbox-screenshot.png",
+        "html": "social-inbox.html"
+      },
+      "nextRoute": "/inbox"
+    },
+    {
+      "title": "Add Account - Platform Selection",
+      "screenId": "16ee308dc2bf49e283f339822d2555ea",
+      "resourceName": "projects/16344899061593404018/screens/16ee308dc2bf49e283f339822d2555ea",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2424",
+      "localFiles": {
+        "screenshot": "add-account-platform-selection-screenshot.png",
+        "html": "add-account-platform-selection.html"
+      }
+    },
+    {
+      "title": "User Feedback & Support",
+      "screenId": "510f59fbf3e24e3b953b27a61ed26aaf",
+      "resourceName": "projects/16344899061593404018/screens/510f59fbf3e24e3b953b27a61ed26aaf",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2728",
+      "localFiles": {
+        "screenshot": "user-feedback-support-screenshot.png",
+        "html": "user-feedback-support-stitch.html"
+      },
+      "nextRoute": "/feedback"
+    },
+    {
+      "title": "Settings - Full Width Navigation",
+      "screenId": "2d4730f54fa948de9c35d453b191b74a",
+      "resourceName": "projects/16344899061593404018/screens/2d4730f54fa948de9c35d453b191b74a",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "3492",
+      "localFiles": {
+        "screenshot": "settings-full-width-navigation-screenshot.png",
+        "html": "settings-full-width-navigation-stitch.html"
+      },
+      "nextRoute": "/settings"
+    },
+    {
+      "title": "AI Agent Chat - Pipeline View",
+      "screenId": "07badcfe714a46ba8b360706e0213613",
+      "resourceName": "projects/16344899061593404018/screens/07badcfe714a46ba8b360706e0213613",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2048",
+      "localFiles": {
+        "screenshot": "ai-agent-chat-pipeline-screenshot.png",
+        "html": "ai-agent-chat-pipeline-stitch.html"
+      },
+      "nextRoute": "/ai-pipeline"
+    },
+    {
+      "title": "Post Scheduler - Multi-Channel Composer",
+      "screenId": "453da90924594abc95a1f7626d1e211e",
+      "resourceName": "projects/16344899061593404018/screens/453da90924594abc95a1f7626d1e211e",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2680",
+      "localFiles": {
+        "screenshot": "post-scheduler-multi-channel-composer-screenshot.png",
+        "html": "post-scheduler-multi-channel-composer.html"
+      },
+      "nextRoute": "/post-scheduler"
+    },
+    {
+      "title": "Post Scheduler - Calendar View",
+      "screenId": "b4fe7d0bcaa74e648afec3eca44cc40d",
+      "resourceName": "projects/16344899061593404018/screens/b4fe7d0bcaa74e648afec3eca44cc40d",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2208",
+      "localFiles": {
+        "screenshot": "post-scheduler-calendar-view-screenshot.png",
+        "html": "post-scheduler-calendar-view.html"
+      },
+      "nextRoute": "/post-scheduler/calendar"
+    },
+    {
+      "title": "Post Scheduler - AI Assistant Panel",
+      "screenId": "6318a7b9de4749feb6511c4d780bd061",
+      "resourceName": "projects/16344899061593404018/screens/6318a7b9de4749feb6511c4d780bd061",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2176",
+      "localFiles": {
+        "screenshot": "post-scheduler-ai-assistant-panel-screenshot.png",
+        "html": "post-scheduler-ai-assistant-panel.html"
+      },
+      "nextRoute": "/post-scheduler/ai-assistant"
+    },
+    {
+      "title": "Delete Workspace Modal",
+      "screenId": "4d33f97d723246c5afee5eb5147e1fbc",
+      "resourceName": "projects/16344899061593404018/screens/4d33f97d723246c5afee5eb5147e1fbc",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2048",
+      "localFiles": {
+        "screenshot": "workspace-delete-modal-screenshot.png",
+        "html": "workspace-delete-modal.html"
+      },
+      "nextRoute": "/workspaces/delete"
+    },
+    {
+      "title": "AI Persona Gallery",
+      "screenId": "46618fd42c954598a977a62ac7427f92",
+      "resourceName": "projects/16344899061593404018/screens/46618fd42c954598a977a62ac7427f92",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2048",
+      "localFiles": {
+        "html": "ai-persona-gallery-stitch.html"
+      },
+      "nextRoute": "/settings/personas"
+    },
+    {
+      "title": "Post Scheduler - Content Pipeline",
+      "screenId": "ae63061e2f5c4ccc9df41e26f61b27e3",
+      "resourceName": "projects/16344899061593404018/screens/ae63061e2f5c4ccc9df41e26f61b27e3",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2048",
+      "localFiles": {
+        "html": "post-scheduler-content-pipeline-stitch.html"
+      },
+      "nextRoute": "/post-scheduler/pipeline"
+    },
+    {
+      "title": "Published Posts",
+      "screenId": "291e6a86f54d4d868c8d0188504dfe9c",
+      "resourceName": "projects/16344899061593404018/screens/291e6a86f54d4d868c8d0188504dfe9c",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2048",
+      "localFiles": {
+        "html": "published-posts-stitch.html"
+      },
+      "nextRoute": "/published"
+    },
+    {
+      "title": "Content Manager",
+      "screenId": "contentmanagerstitch0001demo",
+      "resourceName": "projects/16344899061593404018/screens/contentmanagerstitch0001demo",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2048",
+      "localFiles": {
+        "html": "content-manager-stitch.html"
+      },
+      "nextRoute": "/content-manager"
+    },
+    {
+      "title": "Add Member Modal",
+      "screenId": "b94096a4d84445fe8841603044c8f784",
+      "resourceName": "projects/16344899061593404018/screens/b94096a4d84445fe8841603044c8f784",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "2048",
+      "localFiles": {
+        "html": "add-member-modal-stitch.html"
+      },
+      "nextRoute": "/workspaces/members/add"
+    },
+    {
+      "title": "Dashboard",
+      "screenId": "5daa9d05ddfe4740b8e33851bb93dff5",
+      "resourceName": "projects/16344899061593404018/screens/5daa9d05ddfe4740b8e33851bb93dff5",
+      "deviceType": "DESKTOP",
+      "width": "2560",
+      "height": "3252",
+      "localFiles": {
+        "screenshot": "single-platform-dashboard-instagram-screenshot.png",
+        "html": "single-platform-dashboard-instagram-stitch.html"
+      },
+      "nextRoute": "/dashboard"
+    }
+  ]
+}

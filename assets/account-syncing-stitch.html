@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#e1e1f1",
+              "surface-bright": "#373845",
+              "tertiary": "#bfc6db",
+              "error": "#ffb4ab",
+              "outline": "#938ea0",
+              "secondary-fixed": "#74f9da",
+              "surface-tint": "#ccbeff",
+              "on-tertiary-fixed": "#141c2b",
+              "primary-container": "#6b49d8",
+              "on-tertiary-fixed-variant": "#3f4758",
+              "on-primary-fixed": "#1f0060",
+              "on-surface": "#e1e1f1",
+              "secondary-container": "#01af94",
+              "primary": "#ccbeff",
+              "tertiary-fixed-dim": "#bfc6db",
+              "secondary-fixed-dim": "#54dcbf",
+              "on-secondary-fixed": "#00201a",
+              "surface-dim": "#11131e",
+              "surface-variant": "#323440",
+              "surface-container-highest": "#323440",
+              "surface": "#11131e",
+              "on-secondary": "#00382e",
+              "on-primary-fixed-variant": "#4c23b9",
+              "inverse-primary": "#6542d1",
+              "surface-container": "#1d1f2a",
+              "on-error": "#690005",
+              "on-tertiary-container": "#dbe3f8",
+              "on-surface-variant": "#cac3d6",
+              "surface-container-low": "#191b26",
+              "primary-fixed-dim": "#ccbeff",
+              "inverse-on-surface": "#2e303c",
+              "primary-fixed": "#e7deff",
+              "on-primary-container": "#e7deff",
+              "on-secondary-container": "#003b30",
+              "outline-variant": "#484554",
+              "on-primary": "#350097",
+              "on-tertiary": "#283040",
+              "error-container": "#93000a",
+              "tertiary-fixed": "#dbe2f8",
+              "background": "#11131e",
+              "surface-container-high": "#272935",
+              "surface-container-lowest": "#0b0e18",
+              "on-background": "#e1e1f1",
+              "on-secondary-fixed-variant": "#005143",
+              "on-error-container": "#ffdad6",
+              "tertiary-container": "#5d6577",
+              "secondary": "#54dcbf"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-pulse {
+            box-shadow: 0 0 40px rgba(107, 73, 216, 0.3);
+        }
+        .bg-mesh {
+            background: radial-gradient(at top left, rgba(107, 73, 216, 0.15) 0%, transparent 50%),
+                        radial-gradient(at bottom right, rgba(84, 220, 191, 0.1) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen selection:bg-primary-container selection:text-on-primary-container bg-mesh">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#11131E]/70 backdrop-blur-xl bg-gradient-to-b from-[#11131E] to-transparent shadow-[0_8px_32px_rgba(107,73,216,0.08)]">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-2">
+<img class="h-8 w-8 object-contain" data-alt="Postsiva Brand Logo Modern Minimalist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjdS3Oy-W9oFnRfCWP5nkBfZuf2YQvEqiuLc1-uN2dy1xQbybgJcWC8Cpf1qMH9KZE6cTa2dr9BGsJKj7hBs-Tbx9rxr7ujGNsOfoe9Qgyxwex10pxDem9l6vHTtD66uKR1gA8e8aSIQyeiyVJwcOtdKarCrWMzpwYKTWjPvLEUb8WN8bAlqaEDLVdDy8xCrJHBVFTZH55a9ZrkPse17A1924mhZn0XJx_j8NwrQfKurmGBdN0lqiHwnRo-k2OsdhltpphvU3-bgk9"/>
+<span class="text-2xl font-bold tracking-tighter text-[#E1E1F1] font-['Manrope']">Postsiva</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8">
+<a class="text-[#CAC3D6] font-bold transition-colors duration-300 hover:text-[#54DCBF]" href="#">Dashboard</a>
+<a class="text-[#CAC3D6] font-bold transition-colors duration-300 hover:text-[#54DCBF]" href="#">Schedule</a>
+<a class="text-[#CAC3D6] font-bold transition-colors duration-300 hover:text-[#54DCBF]" href="#">Analytics</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#CAC3D6] hover:text-[#54DCBF] active:scale-95 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-[#CAC3D6] hover:text-[#54DCBF] active:scale-95 transition-all">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="User profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5HurwVtper2Ra_Dkpm5KyOXCmbVGSQiy5Sf5kMoqNYu96mg7aEb7PWNRZm3w0glZoXljo_D20rT0w3Rv49rYrIftGp7gLNh0VLRIuPLr5Lagq01lm9pA8hk_4d3MoI-9Mgkp1U3i7KpIDNMoUDsaLdLAiqWmlCOSP0Ec7XE39wyEVLuqDJtA2RCqoS3sEYfxX5Xvcrz4UKSJIBzgYp9N9vBHKVCblPaFevNZ4QL5rhQk5FKUr0adAkUxZpSVWwM8D-AjozSXv8Ms_"/>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content: Loading State Canvas -->
+<main class="flex flex-col items-center justify-center min-h-screen px-6 relative">
+<!-- Background Ambient Glow -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-container/10 rounded-full blur-[120px]"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[80px]"></div>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center max-w-md">
+<!-- Animated Loader Cluster -->
+<div class="relative w-48 h-48 mb-12 flex items-center justify-center">
+<!-- Outer Ring Spinning -->
+<div class="absolute inset-0 border-4 border-t-primary-container border-r-transparent border-b-secondary border-l-transparent rounded-full animate-spin"></div>
+<!-- Inner Pulse Ring -->
+<div class="absolute inset-4 border-2 border-outline-variant/20 rounded-full glow-pulse"></div>
+<!-- Center Icon Slot -->
+<div class="w-24 h-24 rounded-full bg-surface-container-high flex items-center justify-center shadow-2xl relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary-container/20 to-secondary/20"></div>
+<!-- Platform Icon: Instagram Example -->
+<span class="material-symbols-outlined text-5xl text-on-surface relative z-10" style="font-variation-settings: 'FILL' 1;">
+                        camera_alt
+                    </span>
+</div>
+<!-- Floating Particle Accents (Visual Depth) -->
+<div class="absolute top-0 right-0 w-3 h-3 bg-secondary rounded-full blur-[2px] opacity-60"></div>
+<div class="absolute bottom-4 left-2 w-2 h-2 bg-primary-container rounded-full blur-[1px] opacity-40"></div>
+</div>
+<!-- Status Text Area -->
+<div class="space-y-4">
+<h1 class="text-3xl font-extrabold tracking-tight text-on-surface font-headline">
+                    Syncing with Instagram
+                </h1>
+<div class="flex flex-col items-center gap-2">
+<p class="text-on-surface-variant text-lg font-medium">
+                        Authenticating your profile...
+                    </p>
+<!-- Progress Step Indicators -->
+<div class="flex gap-2 mt-4">
+<div class="w-12 h-1 rounded-full bg-primary-container shadow-[0_0_8px_rgba(107,73,216,0.5)]"></div>
+<div class="w-12 h-1 rounded-full bg-surface-variant"></div>
+<div class="w-12 h-1 rounded-full bg-surface-variant"></div>
+</div>
+</div>
+</div>
+<!-- Branding Secondary Logo (Bottom Context) -->
+<div class="mt-16 opacity-30 flex items-center gap-2 grayscale brightness-200">
+<img class="h-5 w-5 object-contain" data-alt="Postsiva Brand Icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcHq6KxGzrUsFtaZt2ybbxVV1xuSWpvNXJozzlNWctN7Z_gMMc_FeQhUSexpBYSjA5tTtZeAlV6i5ud9f5F0CInzQFF3YKSWjgIhCMk7W23FMZnzzbFg_gf9YpoGA5WL6f9vKDMuTQ2STYfdP1f9pFbSNSXnQqfXzvOM_WTTzW4wFy9W6u9eWnnTZI640QqK85_TMebcsn969hNGfoLoV3Z9seWY3hnAD-4XKRLR_Ynu5eGK36RzbAnunCqKRLuGwzakGpWlTDRe6g"/>
+<span class="text-sm font-bold tracking-widest uppercase">Secure Sync</span>
+</div>
+<!-- Safety Action -->
+<div class="mt-8">
+<button class="px-6 py-2 text-on-surface-variant hover:text-error transition-colors text-sm font-semibold tracking-wide border border-outline-variant/10 rounded-full hover:bg-error/5">
+                    Cancel Syncing
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Floating Pill) -->
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-3xl z-50 bg-[#272935]/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#484554]/15">
+<div class="flex justify-around items-center p-2">
+<!-- Dashboard Tab (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] px-5 py-2 hover:text-[#54DCBF] active:scale-90 transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="text-[10px] font-bold uppercase tracking-widest font-['Manrope']">Dashboard</span>
+</a>
+<!-- Schedule Tab (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] px-5 py-2 hover:text-[#54DCBF] active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1">calendar_today</span>
+<span class="text-[10px] font-bold uppercase tracking-widest font-['Manrope']">Schedule</span>
+</a>
+<!-- Analytics Tab (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] px-5 py-2 hover:text-[#54DCBF] active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1">insights</span>
+<span class="text-[10px] font-bold uppercase tracking-widest font-['Manrope']">Analytics</span>
+</a>
+<!-- Inbox Tab (Active State for User Connection Flow) -->
+<div class="flex flex-col items-center justify-center bg-[#6B49D8] text-[#E7DEFF] rounded-2xl px-5 py-2 shadow-[0_0_15px_rgba(107,73,216,0.4)] active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="text-[10px] font-bold uppercase tracking-widest font-['Manrope']">Inbox</span>
+</div>
+</div>
+</nav>
+<!-- Structural Overlay Decor -->
+<div class="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-container via-secondary to-primary-container opacity-50 z-50"></div>
+</body></html>

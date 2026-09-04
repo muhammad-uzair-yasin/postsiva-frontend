@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edit Workspace Settings - Postsiva</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#bfc6db",
+                        "surface-tint": "#ccbeff",
+                        "surface-dim": "#11131e",
+                        "on-primary-container": "#e7deff",
+                        "on-primary-fixed": "#1f0060",
+                        "background": "#11131e",
+                        "on-tertiary-fixed": "#141c2b",
+                        "tertiary": "#bfc6db",
+                        "surface-bright": "#373845",
+                        "surface-container-highest": "#323440",
+                        "secondary-fixed": "#74f9da",
+                        "outline": "#938ea0",
+                        "secondary-fixed-dim": "#54dcbf",
+                        "on-tertiary": "#283040",
+                        "error-container": "#93000a",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed": "#00201a",
+                        "primary-fixed-dim": "#ccbeff",
+                        "on-primary": "#350097",
+                        "secondary": "#54dcbf",
+                        "tertiary-fixed": "#dbe2f8",
+                        "on-surface": "#e1e1f1",
+                        "surface": "#11131e",
+                        "surface-variant": "#323440",
+                        "on-secondary-fixed-variant": "#005143",
+                        "primary": "#ccbeff",
+                        "tertiary-container": "#5d6577",
+                        "on-surface-variant": "#cac3d6",
+                        "surface-container-low": "#191b26",
+                        "on-tertiary-fixed-variant": "#3f4758",
+                        "on-secondary-container": "#003b30",
+                        "inverse-primary": "#6542d1",
+                        "surface-container-lowest": "#0b0e18",
+                        "outline-variant": "#484554",
+                        "secondary-container": "#01af94",
+                        "on-tertiary-container": "#dbe3f8",
+                        "inverse-surface": "#e1e1f1",
+                        "primary-container": "#6b49d8",
+                        "on-primary-fixed-variant": "#4c23b9",
+                        "inverse-on-surface": "#2e303c",
+                        "primary-fixed": "#e7deff",
+                        "on-background": "#e1e1f1",
+                        "surface-container-high": "#272935",
+                        "surface-container": "#1d1f2a",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "on-secondary": "#00382e"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(29, 31, 42, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #11131E;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #484554;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen">
+<!-- Background UI (Enhanced Workspace Selection Portal) -->
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none opacity-40 blur-sm">
+<header class="flex justify-between items-center px-8 h-16 w-full bg-[#11131E]/70 backdrop-blur-xl">
+<div class="flex items-center gap-4">
+<img alt="Postsiva Logo" class="h-8 w-8 rounded-lg" data-alt="Postsiva Brand Logo Graphic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQZ1lpL3YlWFmOzN_m1ptRI9x15dOHqMsXIoBsLFMwdd5AZ3d3_2DOu8bhYEtFPwhu7MtlJbGCUNyuJ73lGUbyqQKI0J-6NXTd2M96vsMmcxpUhrHyW-XX17fltRfVMPVdkw8qR_KNfdXaE43F_AYZORNiE0Sturuik_Im7EJAqUcDg-Jf4B9esSu6wvPUjnmLtY4uH3bCHDSfFC3VrhIYnFxsgWfThJfgotb_JZANilSPBh46XYWQI8d8Jihs6CwUwc7U6ZZl2by8"/>
+<span class="text-xl font-bold tracking-tighter text-[#E1E1F1]">Postsiva</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest"></div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-8 py-24">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="h-64 rounded-xl bg-surface-container"></div>
+<div class="h-64 rounded-xl bg-surface-container"></div>
+<div class="h-64 rounded-xl bg-surface-container"></div>
+</div>
+</main>
+</div>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-surface-dim/80 backdrop-blur-md">
+<!-- Modal Container -->
+<div class="w-full max-w-2xl max-h-[921px] glass-panel rounded-xl shadow-[0_20px_40px_rgba(107,73,216,0.15)] overflow-hidden flex flex-col border border-outline-variant/10">
+<!-- Modal Header -->
+<div class="px-8 py-6 flex items-center justify-between bg-surface-container-low/50">
+<div class="flex flex-col">
+<h1 class="text-2xl font-bold tracking-tight text-on-surface">Edit Workspace Settings</h1>
+<p class="text-on-surface-variant text-sm">Update your workspace identity and manage access.</p>
+</div>
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">close</span>
+</button>
+</div>
+<!-- Modal Content (Scrollable) -->
+<div class="flex-1 overflow-y-auto px-8 py-6 custom-scrollbar space-y-10">
+<!-- Section: General Settings -->
+<section class="space-y-6">
+<div class="flex items-center gap-6">
+<div class="relative group">
+<div class="w-24 h-24 rounded-2xl bg-surface-container-lowest flex items-center justify-center border-2 border-dashed border-outline-variant/30 group-hover:border-primary/50 transition-all cursor-pointer overflow-hidden">
+<img alt="Workspace Logo Placeholder" class="w-full h-full object-cover" data-alt="Placeholder for workspace profile image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbOY35zoGZRvsLskNotYDBoBFK2bottPf9MIvWUWI64rBgAHr-idnqm845XpBQ9cTOhf5GtZorAPxYjKjyOLM4o5Yrhv28WX4Pm0_Q7NKub162geo4-DbIXZGu2EkfeOB2fldzaWxw7rPslXSt_kaL489kXzQWWKZZjzGWjG0miIObCn_n05jKN27yJtL5Lk9eI1E5QhNsiZ0FF5W3PpWWdHlkz1GCdlLW-9r_ebkE_dpjVH8F_1adc5seEPpGw4irnH7IVhT8QM-c"/>
+<div class="absolute inset-0 bg-surface-dim/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-primary">add_a_photo</span>
+</div>
+</div>
+<span class="absolute -bottom-1 -right-1 bg-primary p-1 rounded-lg text-on-primary text-[10px] font-bold">UPLOAD</span>
+</div>
+<div class="flex-1 space-y-4">
+<div class="space-y-1.5">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant/70">Workspace Name</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg px-4 py-2.5 text-on-surface focus:ring-2 focus:ring-secondary/50 transition-all placeholder:text-on-surface-variant/40" placeholder="Enter workspace name" type="text" value="Main Workspace"/>
+</div>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant/70">Workspace Description</label>
+<textarea class="w-full bg-surface-container-lowest border-none rounded-lg px-4 py-2.5 text-on-surface focus:ring-2 focus:ring-secondary/50 transition-all placeholder:text-on-surface-variant/40" placeholder="What is this workspace for?" rows="3">Primary workspace for the regional marketing team campaigns and content scheduling.</textarea>
+</div>
+</section>
+<!-- Section: Connected Channels -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="text-sm font-bold uppercase tracking-widest text-secondary">Connected Channels</h2>
+<span class="text-xs text-on-surface-variant">3 Accounts Active</span>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<!-- Channel Item -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-[#833ab4] via-[#fd1d1d] to-[#fcb045] flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white text-xl" style="font-variation-settings: 'FILL' 1;">camera</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-on-surface">Instagram</span>
+<span class="text-xs text-on-surface-variant">@postsiva_official</span>
+</div>
+</div>
+<button class="px-3 py-1.5 text-xs font-bold text-error border border-error/20 rounded-lg hover:bg-error/10 transition-colors opacity-0 group-hover:opacity-100">Disconnect</button>
+</div>
+<!-- Channel Item -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-black flex items-center justify-center shadow-lg border border-outline-variant/20">
+<span class="text-white font-black text-xl">X</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-on-surface">X (Twitter)</span>
+<span class="text-xs text-on-surface-variant">@postsiva_hq</span>
+</div>
+</div>
+<button class="px-3 py-1.5 text-xs font-bold text-error border border-error/20 rounded-lg hover:bg-error/10 transition-colors opacity-0 group-hover:opacity-100">Disconnect</button>
+</div>
+<!-- Channel Item -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-[#1877F2] flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white text-xl" style="font-variation-settings: 'FILL' 1;">social_leaderboard</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-on-surface">Facebook</span>
+<span class="text-xs text-on-surface-variant">Postsiva Business</span>
+</div>
+</div>
+<button class="px-3 py-1.5 text-xs font-bold text-error border border-error/20 rounded-lg hover:bg-error/10 transition-colors opacity-0 group-hover:opacity-100">Disconnect</button>
+</div>
+</div>
+</section>
+<!-- Section: Team Management -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="text-sm font-bold uppercase tracking-widest text-primary">Team Management</h2>
+<button class="flex items-center gap-1.5 text-xs font-bold text-secondary-fixed-dim hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-sm">person_add</span>
+                            Invite Member
+                        </button>
+</div>
+<div class="space-y-2">
+<!-- Team Member -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low/50">
+<div class="flex items-center gap-3">
+<img alt="Sarah Johnson" class="w-8 h-8 rounded-full border-2 border-primary/20" data-alt="Team member profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-2njMjKMhoPrgebwXeZOyd3GlEcVy0eJzj8FA2-JqN9vTWR-Mpp6MwlqUziQnegDmxbWYzz0gJhZuCT_qjJtMvem5oAOVzLLY58E1oYZrEbh9DdhL7WtM6g-FHOV3GTwQq50N_WIaoQaeSA3LgNxK5uKi0XpGjO43dDh52OcoN9aZlb8z722eyvDf5vXB4BLbrnKkXXHRFrm6DYugJI8XT1AhTU54u5y_GoMNnYx8aaBwVkjSmF0d1wyQQxcl6DpQE12ZTT0f8D3N"/>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-on-surface">Sarah Johnson</span>
+<span class="text-[10px] text-on-surface-variant/60">sarah@agency.com</span>
+</div>
+</div>
+<span class="px-2 py-0.5 text-[10px] font-bold bg-primary/10 text-primary rounded-full uppercase tracking-tighter">Owner</span>
+</div>
+<!-- Team Member -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low/50">
+<div class="flex items-center gap-3">
+<img alt="Marcus Lee" class="w-8 h-8 rounded-full border-2 border-secondary/20" data-alt="Team member profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy4-GqXeAazgX6JgX8EebsTN4SR9kdeKKqoG4_rp-s5c6IyRx9XlbaQxnq3jjFkaXIlGY1XcZ5Dj95-zyOm6MGkT_BjDyBFUHZPV4X4bWMAMmTx3W3q5c2ZIzGG_Tew9-Krpwdeqi4Fa6VzyOOFqhzA2_l43FrvYK_FSNVJtcWUMPp11Zwq1VdNstAQgIXvVQ2XMRJ7L9z_HKOSL6eSz_nHDbGFL4GqAo-ph8Dzc2yUfjqGvn83w8SgS9stu4qwXfjuDKNLE_LlXgx"/>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-on-surface">Marcus Lee</span>
+<span class="text-[10px] text-on-surface-variant/60">marcus.l@agency.com</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 text-[10px] font-bold bg-surface-container-highest text-on-surface-variant rounded-full uppercase tracking-tighter">Editor</span>
+<button class="material-symbols-outlined text-lg text-on-surface-variant/40 hover:text-on-surface transition-colors">more_vert</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Modal Footer -->
+<div class="px-8 py-6 bg-surface-container-highest/30 flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<button class="text-xs font-bold text-error/60 hover:text-error transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">delete</span>
+                        Delete Workspace
+                    </button>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2.5 text-sm font-bold text-on-surface-variant hover:text-on-surface transition-colors">Cancel</button>
+<button class="px-8 py-2.5 bg-primary-container text-on-primary-container text-sm font-bold rounded-lg shadow-[0_8px_16px_rgba(107,73,216,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all">Save Changes</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Postsiva | Instagram Deep Dive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#bfc6db",
+              "on-secondary": "#00382e",
+              "on-primary-container": "#e7deff",
+              "primary-fixed": "#e7deff",
+              "on-tertiary": "#283040",
+              "surface-container-high": "#272935",
+              "error-container": "#93000a",
+              "primary-container": "#6b49d8",
+              "secondary-container": "#01af94",
+              "on-background": "#e1e1f1",
+              "inverse-primary": "#6542d1",
+              "primary-fixed-dim": "#ccbeff",
+              "on-surface-variant": "#cac3d6",
+              "on-secondary-container": "#003b30",
+              "on-primary": "#350097",
+              "surface-dim": "#11131e",
+              "surface": "#11131e",
+              "on-error-container": "#ffdad6",
+              "surface-container-low": "#191b26",
+              "background": "#11131e",
+              "surface-container-highest": "#323440",
+              "error": "#ffb4ab",
+              "tertiary": "#bfc6db",
+              "primary": "#ccbeff",
+              "on-primary-fixed-variant": "#4c23b9",
+              "tertiary-container": "#5d6577",
+              "surface-tint": "#ccbeff",
+              "secondary-fixed-dim": "#54dcbf",
+              "surface-variant": "#323440",
+              "on-surface": "#e1e1f1",
+              "on-primary-fixed": "#1f0060",
+              "on-error": "#690005",
+              "on-tertiary-fixed": "#141c2b",
+              "inverse-on-surface": "#2e303c",
+              "outline": "#938ea0",
+              "outline-variant": "#484554",
+              "secondary": "#54dcbf",
+              "secondary-fixed": "#74f9da",
+              "tertiary-fixed": "#dbe2f8",
+              "surface-bright": "#373845",
+              "on-secondary-fixed": "#00201a",
+              "on-tertiary-fixed-variant": "#3f4758",
+              "on-tertiary-container": "#dbe3f8",
+              "on-secondary-fixed-variant": "#005143",
+              "surface-container": "#1d1f2a",
+              "inverse-surface": "#e1e1f1",
+              "surface-container-lowest": "#0b0e18"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(29, 31, 42, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .glow-bar {
+            filter: drop-shadow(0 0 8px currentColor);
+        }
+        /* Scroll without showing a scrollbar (wheel / touch still works). */
+        html {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        html::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            overflow-x: hidden;
+            overflow-y: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        body::-webkit-scrollbar {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen pb-6">
+<!-- App shell provides WorkspaceTopNav + bottom nav; no duplicate chrome here. -->
+<main class="w-full max-w-none px-2 pt-2 md:px-6">
+<!-- Profile Header Section -->
+<header class="relative mb-12 p-8 rounded-xl bg-surface-container-low overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style="background: radial-gradient(at top left, #6B49D8 0%, transparent 40%);"></div>
+<div class="flex flex-col md:flex-row items-center gap-8 relative z-10">
+<div class="relative">
+<div class="w-32 h-32 rounded-full p-1 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]">
+<div class="w-full h-full rounded-full border-4 border-surface-container-low overflow-hidden">
+<img alt="Instagram Profile" data-alt="Modern brand logo in minimalist style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe0b-LUDMi0o44y0E1vzbZdCkEk6cfhElz8puAkCqdbsD7Pv_MFlUXf3nt6E7uOeSSWNZrtkh2YKxDonW_JMbDgRVqLbNUBPljEVQO6E4Lkqp8T7QccK7461PbH7iBo8nCal_DfAB0wMVm7BHAV8IBEWlFbL-qAQYt2ateP88-gza8ikHn1bzdgQ06Poffb2BHaCcDzwnG8DHzFSt-My5GZVRqspTe11x-_ktur-ukvstJFrA86ODR0fWljTBs4AkzJfU_BE5PPuYG"/>
+</div>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary-container text-on-primary-container rounded-full p-1 shadow-lg">
+<span class="material-symbols-outlined text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="text-center md:text-left flex-1">
+<div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+<h1 class="text-3xl font-extrabold tracking-tight text-on-surface">@lumina_studios</h1>
+<div class="flex gap-2">
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-bold text-sm hover:opacity-90 transition-all active:scale-95">Edit Profile</button>
+<button class="bg-surface-container-highest text-on-surface px-4 py-2 rounded-lg font-bold text-sm hover:bg-surface-variant transition-all active:scale-95">
+<span class="material-symbols-outlined align-middle text-lg" data-icon="share">share</span>
+</button>
+</div>
+</div>
+<div class="flex justify-center md:justify-start gap-8 text-on-surface-variant">
+<div><span class="font-bold text-on-surface">1,284</span> posts</div>
+<div><span class="font-bold text-on-surface">42.5k</span> followers</div>
+<div><span class="font-bold text-on-surface">892</span> following</div>
+</div>
+<p class="mt-4 text-on-surface-variant max-w-lg">Digital experiences for the next generation of architects. Based in SF 📐✨ #VisualArts #DesignFuture</p>
+</div>
+<div class="grid grid-cols-2 gap-4 w-full md:w-auto">
+<div class="bg-surface-container p-4 rounded-xl text-center">
+<div class="text-secondary font-bold text-2xl">+12.4%</div>
+<div class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">MoM Growth</div>
+</div>
+<div class="bg-surface-container p-4 rounded-xl text-center">
+<div class="text-primary font-bold text-2xl">4.2%</div>
+<div class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Eng. Rate</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Bento Grid Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Profile Visits -->
+<div class="bg-surface-container p-6 rounded-xl flex flex-col justify-between h-48">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary" data-icon="visibility">visibility</span>
+<span class="text-secondary text-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span> 8%
+                    </span>
+</div>
+<div>
+<h3 class="text-4xl font-black tracking-tighter text-on-surface">18,492</h3>
+<p class="text-on-surface-variant text-sm font-medium">Profile Visits (Last 7 Days)</p>
+</div>
+</div>
+<!-- Story Views -->
+<div class="bg-surface-container p-6 rounded-xl flex flex-col justify-between h-48">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary" data-icon="history_toggle_off">history_toggle_off</span>
+<span class="text-error text-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="trending_down">trending_down</span> 2%
+                    </span>
+</div>
+<div>
+<h3 class="text-4xl font-black tracking-tighter text-on-surface">5,103</h3>
+<p class="text-on-surface-variant text-sm font-medium">Avg. Story Views</p>
+</div>
+</div>
+<!-- Reel Reach -->
+<div class="bg-surface-container-highest p-6 rounded-xl flex flex-col justify-between h-48 relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary-container opacity-5 group-hover:opacity-10 transition-opacity"></div>
+<div class="flex justify-between items-start relative z-10">
+<span class="material-symbols-outlined text-primary" data-icon="movie">movie</span>
+<span class="text-secondary text-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span> 24%
+                    </span>
+</div>
+<div class="relative z-10">
+<h3 class="text-4xl font-black tracking-tighter text-on-surface">142.8k</h3>
+<p class="text-on-surface-variant text-sm font-medium">Reel Reach</p>
+</div>
+</div>
+</div>
+<!-- Weekly Engagement Chart -->
+<section class="mb-12">
+<div class="bg-surface-container p-8 rounded-xl">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-2xl font-extrabold text-on-surface mb-2">Engagement Velocity</h2>
+<p class="text-on-surface-variant">Daily interaction breakdown across all formats.</p>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Static</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Reels</span>
+</div>
+</div>
+</div>
+<div class="flex items-end justify-between h-64 gap-2 md:gap-8">
+<!-- Day 1 -->
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full flex flex-col-reverse gap-1 h-full">
+<div class="w-full bg-primary-container rounded-t-sm glow-bar" style="height: 40%"></div>
+<div class="w-full bg-secondary rounded-t-sm glow-bar" style="height: 20%"></div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant uppercase">Mon</span>
+</div>
+<!-- Day 2 -->
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full flex flex-col-reverse gap-1 h-full">
+<div class="w-full bg-primary-container rounded-t-sm glow-bar" style="height: 55%"></div>
+<div class="w-full bg-secondary rounded-t-sm glow-bar" style="height: 15%"></div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant uppercase">Tue</span>
+</div>
+<!-- Day 3 -->
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full flex flex-col-reverse gap-1 h-full">
+<div class="w-full bg-primary-container rounded-t-sm glow-bar" style="height: 45%"></div>
+<div class="w-full bg-secondary rounded-t-sm glow-bar" style="height: 35%"></div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant uppercase">Wed</span>
+</div>
+<!-- Day 4 -->
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full flex flex-col-reverse gap-1 h-full">
+<div class="w-full bg-primary-container rounded-t-sm glow-bar" style="height: 70%"></div>
+<div class="w-full bg-secondary rounded-t-sm glow-bar" style="height: 25%"></div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant uppercase">Thu</span>
+</div>
+<!-- Day 5 -->
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full flex flex-col-reverse gap-1 h-full">
+<div class="w-full bg-primary-container rounded-t-sm glow-bar" style="height: 50%"></div>
+<div class="w-full bg-secondary rounded-t-sm glow-bar" style="height: 40%"></div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant uppercase">Fri</span>
+</div>
+<!-- Day 6 -->
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full flex flex-col-reverse gap-1 h-full">
+<div class="w-full bg-primary-container rounded-t-sm glow-bar" style="height: 30%"></div>
+<div class="w-full bg-secondary rounded-t-sm glow-bar" style="height: 60%"></div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant uppercase">Sat</span>
+</div>
+<!-- Day 7 -->
+<div class="flex-1 flex flex-col items-center gap-3">
+<div class="w-full flex flex-col-reverse gap-1 h-full">
+<div class="w-full bg-primary-container rounded-t-sm glow-bar" style="height: 25%"></div>
+<div class="w-full bg-secondary rounded-t-sm glow-bar" style="height: 45%"></div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant uppercase">Sun</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Posts Performance -->
+<section>
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-2xl font-extrabold text-on-surface">Recent Performance</h2>
+<button class="text-primary font-bold text-sm flex items-center gap-1 hover:underline">
+                    View Gallery <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Post 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-square rounded-xl overflow-hidden mb-3">
+<img alt="Post 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Abstract 3D render of purple and teal waves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1r069GH9K9gHGfa-IaRgf5kcJmIDcEZaGKaBmFjxQiBrirBllvur9bqCykmFbJ0HuFAC155QCcc8pdttLjnBiEeYor4MSc6hUK6nzKkRsvvLaG-VONB-7qKXeZ8z8r4i4HEzVdwr6iQ19Zjm49UTSfNeWmgoqw7bcNAFj_JDZqUlIx9ElD4lLGfk_uGSmQEVa1fS2pUvNNJrgGIh5uCnTN7YzvG8mxWtzKxbTA7bTayePI8JtVDZ0E_ThWKJ6EZW3R0SitzkQ38Qa"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-6 text-white">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span> 1.2k</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined" data-icon="comment" style="font-variation-settings: 'FILL' 1;">comment</span> 84</div>
+</div>
+<div class="absolute top-3 right-3 bg-black/50 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-white uppercase tracking-widest">Reel</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-bold text-on-surface truncate w-40">Architectural Fluidity</p>
+<p class="text-xs text-on-surface-variant">2 days ago</p>
+</div>
+<div class="text-secondary font-bold text-sm">+18.2%</div>
+</div>
+</div>
+<!-- Post 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-square rounded-xl overflow-hidden mb-3">
+<img alt="Post 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Colorful geometric pattern background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDNi_9XAvhnGJgHScqDw9pXCPPkwEVWUs1o-tU_BHoGea2J1MOFCkkC0Am8L0SpPgYv-CYnvd46ofYXb6napyiR9xSuOQN1dMWZjB-iSP3l_1h7pZ193pjnFbvciAuWTUVQ1qBcv4IoWS8mrX0eT3VCszCF44COfs6LPpIvosU4lEZHLzzroZGlJY9wSwbGHaJ4fuU244QsXYaooCZB3tqwWw6v6PEK4mGsBnOC3Is5ZayIWaQVJ0Qmvr0UpFLYg6zdoSTadPA7liD"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-6 text-white">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span> 890</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined" data-icon="comment" style="font-variation-settings: 'FILL' 1;">comment</span> 42</div>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-bold text-on-surface truncate w-40">Color Study #04</p>
+<p class="text-xs text-on-surface-variant">4 days ago</p>
+</div>
+<div class="text-on-surface-variant font-bold text-sm">-2.4%</div>
+</div>
+</div>
+<!-- Post 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-square rounded-xl overflow-hidden mb-3">
+<img alt="Post 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Minimalist architectural photo with harsh shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4YRppdgLWqAbzAzsn2_kk4RYHZk_rWbo-5lamG7S4W445zn6FzW9s5eYsK8BbyVR6rkWTcjR5UKYlhjZHJbAjvrfQHisNUB66eGqxn9KMQToRsh3Yzh430mZop3R7r59ABzfJb8BjayKSnT5SqGCBaV8F8ULOgcwO1f_qTfrO_bsaRWvviWB_4MhUFKQ6B1yOzTVkCrDcrHk4d7MmxRK2wcbhMk_OxsZjrHJg5jlDFa3COzGCiUEIUn8RNmlCd2SBR1ojhtEF5ruk"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-6 text-white">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span> 2.1k</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined" data-icon="comment" style="font-variation-settings: 'FILL' 1;">comment</span> 156</div>
+</div>
+<div class="absolute top-3 right-3 bg-black/50 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold text-white uppercase tracking-widest">Reel</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-bold text-on-surface truncate w-40">Urban Shadows Series</p>
+<p class="text-xs text-on-surface-variant">1 week ago</p>
+</div>
+<div class="text-secondary font-bold text-sm">+42.1%</div>
+</div>
+</div>
+<!-- Post 4 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-square rounded-xl overflow-hidden mb-3">
+<img alt="Post 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Soft ethereal gradient with organic shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIKXcgzCop41rNdHepZWatYAwR8_W2FkQO1kx0TOuhLTXyBXURVFlgbDWFk3ArrY3_PAESrMyCUDUXXTKCT__XADWLcuzORBpljsKuasVMSgW2V5BczPTOmXBGwgFFEGY6jPtYAlR2G89WwnnkSlq-QGj84YmUlfKAFYaFSh1XzNzxzGIVkMzrNvqvkV8-JwWgbBcJkPOEcR5_966iq1mhQ3MttyW8T93e3c85UjCb1x9Itni0phRzDwgVvrVExN6U5zG1nYjRfur-"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-6 text-white">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span> 654</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined" data-icon="comment" style="font-variation-settings: 'FILL' 1;">comment</span> 31</div>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-bold text-on-surface truncate w-40">Morning Mist Gradient</p>
+<p class="text-xs text-on-surface-variant">1 week ago</p>
+</div>
+<div class="text-on-surface-variant font-bold text-sm">+1.5%</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

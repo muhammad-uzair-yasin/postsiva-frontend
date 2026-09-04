@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#191b26",
+              "primary": "#ccbeff",
+              "surface-tint": "#ccbeff",
+              "surface-container-high": "#272935",
+              "secondary-fixed-dim": "#54dcbf",
+              "surface-bright": "#373845",
+              "surface-variant": "#323440",
+              "on-tertiary-fixed-variant": "#3f4758",
+              "error-container": "#93000a",
+              "on-surface": "#e1e1f1",
+              "on-background": "#e1e1f1",
+              "on-secondary-fixed-variant": "#005143",
+              "tertiary": "#bfc6db",
+              "secondary-container": "#01af94",
+              "surface": "#11131e",
+              "on-error-container": "#ffdad6",
+              "inverse-on-surface": "#2e303c",
+              "primary-fixed-dim": "#ccbeff",
+              "on-tertiary-fixed": "#141c2b",
+              "surface-container-lowest": "#0b0e18",
+              "surface-container": "#1d1f2a",
+              "on-tertiary": "#283040",
+              "primary-container": "#6b49d8",
+              "surface-dim": "#11131e",
+              "tertiary-container": "#5d6577",
+              "error": "#ffb4ab",
+              "on-primary-fixed": "#1f0060",
+              "on-secondary-container": "#003b30",
+              "secondary": "#54dcbf",
+              "outline-variant": "#484554",
+              "on-tertiary-container": "#dbe3f8",
+              "tertiary-fixed-dim": "#bfc6db",
+              "on-primary": "#350097",
+              "on-secondary": "#00382e",
+              "surface-container-highest": "#323440",
+              "outline": "#938ea0",
+              "tertiary-fixed": "#dbe2f8",
+              "on-primary-container": "#e7deff",
+              "inverse-primary": "#6542d1",
+              "primary-fixed": "#e7deff",
+              "inverse-surface": "#e1e1f1",
+              "on-error": "#690005",
+              "secondary-fixed": "#74f9da",
+              "on-primary-fixed-variant": "#4c23b9",
+              "on-surface-variant": "#cac3d6",
+              "background": "#11131e",
+              "on-secondary-fixed": "#00201a"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-glass {
+            backdrop-filter: blur(20px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hero-glow {
+            background: radial-gradient(at top left, rgba(107, 73, 216, 0.15) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen selection:bg-primary/30">
+<!-- TopAppBar Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-[#11131E]/70 backdrop-blur-xl bg-gradient-to-b from-[#11131E] to-transparent shadow-[0_8px_32px_rgba(107,73,216,0.06)]">
+<div class="flex justify-between items-center w-full px-8 h-16 max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 group cursor-pointer">
+<img class="w-8 h-8 group-hover:rotate-12 transition-transform duration-300" data-alt="Postsiva Brand Logo Purple Glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM_Tu8-kBP6loRJvmZEitnDUiWuVMkFQ6VIc_4EszlNgxBMquTXMZGEhHreABwaljUu7d2LpwtfSMz51uQc4g4yxr1dwoDbRaLql55Y_m_0EZBSX6b02JDOJDjqcSnd-jgWMA-sZGQFfu2l1sIKmWv1KGzLyQilLovo7314C2CSzLsmcvklQ-7uwN18HQs_iNm0Jg2L5wLB6XD6OKx19koQiZAGjPahl4Mg4v7VkL6wOs3nK1lYow0X03bfP0kedDnDV2W5Y7CDEIi"/>
+<span class="text-2xl font-black text-[#E1E1F1] tracking-tighter font-manrope">Postsiva</span>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-[#CAC3D6] hover:text-[#E1E1F1] transition-colors font-manrope tracking-tight active:scale-95 duration-200" href="#">Dashboard</a>
+<a class="text-[#CAC3D6] hover:text-[#E1E1F1] transition-colors font-manrope tracking-tight active:scale-95 duration-200" href="#">Projects</a>
+<a class="text-[#CAC3D6] hover:text-[#E1E1F1] transition-colors font-manrope tracking-tight active:scale-95 duration-200" href="#">Team</a>
+<a class="text-[#CAC3D6] hover:text-[#E1E1F1] transition-colors font-manrope tracking-tight active:scale-95 duration-200" href="#">Analytics</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#CAC3D6] hover:bg-[#272935]/50 rounded-lg transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-[#CAC3D6] hover:bg-[#272935]/50 rounded-lg transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center border border-outline-variant/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User Avatar Profile Photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsvzaNJd7WKresRz7vGg5Wr81di2mjIIUbxPnxN22-MjP0phZC7DlBVmTNPdGQh6ZGT10-kkYbXhXZnkxPYsdaFMviqLiLpi3UTSN9VFGJbHfMvJMZmXw8C3NWfcNdoAxAr2CHUUhZno1KEPoeLNw7Jf6QvaSN4ypUnHff02_1c97lRWgE0WX5_Rmt5qXDx699FNUbyNWY_DbsJKNAvaaEWQRicUiKFdn4U7pEqBnbxxqncPAF1ajF4TvXavHczzH4wEV7xQslvCtJ"/>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto hero-glow">
+<!-- Header Section -->
+<header class="mb-12">
+<h1 class="text-4xl md:text-5xl font-extrabold text-on-surface tracking-tight mb-4">
+                Give <span class="text-secondary">Feedback</span>
+</h1>
+<p class="text-on-surface-variant max-w-2xl text-lg leading-relaxed">
+                Your insights shape the future of Postsiva. Help us build the perfect command center for your digital architecture.
+            </p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Form & Interaction -->
+<div class="lg:col-span-8 space-y-12">
+<!-- Feedback Type Selection -->
+<section>
+<h2 class="text-sm font-bold uppercase tracking-[0.2em] text-secondary mb-6">Select Category</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Card: Report Bug -->
+<div class="bg-surface-container hover:bg-surface-container-high border border-outline-variant/10 p-6 rounded-xl transition-all cursor-pointer group active:scale-[0.98]">
+<div class="w-12 h-12 rounded-lg bg-error-container/20 flex items-center justify-center text-error mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="bug_report">bug_report</span>
+</div>
+<h3 class="font-bold text-on-surface mb-2">Report a Bug</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Something isn't working as expected.</p>
+</div>
+<!-- Card: Suggest Feature -->
+<div class="bg-surface-container-high border-2 border-primary-container p-6 rounded-xl transition-all cursor-pointer group shadow-[0_0_20px_rgba(107,73,216,0.1)] relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary-container/10 blur-2xl -mr-12 -mt-12"></div>
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<h3 class="font-bold text-on-surface mb-2">Feature Request</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">A new idea to enhance your workflow.</p>
+</div>
+<!-- Card: General Improvement -->
+<div class="bg-surface-container hover:bg-surface-container-high border border-outline-variant/10 p-6 rounded-xl transition-all cursor-pointer group active:scale-[0.98]">
+<div class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h3 class="font-bold text-on-surface mb-2">Improvement</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Polish an existing feature or UX.</p>
+</div>
+</div>
+</section>
+<!-- Feedback Form -->
+<section class="bg-surface-container-low rounded-2xl p-8 border border-outline-variant/5">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">Subject</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary transition-all placeholder:text-on-tertiary-fixed-variant" placeholder="e.g., Performance issues in Analytics dashboard" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">Priority</label>
+<div class="flex gap-2">
+<button class="flex-1 py-3 px-2 rounded-xl bg-surface-container-lowest text-xs font-bold border border-outline-variant/10 hover:bg-surface-container-high transition-colors text-on-surface-variant" type="button">Low</button>
+<button class="flex-1 py-3 px-2 rounded-xl bg-primary-container text-xs font-bold text-on-primary-container shadow-lg shadow-primary-container/20" type="button">Medium</button>
+<button class="flex-1 py-3 px-2 rounded-xl bg-surface-container-lowest text-xs font-bold border border-outline-variant/10 hover:bg-surface-container-high transition-colors text-on-surface-variant" type="button">High</button>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">Description</label>
+<textarea class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary transition-all placeholder:text-on-tertiary-fixed-variant resize-none" placeholder="Please provide as much detail as possible..." rows="6"></textarea>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1">Attachments</label>
+<div class="border-2 border-dashed border-outline-variant/20 rounded-2xl p-8 flex flex-col items-center justify-center bg-surface-container-lowest/50 hover:bg-surface-container-lowest transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-4xl text-on-tertiary-fixed-variant group-hover:text-primary transition-colors mb-2" data-icon="cloud_upload">cloud_upload</span>
+<p class="text-sm text-on-surface-variant"><span class="text-primary font-bold">Click to upload</span> or drag and drop</p>
+<p class="text-xs text-on-tertiary-fixed-variant mt-1">PNG, JPG or PDF (max. 10MB)</p>
+</div>
+</div>
+<div class="flex justify-end pt-4">
+<button class="bg-primary-container text-on-primary-container px-10 py-4 rounded-xl font-bold tracking-tight hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-primary-container/20 flex items-center gap-2" type="submit">
+<span>Submit Feedback</span>
+<span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+</button>
+</div>
+</form>
+</section>
+</div>
+<!-- Right Column: Status & Sidebar -->
+<aside class="lg:col-span-4 space-y-8">
+<div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-lg font-bold text-on-surface">Request Status</h2>
+<span class="text-xs font-bold text-secondary-fixed-dim bg-secondary-container/10 px-2 py-1 rounded-md">3 Active</span>
+</div>
+<div class="space-y-6">
+<!-- Request Item -->
+<div class="group cursor-pointer">
+<div class="flex items-start justify-between mb-2">
+<span class="text-xs font-bold bg-surface-container-high text-on-surface-variant px-2 py-1 rounded-md">#PS-842</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-secondary-fixed-dim bg-secondary-container/10 px-2 py-1 rounded-full">Planned</span>
+</div>
+<h4 class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Dark Mode contrast improvements</h4>
+<p class="text-xs text-on-surface-variant mt-1">Updated 2 days ago</p>
+</div>
+<!-- Divider -->
+<div class="h-px bg-outline-variant/10"></div>
+<!-- Request Item -->
+<div class="group cursor-pointer">
+<div class="flex items-start justify-between mb-2">
+<span class="text-xs font-bold bg-surface-container-high text-on-surface-variant px-2 py-1 rounded-md">#PS-791</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary-fixed-dim bg-primary-container/20 px-2 py-1 rounded-full">Under Review</span>
+</div>
+<h4 class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Batch export functionality</h4>
+<p class="text-xs text-on-surface-variant mt-1">Updated 5 hours ago</p>
+</div>
+<!-- Divider -->
+<div class="h-px bg-outline-variant/10"></div>
+<!-- Request Item -->
+<div class="group cursor-pointer">
+<div class="flex items-start justify-between mb-2">
+<span class="text-xs font-bold bg-surface-container-high text-on-surface-variant px-2 py-1 rounded-md">#PS-612</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded-full">Completed</span>
+</div>
+<h4 class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Mobile responsiveness fix</h4>
+<p class="text-xs text-on-surface-variant mt-1">Updated 1 week ago</p>
+</div>
+</div>
+<button class="w-full mt-8 py-3 bg-surface-container-high hover:bg-surface-container-highest transition-colors rounded-xl text-xs font-bold uppercase tracking-widest text-on-surface-variant border border-outline-variant/10">
+                        View all requests
+                    </button>
+</div>
+<!-- Community Stat Bento -->
+<div class="bg-gradient-to-br from-primary-container/20 to-transparent p-6 rounded-2xl border border-primary-container/20 overflow-hidden relative">
+<div class="relative z-10">
+<h3 class="font-bold text-on-surface mb-2">Community Driven</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">Over 85% of our recent updates were inspired by users like you.</p>
+<div class="mt-4 flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-surface" data-alt="Community User 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf9iohPqAPGYkrOoqBz73IhKnoJNSRPk6GG__NKmjjbMDMLaHh_n6IY7f4A8DByf5AAnl89JNW6yckLY2qdlIl6cKqf3OU1iHH36v2nfuFlYRN78bZKVz1CR9mJUFUWcI5vkbBZCTrsEenpSeEkerneU_Oiv-Pemwz4CPhXDCdvvGd2GobamB_-mLQvgt3-HBewsGo-QeAp6iOArQNhcprkTBvxGjrkKHiTIk8MCS5KHm73OdmTFKl_lAjLeb3zJobQkI3KaHzb-JY"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface" data-alt="Community User 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGSXYctlyUPCSVeub3lVbtFPBj0Fn5zETSbA6Ma5CpzrUNk9GvpfX2BBkCV9Uq4O1t3PpS8-gyC-_Hny0oHNDHEZWeJT01H-AW3a-DfY5R4xg7RUFdaWCNNRJx88Y8Nwbug3YBN-vsaeludP6jnhetVGyErXqo9EPK10JcN83ZT6aMzjtDaXKwZpwb54RXf4BuESrdFSlL5t7riM1WZEGPR32P1MZFL5O7HrCvWXgk08UNlDVOD6asWEuzIgrajznDIoqIdDPr-jRS"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface" data-alt="Community User 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI3iUtnhyvjWq7x95MHJde4JBLexcdncURx6SRgfCYBjYrNbL86NY-sZwQXiUjI-7b6yKC5hYRNegDO3S0CMuFzXubs_51yrED9HrPyPd6UpdUmSq9OECzIzFMOzZ2ifmBZVwYAxMWiU1R66GxovYCpO0ibbAfDfROye0GFYf8P06sqtbxxB96nvGKw50RTOy_yBD44Fk5wKRKt6gasu1e44WawA9gjMGZHuTSGf4IBhjICDmYVsHDqWj1oTq-S4i_xjl-3VKu5lI2"/>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border-2 border-surface flex items-center justify-center text-[10px] font-bold">+2k</div>
+</div>
+</div>
+<div class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/20 blur-3xl rounded-full"></div>
+</div>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-[#323440]/80 backdrop-blur-2xl rounded-full px-6 py-3 z-50 shadow-[0_20px_50px_rgba(107,73,216,0.15)] min-w-[320px]">
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] px-5 py-2 hover:text-[#54DCBF] transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-bold font-manrope uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] px-5 py-2 hover:text-[#54DCBF] transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span class="text-[10px] font-bold font-manrope uppercase tracking-widest mt-1">Support</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#6B49D8] text-[#E7DEFF] rounded-full px-5 py-2 scale-110 shadow-lg shadow-[#6B49D8]/40 active:scale-90 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="rate_review" style="font-variation-settings: 'FILL' 1;">rate_review</span>
+<span class="text-[10px] font-bold font-manrope uppercase tracking-widest mt-1">Feedback</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] px-5 py-2 hover:text-[#54DCBF] transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-bold font-manrope uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

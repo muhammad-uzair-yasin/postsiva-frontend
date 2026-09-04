@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Published Posts | Postsiva</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-container": "#e7deff",
+                        "tertiary": "#bfc6db",
+                        "inverse-surface": "#e1e1f1",
+                        "inverse-primary": "#6542d1",
+                        "secondary": "#54dcbf",
+                        "on-primary-fixed": "#1f0060",
+                        "surface": "#11131e",
+                        "secondary-fixed-dim": "#54dcbf",
+                        "on-primary-fixed-variant": "#4c23b9",
+                        "primary-fixed-dim": "#ccbeff",
+                        "on-secondary-container": "#003b30",
+                        "surface-variant": "#323440",
+                        "surface-container-high": "#272935",
+                        "surface-bright": "#373845",
+                        "on-surface-variant": "#cac3d6",
+                        "surface-dim": "#11131e",
+                        "on-tertiary-fixed-variant": "#3f4758",
+                        "outline": "#938ea0",
+                        "background": "#11131e",
+                        "outline-variant": "#484554",
+                        "on-background": "#e1e1f1",
+                        "on-secondary-fixed-variant": "#005143",
+                        "secondary-fixed": "#74f9da",
+                        "on-secondary": "#00382e",
+                        "surface-container-low": "#191b26",
+                        "tertiary-fixed-dim": "#bfc6db",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#323440",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0b0e18",
+                        "surface-container": "#1d1f2a",
+                        "on-secondary-fixed": "#00201a",
+                        "on-tertiary-container": "#dbe3f8",
+                        "on-surface": "#e1e1f1",
+                        "secondary-container": "#01af94",
+                        "primary-container": "#6b49d8",
+                        "on-tertiary": "#283040",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-primary": "#350097",
+                        "on-tertiary-fixed": "#141c2b",
+                        "primary-fixed": "#e7deff",
+                        "inverse-on-surface": "#2e303c",
+                        "tertiary-fixed": "#dbe2f8",
+                        "primary": "#ccbeff",
+                        "tertiary-container": "#5d6577",
+                        "surface-tint": "#ccbeff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(29, 31, 42, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #11131e; }
+        ::-webkit-scrollbar-thumb { background: #323440; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Main Canvas -->
+<main class="min-h-screen p-8 lg:p-12 relative overflow-hidden pb-32">
+<!-- Background Accents -->
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary-container/10 rounded-full blur-[120px] -z-10"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-secondary-container/10 rounded-full blur-[100px] -z-10"></div>
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 max-w-7xl mx-auto">
+<div>
+<h2 class="text-4xl font-extrabold tracking-tighter text-on-surface mb-2">Published Posts</h2>
+<p class="text-on-surface-variant text-lg">Manage and analyze your historical content performance.</p>
+</div>
+<div class="flex items-center gap-4">
+<!-- Search Bar -->
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-secondary transition-colors">search</span>
+<input class="bg-surface-container-lowest border-none ring-1 ring-outline-variant/20 focus:ring-2 focus:ring-secondary/50 rounded-xl pl-12 pr-6 py-3 w-64 text-sm transition-all outline-none" placeholder="Search posts..." type="text"/>
+</div>
+<!-- Sort Dropdown -->
+<button class="flex items-center gap-2 bg-surface-container-high px-4 py-3 rounded-xl border border-outline-variant/10 text-sm font-semibold hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-sm">sort</span>
+                Sort by Date
+                <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</header>
+<!-- Platform Filters -->
+<section class="mb-10 overflow-x-auto pb-2 max-w-7xl mx-auto">
+<div class="flex items-center gap-3 min-w-max">
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-full bg-primary-container text-on-primary-container font-bold text-sm shadow-md transition-all active:scale-95">
+                All Posts
+            </button>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-full bg-surface-container-high border border-outline-variant/10 text-on-surface-variant hover:text-on-surface hover:border-outline-variant/40 font-semibold text-sm transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg">photo_camera</span>
+                Instagram
+            </button>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-full bg-surface-container-high border border-outline-variant/10 text-on-surface-variant hover:text-on-surface hover:border-outline-variant/40 font-semibold text-sm transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg">close</span>
+                X (Twitter)
+            </button>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-full bg-surface-container-high border border-outline-variant/10 text-on-surface-variant hover:text-on-surface hover:border-outline-variant/40 font-semibold text-sm transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg">social_leaderboard</span>
+                Facebook
+            </button>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-full bg-surface-container-high border border-outline-variant/10 text-on-surface-variant hover:text-on-surface hover:border-outline-variant/40 font-semibold text-sm transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg">work</span>
+                LinkedIn
+            </button>
+</div>
+</section>
+<!-- Posts Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+<!-- Card 1 -->
+<article class="group relative bg-surface-container rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(107,73,216,0.15)] ring-1 ring-outline-variant/10">
+<div class="relative aspect-video overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Abstract colorful gradient wave illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhRtJwZwUJzw79EdLYTGFg7-ighW0p7zVQ7vrgc6pSIDxp_m7LTPT399xUrfrF13X5iq31zOmavrLZzulqEMhErMKcoCwfxe6O9qr2RmGwf_5CllUll8Z1nCUK3cN3tuzpBWNbOS_xIzw9_Stm3fKPxIY8c2ZapG_4OS5DMJ64CQpXQBcV21sGq10x2yN9zaSK4iNJOyI7rVvbXyAUfZzWlNqBYU16Poe4vvj9b99j0yuSezI-KwuyAKyG7PlrQyfzhFg37Rqwytkc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+<div class="absolute top-4 left-4 bg-surface-container-highest/80 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 ring-1 ring-white/10">
+<span class="material-symbols-outlined text-pink-500 text-sm" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+<span class="text-xs font-bold text-on-surface tracking-tight">@postsiva_official</span>
+</div>
+</div>
+<div class="p-6">
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6">Unlocking new levels of creative flow with the latest Postsiva update. Designing for the future... #SaaS #Design</p>
+<!-- Metrics -->
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-surface-container-low p-3 rounded-2xl flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Reach</p>
+<p class="text-sm font-black text-on-surface">12.4K</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-2xl flex items-center gap-3">
+<span class="material-symbols-outlined text-error text-lg" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Likes</p>
+<p class="text-sm font-black text-on-surface">842</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-2xl flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Comments</p>
+<p class="text-sm font-black text-on-surface">56</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-2xl flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">share</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Shares</p>
+<p class="text-sm font-black text-on-surface">124</p>
+</div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-surface-container-highest hover:bg-surface-bright text-on-surface font-bold py-3 rounded-xl transition-colors text-sm border border-outline-variant/10">
+                        Analytics
+                    </button>
+<button class="bg-primary-container/10 hover:bg-primary-container/20 text-primary-container px-4 rounded-xl transition-all active:scale-95">
+<span class="material-symbols-outlined">open_in_new</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group relative bg-surface-container rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(107,73,216,0.15)] ring-1 ring-outline-variant/10">
+<div class="relative aspect-video overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Retro hardware and modern neon lights aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDck9T2M-dCRsxF6Qhw4LIH56EvytpIIYsbOeP86RJHK_18EtK5EbYzX0Ck9qZN75W24jaNEayrvcz8z5HzKV9eJhJf7_jaM2YfzDct92Lhr4U0fSNy-74uVaF4sXwoRco-50-pJUn0J8t3lFaEl-_EdVBURThL5j9tulQ1HPHLEv_o1W4C9lgKkXSDrDpp_ATC0CdrehsFulqsZV2O_acIaMcequcLQ_JcUEPf9rlCzjiSLSHbsuGIq_3t6oYJSIKjok73D0SPVq8-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+<div class="absolute top-4 left-4 bg-surface-container-highest/80 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 ring-1 ring-white/10">
+<span class="material-symbols-outlined text-blue-400 text-sm" style="font-variation-settings: 'FILL' 1;">close</span>
+<span class="text-xs font-bold text-on-surface tracking-tight">@postsiva_official</span>
+</div>
+</div>
+<div class="p-6">
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6">Why dark mode isn't just a trend, but a necessity for modern command centers. A thread on UI depth. 🧵</p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-surface-container-low p-3 rounded-2xl flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Reach</p>
+<p class="text-sm font-black text-on-surface">45.2K</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-2xl flex items-center gap-3">
+<span class="material-symbols-outlined text-error text-lg" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Likes</p>
+<p class="text-sm font-black text-on-surface">3.1K</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-2xl flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Comments</p>
+<p class="text-sm font-black text-on-surface">428</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-2xl flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">share</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Shares</p>
+<p class="text-sm font-black text-on-surface">892</p>
+</div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-surface-container-highest hover:bg-surface-bright text-on-surface font-bold py-3 rounded-xl transition-colors text-sm border border-outline-variant/10">
+                        Analytics
+                    </button>
+<button class="bg-primary-container/10 hover:bg-primary-container/20 text-primary-container px-4 rounded-xl transition-all active:scale-95">
+<span class="material-symbols-outlined">open_in_new</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group relative bg-surface-container rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(107,73,216,0.15)] ring-1 ring-outline-variant/10">
+<div class="relative aspect-video overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Futuristic data visualization and 3D glass structures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3bYg0jrRXPG94lKzjFAX3O69nPSrRzUM59xmaOsd8DO4sVAROD7HL10G8Bq0DXv-5XF_YueFscW7FLoPO5DvMq75Oi8RsVRIaUeejXFgC7UgejSYZ5bmeDx3bM-2GbtvF543l6Nq7q17vHSjWYjW8iVm--mHZqYlWZjXN2TFEKw7o0-G7oO8S3w82XezsoRRpUouI92Wy2VFZHG4EGnqZe0HXfYkirtXAB6B-M5S2SsMLATHYr2IL4DjaB5pkJhM8WPHANuZtjcvP"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+<div class="absolute top-4 left-4 bg-surface-container-highest/80 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 ring-1 ring-white/10">
+<span class="material-symbols-outlined text-blue-700 text-sm" style="font-variation-settings: 'FILL' 1;">work</span>
+<span class="text-xs font-bold text-on-surface tracking-tight">@postsiva_official</span>
+</div>
+</div>
+<div class="p-6">
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6">Big news! Postsiva Enterprise is now live. Helping teams scale their social presence across 10+ networks.</p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-surface-container-low p-3 rounded-2xl flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Reach</p>
+<p class="text-sm font-black text-on-surface">8.1K</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-2xl flex items-center gap-3">
+<span class="material-symbols-outlined text-error text-lg" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Likes</p>
+<p class="text-sm font-black text-on-surface">215</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-2xl flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Comments</p>
+<p class="text-sm font-black text-on-surface">18</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-2xl flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">share</span>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Shares</p>
+<p class="text-sm font-black text-on-surface">42</p>
+</div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-surface-container-highest hover:bg-surface-bright text-on-surface font-bold py-3 rounded-xl transition-colors text-sm border border-outline-variant/10">
+                        Analytics
+                    </button>
+<button class="bg-primary-container/10 hover:bg-primary-container/20 text-primary-container px-4 rounded-xl transition-all active:scale-95">
+<span class="material-symbols-outlined">open_in_new</span>
+</button>
+</div>
+</div>
+</article>
+</section>
+<!-- Pagination / Load More -->
+<div class="mt-16 flex flex-col items-center gap-6 max-w-7xl mx-auto">
+<button class="group px-8 py-4 bg-surface-container-high hover:bg-surface-bright text-on-surface font-black rounded-2xl transition-all ring-1 ring-outline-variant/10 flex items-center gap-3 active:scale-95">
+            Load More Posts
+            <span class="material-symbols-outlined group-hover:rotate-180 transition-transform duration-500">sync</span>
+</button>
+<p class="text-on-surface-variant text-sm font-medium">Showing 3 of 42 published posts</p>
+</div>
+</main>
+<!-- Floating Bottom Navigation -->
+<div class="fixed bottom-0 left-0 w-full z-50 flex justify-center pb-8">
+<nav class="bg-[#272935]/80 backdrop-blur-2xl fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-lg rounded-full px-6 py-3 border border-[#484554]/15 shadow-[0_20px_50px_rgba(107,73,216,0.1)] flex justify-between items-center">
+<button class="flex flex-col items-center justify-center text-[#CAC3D6] hover:text-[#E1E1F1] transition-all group active:scale-110 duration-300 ease-out">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="text-[10px] font-manrope font-semibold uppercase tracking-wider">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#CAC3D6] hover:text-[#E1E1F1] transition-all group active:scale-110 duration-300 ease-out">
+<span class="material-symbols-outlined text-2xl">insights</span>
+<span class="text-[10px] font-manrope font-semibold uppercase tracking-wider">Stats</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#54DCBF] group active:scale-110 duration-300 ease-out">
+<div class="w-12 h-12 rounded-full bg-[#6B49D8] flex items-center justify-center -mt-8 shadow-lg shadow-[#6B49D8]/30">
+<span class="material-symbols-outlined text-white text-2xl">add</span>
+</div>
+<span class="text-[10px] font-manrope font-semibold uppercase tracking-wider mt-1">Create</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#CAC3D6] hover:text-[#E1E1F1] transition-all group active:scale-110 duration-300 ease-out">
+<span class="material-symbols-outlined text-2xl">chat_bubble</span>
+<span class="text-[10px] font-manrope font-semibold uppercase tracking-wider">Inbox</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#CAC3D6] hover:text-[#E1E1F1] transition-all group active:scale-110 duration-300 ease-out">
+<span class="material-symbols-outlined text-2xl">group</span>
+<span class="text-[10px] font-manrope font-semibold uppercase tracking-wider">Audience</span>
+</button>
+</nav>
+</div>
+</body></html>

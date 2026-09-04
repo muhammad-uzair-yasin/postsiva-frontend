@@ -1,0 +1,32 @@
+export const personas = {
+  engineTitle: "Persona",
+  engineTitleAccent: "motor",
+  engineSubtitle:
+    "Podesite AI glasove za svaki kanal. Kreirajte, duplirajte i šaljite dosljedan ton u velikom obimu.",
+  newPersona: "Nova persona",
+  edit: "Uredi",
+  duplicate: "Dupliraj",
+  editorBreadcrumb: "Uređivač",
+  editorTitle: "Uređivač persone",
+  editorSubtitle: "Podesite klizače glasa i sistemske upute za ovu personu.",
+  sliderFormality: "Formalnost",
+  sliderCreativity: "Kreativnost",
+  sliderBrevity: "Kratkoća",
+  systemInstructions: "Sistemske upute",
+  systemInstructionsDefault:
+    "Pišete kao senior brand strateg. Preferirajte aktivni glas, navedite koristi, izbjegavajte žargon.",
+  savePersona: "Sačuvaj personu",
+  liveSample: "Uživo uzorak",
+  liveSampleText:
+    "Sedmica lansiranja je ovdje. Poboljšali smo tok rada tako da vaš tim objavljuje brendirane objave za minute—a ne sastanke. Dodirnite ispod za novi composer.",
+  liveSampleHint: "Pregled se ažurira dok podesite klizače (demo statično).",
+  cardP1Name: "Brand arhitekt",
+  cardP1Role: "Korporativno · LinkedIn-first",
+  cardP1Blurb: "Smireno, precizno, autoritet pri lansiranju proizvoda.",
+  cardP2Name: "Domaćin zajednice",
+  cardP2Role: "Ležerno · X i Threads",
+  cardP2Blurb: "Toplo, duhovito, kratka forma angažmana.",
+  cardP3Name: "Vizuelni pripovjedač",
+  cardP3Role: "Instagram · Reels",
+  cardP3Blurb: "Smeli hookovi, senzorni jezik, malo emojija.",
+} as const;

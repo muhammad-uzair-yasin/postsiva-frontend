@@ -1,0 +1,32 @@
+export const personas = {
+  engineTitle: "Persona",
+  engineTitleAccent: "Engine",
+  engineSubtitle:
+    "Tune AI voices for every channel. Create, duplicate, and ship consistent tone at scale.",
+  newPersona: "New persona",
+  edit: "Edit",
+  duplicate: "Duplicate",
+  editorBreadcrumb: "Editor",
+  editorTitle: "Persona Editor",
+  editorSubtitle: "Adjust voice sliders and system instructions for this persona.",
+  sliderFormality: "Formality",
+  sliderCreativity: "Creativity",
+  sliderBrevity: "Brevity",
+  systemInstructions: "System instructions",
+  systemInstructionsDefault:
+    "You write as a senior brand strategist. Prefer active voice, cite benefits, avoid jargon.",
+  savePersona: "Save persona",
+  liveSample: "Live sample",
+  liveSampleText:
+    "Launch week is here. We refined the workflow so your team ships on-brand posts in minutes—not meetings. Tap below to see the new composer.",
+  liveSampleHint: "Preview updates as you adjust sliders (demo static).",
+  cardP1Name: "Brand Architect",
+  cardP1Role: "Corporate · LinkedIn-first",
+  cardP1Blurb: "Calm, precise, authority on product launches.",
+  cardP2Name: "Community Host",
+  cardP2Role: "Casual · X & Threads",
+  cardP2Blurb: "Warm, witty, short-form engagement.",
+  cardP3Name: "Visual Storyteller",
+  cardP3Role: "Instagram · Reels",
+  cardP3Blurb: "Bold hooks, sensory language, emoji-light.",
+} as const;

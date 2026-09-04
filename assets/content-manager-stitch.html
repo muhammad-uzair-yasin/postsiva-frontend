@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Postsiva | Content Manager</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error": "#690005",
+              "on-background": "#e1e1f1",
+              "on-tertiary-fixed-variant": "#3f4758",
+              "on-primary": "#350097",
+              "secondary-fixed-dim": "#54dcbf",
+              "primary": "#ccbeff",
+              "on-primary-container": "#e7deff",
+              "surface-tint": "#ccbeff",
+              "background": "#11131e",
+              "outline": "#938ea0",
+              "primary-container": "#6b49d8",
+              "inverse-primary": "#6542d1",
+              "error": "#ffb4ab",
+              "tertiary-fixed": "#dbe2f8",
+              "on-primary-fixed": "#1f0060",
+              "secondary-fixed": "#74f9da",
+              "surface-bright": "#373845",
+              "primary-fixed": "#e7deff",
+              "surface-variant": "#323440",
+              "tertiary": "#bfc6db",
+              "on-secondary-fixed-variant": "#005143",
+              "inverse-on-surface": "#2e303c",
+              "surface-container-highest": "#323440",
+              "surface-container-low": "#191b26",
+              "surface-container": "#1d1f2a",
+              "secondary-container": "#01af94",
+              "tertiary-container": "#5d6577",
+              "on-tertiary-fixed": "#141c2b",
+              "surface-container-high": "#272935",
+              "on-secondary-container": "#003b30",
+              "on-primary-fixed-variant": "#4c23b9",
+              "on-tertiary": "#283040",
+              "secondary": "#54dcbf",
+              "outline-variant": "#484554",
+              "surface-dim": "#11131e",
+              "on-surface-variant": "#cac3d6",
+              "on-tertiary-container": "#dbe3f8",
+              "surface-container-lowest": "#0b0e18",
+              "on-surface": "#e1e1f1",
+              "on-secondary-fixed": "#00201a",
+              "tertiary-fixed-dim": "#bfc6db",
+              "surface": "#11131e",
+              "primary-fixed-dim": "#ccbeff",
+              "inverse-surface": "#e1e1f1",
+              "on-secondary": "#00382e",
+              "error-container": "#93000a",
+              "on-error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #11131e;
+        }
+        .glass-card {
+            background: rgba(29, 31, 42, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="text-on-surface selection:bg-primary-container selection:text-on-primary-container min-h-screen pb-32">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#11131E]/70 backdrop-blur-xl shadow-[0_8px_32px_rgba(107,73,216,0.08)] bg-gradient-to-b from-[#11131E] to-transparent">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-full">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold text-[#E1E1F1] tracking-tight">Postsiva</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-[#6B49D8] font-bold border-b-2 border-[#6B49D8] pb-1 font-['Manrope'] tracking-tight" href="#">Drafts</a>
+<a class="text-[#CAC3D6] hover:text-[#E1E1F1] transition-colors font-['Manrope'] tracking-tight" href="#">Scheduled</a>
+<a class="text-[#CAC3D6] hover:text-[#E1E1F1] transition-colors font-['Manrope'] tracking-tight" href="#">Published</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#CAC3D6] hover:bg-[#1D1F2A] rounded-lg transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-[#CAC3D6] hover:bg-[#1D1F2A] rounded-lg transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border border-outline-variant/15">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="User profile avatar close-up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsG3zbiI1hqQko2golbiMIRXI5DMB072eBfn7Utdiv-hqpiWn8qhrI0WAAoPStvmVH0H1VKZlEQXGtRpqko7TF01IFXsjTBgiREiT7epWRlbHzJB0rVFv3sV7a2mbCto5Gm-xGz91WqlDmITG4BmKG20FgCJsYAvJQZgu-mJUfX-VPjpT3A6lVg77-YhERmuptq2EBaes3qKhMwB2QKwXXAfsL3TaoyTKyRDZlHHy3kvMAo4pOy1-LbQ_Ga6UwwTCXxr3r9ZKIN9VJ"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-6 max-w-7xl mx-auto">
+<!-- Filter Bar -->
+<header class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="text-4xl font-extrabold text-on-surface tracking-tight mb-2">Content Manager</h1>
+<p class="text-on-surface-variant max-w-xl">Architect your brand's digital presence. Manage, schedule, and analyze your social ecosystem from one command center.</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center gap-2 px-4 py-2.5 bg-surface-container-low text-on-surface rounded-xl hover:bg-surface-container transition-colors border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary" data-icon="filter_list">filter_list</span>
+<span class="text-sm font-semibold">Channels</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 bg-surface-container-low text-on-surface rounded-xl hover:bg-surface-container transition-colors border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary" data-icon="calendar_month">calendar_month</span>
+<span class="text-sm font-semibold">Last 30 Days</span>
+</button>
+<button class="flex items-center gap-2 px-6 py-2.5 bg-primary-container text-on-primary-container rounded-xl font-bold shadow-[0_0_20px_rgba(107,73,216,0.3)] active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span>New Post</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Social Channels Filter -->
+<div class="flex gap-4 mb-8 overflow-x-auto pb-2 no-scrollbar">
+<button class="flex-none flex items-center gap-2 px-5 py-2 rounded-full bg-secondary-container/10 border border-secondary/30 text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="all_inclusive">all_inclusive</span>
+<span class="text-xs font-bold uppercase tracking-widest">All Channels</span>
+</button>
+<button class="flex-none flex items-center gap-2 px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-lg" data-icon="brand_awareness">brand_awareness</span>
+<span class="text-xs font-bold uppercase tracking-widest">Instagram</span>
+</button>
+<button class="flex-none flex items-center gap-2 px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-lg" data-icon="alternate_email">alternate_email</span>
+<span class="text-xs font-bold uppercase tracking-widest">X / Twitter</span>
+</button>
+<button class="flex-none flex items-center gap-2 px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-lg" data-icon="work">work</span>
+<span class="text-xs font-bold uppercase tracking-widest">LinkedIn</span>
+</button>
+<button class="flex-none flex items-center gap-2 px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-lg" data-icon="facebook">social_leaderboard</span>
+<span class="text-xs font-bold uppercase tracking-widest">Facebook</span>
+</button>
+</div>
+<!-- Bento Grid Post List -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Post Card 1: Scheduled -->
+<div class="group relative flex flex-col bg-surface-container-low rounded-3xl overflow-hidden shadow-2xl transition-all hover:translate-y-[-4px]">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Abstract purple 3D geometric render" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0GU3vg0nuenePA6nmo2FgM7JnT5iY31DggLLxDfwUsRKXWHimx5TUNUO4zoeczh1z1DWUh4NRpzI_awYvfGv_fvpO5b0lgq82GLFW-DPdv9_tmx44pLLXrTZTP4gjrLRDsjWZSl6P1BCGNHGFkb171a2AkPsvo8KOuwgFiglqx-wz6gLz30UnulOphhjJJ2KN59otL-JVRjr1niQuGzI3VsdYTtTv0XvkNsrs7-jnx9nacP3YDRaQeuWnaaEswkItVOeARg_z0jC0"/>
+<div class="absolute top-4 left-4 bg-[#272935]/80 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="schedule">schedule</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface">Oct 24, 10:00 AM</span>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary border border-outline-variant/20">
+<span class="material-symbols-outlined text-lg" data-icon="brand_awareness">brand_awareness</span>
+</div>
+<span class="text-sm font-bold text-on-surface">@postsiva_official</span>
+</div>
+<p class="text-on-surface-variant line-clamp-2 text-sm leading-relaxed mb-6">
+                        Designing for the future requires a shift in perspective. Our latest interface update embraces tonal depth and architectural light. #UXDesign #FutureInterface
+                    </p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<div class="flex gap-2">
+<button class="p-2 bg-surface-container rounded-lg text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="p-2 bg-surface-container rounded-lg text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="visibility">visibility</span>
+</button>
+</div>
+<button class="text-error/70 hover:text-error p-2 transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Post Card 2: Published -->
+<div class="group relative flex flex-col bg-surface-container-low rounded-3xl overflow-hidden shadow-2xl transition-all hover:translate-y-[-4px]">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Vintage technology collection and aesthetic setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6_NhnmnNYY9UOgMMuGOqOlVLtmumnN_xA8J4Ie9yDHnrqdagpnRhOZM5gcTivRYa0smJKLIIKaFzkNrhnLlCq-Ly-xycKzSERjnMoxzgz3CNH2jpTouEFDgwDWG19XwG7uLSAkFUahJN7UcpJC0A2nkvxFKl6LC6y-v0NoX0yWn-JUwRezhKbxylfWUQ7dU5-c4ZjwAs6smz8-dPV3AjQGCu7IGygM6I6fqhGT66iPhTgTCcOGsV3IERxXWYszh-vIas4XC9lZfsp"/>
+<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Published</span>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary border border-outline-variant/20">
+<span class="material-symbols-outlined text-lg" data-icon="alternate_email">alternate_email</span>
+</div>
+<span class="text-sm font-bold text-on-surface">@postsiva_hq</span>
+</div>
+<p class="text-on-surface-variant line-clamp-2 text-sm leading-relaxed mb-6">
+                        Retro tech meets modern automation. See how we're bridging the gap between legacy workflows and AI power. ⚡️
+                    </p>
+<!-- Metrics -->
+<div class="grid grid-cols-3 gap-2 mb-6">
+<div class="bg-surface-container rounded-xl p-3 text-center">
+<span class="block text-secondary font-bold text-lg">1.2k</span>
+<span class="text-[9px] uppercase tracking-tighter text-on-surface-variant">Reach</span>
+</div>
+<div class="bg-surface-container rounded-xl p-3 text-center">
+<span class="block text-primary font-bold text-lg">84</span>
+<span class="text-[9px] uppercase tracking-tighter text-on-surface-variant">Likes</span>
+</div>
+<div class="bg-surface-container rounded-xl p-3 text-center">
+<span class="block text-on-surface font-bold text-lg">12</span>
+<span class="text-[9px] uppercase tracking-tighter text-on-surface-variant">Comments</span>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<button class="w-full py-2 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="insights">insights</span>
+                            View Analytics
+                        </button>
+</div>
+</div>
+</div>
+<!-- Post Card 3: Draft -->
+<div class="group relative flex flex-col bg-surface-container-low rounded-3xl overflow-hidden shadow-2xl transition-all hover:translate-y-[-4px] border border-dashed border-outline-variant/30">
+<div class="aspect-video relative bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-outline-variant/20" data-icon="add_photo_alternate">add_photo_alternate</span>
+<div class="absolute top-4 left-4 bg-surface-container-high text-on-surface-variant px-3 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="edit_note">edit_note</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Draft</span>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary border border-outline-variant/20">
+<span class="material-symbols-outlined text-lg" data-icon="work">work</span>
+</div>
+<span class="text-sm font-bold text-on-surface">@postsiva_b2b</span>
+</div>
+<h3 class="text-on-surface font-bold mb-2">Team Collaboration Update</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed italic mb-6">
+                        No caption yet. Click to start composing your next viral business update...
+                    </p>
+<div class="mt-auto pt-4 border-t border-outline-variant/10">
+<button class="w-full py-2.5 bg-primary-container text-on-primary-container rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all active:scale-95 shadow-lg shadow-primary-container/20">
+<span class="material-symbols-outlined text-lg" data-icon="auto_awesome">auto_awesome</span>
+                            Complete with AI
+                        </button>
+</div>
+</div>
+</div>
+<!-- Post Card 4: Published -->
+<div class="group relative flex flex-col bg-surface-container-low rounded-3xl overflow-hidden shadow-2xl transition-all hover:translate-y-[-4px]">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Modern minimalist office workspace with laptop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9W9hOCrhAynKZno8YkSzoj_TWkNnBKH1GGDfifxlEtRfPKu-X-YDI6Rq8PuC4d-mGD-BuXcZU1YTxWWlb-6cZKZFmcr3-xY0hcupuYKzy-21tWQvAU6Sfx8nFBL-MFB_g0-oS68gQ1P2lzv6cs9XqSMrGpEBB-k2q9v-hrNtjEH71n2nWvU8_oK2SYsGk_VdHNEX_BESyhDONs5rRIoDTAmM1GeP1Vfpdwsz594jHvhd_sURmhzoXrppk2xuolLdBy_nkJVeHlssa"/>
+<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Published</span>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary border border-outline-variant/20">
+<span class="material-symbols-outlined text-lg" data-icon="brand_awareness">brand_awareness</span>
+</div>
+<span class="text-sm font-bold text-on-surface">@postsiva_official</span>
+</div>
+<p class="text-on-surface-variant line-clamp-2 text-sm leading-relaxed mb-6">
+                        Efficiency isn't just a buzzword. It's the core of how we build. 🚀
+                    </p>
+<div class="grid grid-cols-3 gap-2 mb-6">
+<div class="bg-surface-container rounded-xl p-3 text-center">
+<span class="block text-secondary font-bold text-lg">5.4k</span>
+<span class="text-[9px] uppercase tracking-tighter text-on-surface-variant">Reach</span>
+</div>
+<div class="bg-surface-container rounded-xl p-3 text-center">
+<span class="block text-primary font-bold text-lg">312</span>
+<span class="text-[9px] uppercase tracking-tighter text-on-surface-variant">Likes</span>
+</div>
+<div class="bg-surface-container rounded-xl p-3 text-center">
+<span class="block text-on-surface font-bold text-lg">45</span>
+<span class="text-[9px] uppercase tracking-tighter text-on-surface-variant">Comments</span>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<button class="w-full py-2 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="insights">insights</span>
+                            View Analytics
+                        </button>
+</div>
+</div>
+</div>
+<!-- Post Card 5: Scheduled -->
+<div class="group relative flex flex-col bg-surface-container-low rounded-3xl overflow-hidden shadow-2xl transition-all hover:translate-y-[-4px]">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Dark aesthetic laptop on desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-MsGWpSJp6wJTFVBSFFzFZWF2UsJeXrwsebdm9vlQXdLa6g7d0wp4Gjxuqsn0atxg3N6Pk6SqF5hIElwD7oj-tKjaTMn99c1psYQ_rZdXpwfFPm1HEkuRr1FLwlxo1jgvVf4H9pG6N6R0s5s5yyrWndDrRm8AkRd6RhIVXvWrs2m8mUZyVhodZoZdb-iz567lnIvwAkvopj3WQ98kAjTcAD9lhXN5XL4NAnyEAAJY3JkajAf9OzEUvxerIlcf1C3kZicKVU3Bw_rO"/>
+<div class="absolute top-4 left-4 bg-[#272935]/80 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="schedule">schedule</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface">Oct 26, 4:00 PM</span>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary border border-outline-variant/20">
+<span class="material-symbols-outlined text-lg" data-icon="facebook">social_leaderboard</span>
+</div>
+<span class="text-sm font-bold text-on-surface">Postsiva Community</span>
+</div>
+<p class="text-on-surface-variant line-clamp-2 text-sm leading-relaxed mb-6">
+                        Join our upcoming webinar on maximizing content ROI using Postsiva's predictive analytics engine.
+                    </p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<div class="flex gap-2">
+<button class="p-2 bg-surface-container rounded-lg text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="p-2 bg-surface-container rounded-lg text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="visibility">visibility</span>
+</button>
+</div>
+<button class="text-error/70 hover:text-error p-2 transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Post Card 6: Draft -->
+<div class="group relative flex flex-col bg-surface-container-low rounded-3xl overflow-hidden shadow-2xl transition-all hover:translate-y-[-4px] border border-dashed border-outline-variant/30">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-50" data-alt="Vibrant abstract color gradient background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO4jmTRavKvTrtZKVE-rnLyYRyeroVuxAdBNkNz_OYtpKQ52ygjiP7CkN4GmX2VbE-E-gqs5jhX6kkxENEZ4HySO-JLd-JwQPHRBgTio-Dvu5FxZXvjrUGma3d5RuupSc2RCPpPG-l72ECqSUw39HK2WOlWhXN5wik_RrUb5IzD22u4ptVWdFR1lrRyj1-PUhqbdxu8fdWsY9Zl3Z5BjYgb4zAXDShu0uSnP1NGg2h6Gj2q0uNg4cyb0xo4Dvn9qX3mfpOSDFYEEVJ"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-on-surface" data-icon="movie">movie</span>
+</div>
+<div class="absolute top-4 left-4 bg-surface-container-high text-on-surface-variant px-3 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="edit_note">edit_note</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Draft</span>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary border border-outline-variant/20">
+<span class="material-symbols-outlined text-lg" data-icon="brand_awareness">brand_awareness</span>
+</div>
+<span class="text-sm font-bold text-on-surface">@postsiva_official</span>
+</div>
+<h3 class="text-on-surface font-bold mb-2">Reel: Workspace Tour</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                        Rough cut of the new studio. Need to add background music and captions...
+                    </p>
+<div class="mt-auto pt-4 border-t border-outline-variant/10 flex gap-3">
+<button class="flex-1 py-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-xl text-sm font-bold transition-all">
+                            Open Editor
+                        </button>
+<button class="p-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-xl transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-8 left-1/2 -translate-x-1/2 rounded-full px-8 py-3 z-50 bg-[#272935]/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(107,73,216,0.15)] flex gap-8 items-center justify-around w-max">
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] opacity-60 hover:opacity-100 hover:text-[#54DCBF] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="grid_view">grid_view</span>
+<span class="text-[10px] font-bold font-['Manrope'] uppercase tracking-widest mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] opacity-60 hover:opacity-100 hover:text-[#54DCBF] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="insights">insights</span>
+<span class="text-[10px] font-bold font-['Manrope'] uppercase tracking-widest mt-1">Analytics</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#6B49D8] text-[#E7DEFF] rounded-full p-3 scale-110 shadow-[0_0_15px_rgba(107,73,216,0.5)] active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="add_circle">add_circle</span>
+<span class="hidden">Create</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#CAC3D6] opacity-60 hover:opacity-100 hover:text-[#54DCBF] transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="account_circle">account_circle</span>
+<span class="text-[10px] font-bold font-['Manrope'] uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

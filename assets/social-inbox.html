@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Postsiva | Social Inbox</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-surface": "#e1e1f1",
+                        "surface-bright": "#373845",
+                        "tertiary": "#bfc6db",
+                        "error": "#ffb4ab",
+                        "outline": "#938ea0",
+                        "secondary-fixed": "#74f9da",
+                        "surface-tint": "#ccbeff",
+                        "on-tertiary-fixed": "#141c2b",
+                        "primary-container": "#6b49d8",
+                        "on-tertiary-fixed-variant": "#3f4758",
+                        "on-primary-fixed": "#1f0060",
+                        "on-surface": "#e1e1f1",
+                        "secondary-container": "#01af94",
+                        "primary": "#ccbeff",
+                        "tertiary-fixed-dim": "#bfc6db",
+                        "secondary-fixed-dim": "#54dcbf",
+                        "on-secondary-fixed": "#00201a",
+                        "surface-dim": "#11131e",
+                        "surface-variant": "#323440",
+                        "surface-container-highest": "#323440",
+                        "surface": "#11131e",
+                        "on-secondary": "#00382e",
+                        "on-primary-fixed-variant": "#4c23b9",
+                        "inverse-primary": "#6542d1",
+                        "surface-container": "#1d1f2a",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#dbe3f8",
+                        "on-surface-variant": "#cac3d6",
+                        "surface-container-low": "#191b26",
+                        "primary-fixed-dim": "#ccbeff",
+                        "inverse-on-surface": "#2e303c",
+                        "primary-fixed": "#e7deff",
+                        "on-primary-container": "#e7deff",
+                        "on-secondary-container": "#003b30",
+                        "outline-variant": "#484554",
+                        "on-primary": "#350097",
+                        "on-tertiary": "#283040",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#dbe2f8",
+                        "background": "#11131e",
+                        "surface-container-high": "#272935",
+                        "surface-container-lowest": "#0b0e18",
+                        "on-background": "#e1e1f1",
+                        "on-secondary-fixed-variant": "#005143",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#5d6577",
+                        "secondary": "#54dcbf"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #484554; border-radius: 10px; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex h-screen overflow-hidden">
+<!-- Main Workspace -->
+<main class="flex-1 flex flex-col min-w-0 bg-surface">
+<!-- Top Navigation -->
+<header class="flex justify-between items-center w-full px-6 h-16 bg-[#11131E]/70 backdrop-blur-xl border-b border-[#484554]/15 font-['Manrope'] tracking-tight shrink-0">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#E1E1F1]">Postsiva</span>
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-[#6B49D8] font-semibold border-b-2 border-[#6B49D8] pb-1" href="#">Inbox</a>
+<a class="text-[#CAC3D6] hover:text-[#E1E1F1] transition-colors" href="#">Analytics</a>
+<a class="text-[#CAC3D6] hover:text-[#E1E1F1] transition-colors" href="#">Schedule</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant text-sm">search</span>
+<input class="bg-surface-container-lowest border-none rounded-lg pl-10 pr-4 py-1.5 text-sm w-64 focus:ring-2 focus:ring-secondary/50 placeholder:text-outline/50" placeholder="Search interactions..." type="text"/>
+</div>
+<button class="p-2 text-[#CAC3D6] hover:bg-[#1D1F2A] rounded-lg transition-all active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#484554]/30">
+<img alt="User profile avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_6QLe0UyqFb-11L4tNQdNni7nrP24tsReY-Qk62qH0RMDd2eisWGJxhyEXQVHRpNTRr64ds3NgI5qVCBZKeJK3F9FpsR2qbXeXm-Kj1Zxv-dh243VFXTvqB9Gq2benE-hFzLxnPdHqLH4LkcNRZ4m6r1b3FeMBICNT2ZrqpYiIh_IfqMuWVNyaPBN1t57LY80i-psMZAwlj0d0x2RXEwSYUPZZK8PtaUUzjCQRdVvProKLeu580E6LpZ2B-uSgoU_3h_l-21RVzO9"/>
+</div>
+</div>
+</header>
+<!-- Social Inbox Content Shell -->
+<section class="flex-1 flex overflow-hidden">
+<!-- Left Panel: Granular Filtering System -->
+<div class="w-[380px] hidden md:flex flex-shrink-0 flex-col border-r border-outline-variant/15 bg-surface-container-low overflow-hidden">
+<!-- Tier 1: High Level -->
+<div class="p-4 border-b border-outline-variant/10">
+<button class="w-full flex items-center justify-between px-4 py-2.5 bg-primary/10 text-primary border border-primary/20 rounded-lg font-bold text-sm transition-all hover:bg-primary/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">all_inbox</span>
+<span>All Comments</span>
+</div>
+<span class="bg-primary/20 px-2 py-0.5 rounded text-[10px]">128</span>
+</button>
+</div>
+<!-- Tier 2: Filter by Platform -->
+<div class="px-4 py-3 border-b border-outline-variant/10">
+<p class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-widest mb-3 px-1">Platforms</p>
+<div class="grid grid-cols-4 gap-2">
+<button class="flex flex-col items-center gap-1.5 p-2 rounded-lg bg-surface-container-high border border-outline-variant/5 hover:border-primary/40 transition-all group">
+<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] flex items-center justify-center">
+<img alt="IG" class="w-4 h-4 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzv5OQNeOofzYZ8jrhGwFenElTPUGEsmQ260DUUyMRAEzIFki-KGb6P-NIm7i2Tuu8GOAjPw1YItrw4tvFhlrWrqRFt3qKJJUCqO4OFPu1Kbe_AF_vAQvdKbfDP2ON0yJSki1wpsJt6nLobaZNPzLOQtJO7rzmro86LV7SUkiOFfwrkEWHD6d8oSu6zT0zEZJTB5_ZTl9fRm26lcDNigolmGYgLF7l9PzZjbhEBAmmgGWJ7Q9eZl6xWZuFlZNGzDLw5H87LUFFe5qI"/>
+</div>
+<span class="text-[9px] font-bold text-on-surface-variant group-hover:text-on-surface">Insta</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 p-2 rounded-lg bg-surface-container-high border border-outline-variant/5 hover:border-primary/40 transition-all group">
+<div class="w-8 h-8 rounded-full bg-black flex items-center justify-center">
+<span class="text-[10px] font-bold text-white">𝕏</span>
+</div>
+<span class="text-[9px] font-bold text-on-surface-variant group-hover:text-on-surface">X</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 p-2 rounded-lg bg-surface-container-high border border-outline-variant/5 hover:border-primary/40 transition-all group">
+<div class="w-8 h-8 rounded-full bg-[#1877F2] flex items-center justify-center">
+<span class="text-[12px] font-bold text-white leading-none">f</span>
+</div>
+<span class="text-[9px] font-bold text-on-surface-variant group-hover:text-on-surface">FB</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 p-2 rounded-lg bg-surface-container-high border border-outline-variant/5 hover:border-primary/40 transition-all group">
+<div class="w-8 h-8 rounded-full bg-[#0077b5] flex items-center justify-center">
+<span class="text-[10px] font-bold text-white leading-none">in</span>
+</div>
+<span class="text-[9px] font-bold text-on-surface-variant group-hover:text-on-surface">LI</span>
+</button>
+</div>
+</div>
+<!-- Tier 3: Filter by Post -->
+<div class="flex-1 flex flex-col min-h-0">
+<div class="p-4 flex items-center justify-between border-b border-outline-variant/5">
+<p class="text-[10px] font-extrabold text-on-surface-variant uppercase tracking-widest px-1">Recent Posts</p>
+<button class="p-1 rounded hover:bg-surface-container text-outline"><span class="material-symbols-outlined text-sm">search</span></button>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar">
+<!-- Post Item 1 (Selected) -->
+<div class="p-3 border-b border-outline-variant/5 bg-[#6B49D8]/5 cursor-pointer hover:bg-[#6B49D8]/10 transition-colors relative group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex gap-3">
+<img alt="IG post" class="w-10 h-10 rounded-lg object-cover ring-1 ring-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAerC0zURgkYPgj0Yf5m6yiCGRwqE5J2PpdNynsCm0a2Er_TccLcTMPEveuxwc7tiXyfLiAf7QZ_Ff7I0JkbKXKyl7ggnOjJ1UlCRxHlx2AQZ5vM9Ur3Uboopx2vF3XR46mUIsqaT3N-AiaUvcCrqqZrVrkW3alDrTph4AI3QOHNbfLlAK4CoK0cxYWFv9WtvlHYJhu6lLzziQUKU-qbDmpvMV0B6G4NFA2NAIjbsAzr9k5Zy3U20JH9BGfqGg2UNz6ruIU-bWlkzr1"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<span class="font-bold text-[11px] truncate">@design.studio</span>
+<span class="text-[9px] text-on-surface-variant">2m ago</span>
+</div>
+<p class="text-[10px] text-on-surface-variant line-clamp-1 mt-0.5 italic">"Check out our new brand identity..."</p>
+<div class="mt-1.5 flex items-center gap-2">
+<span class="text-[9px] font-bold text-primary">12 New Comments</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Post Item 2 -->
+<div class="p-3 border-b border-outline-variant/5 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex gap-3">
+<img alt="X post" class="w-10 h-10 rounded-lg object-cover opacity-60 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpAT81JR1RfpusOvSJ227L4CJ2buApqIvOYD-U_h5BzJ5PbmFOwtmqB5bEobVCI8PFpbUGxlEKb2y-h1tLhc8jGtYuf1lxnHfo4-FOqVlUjDTsFhr8nCwLu6GYZpvk6iStWc6kfGR1EJTNv4dfKPbV-CIjAOM-EB31BHBsIF6TFasaG6pWe_DXKF7UZsjTnBk_OYpaR_N2RfWPqgKnt96GfFsq_j6m0OwMrfOeRLOcROmSnOeL0ZYSu1EroaS7gu2GgdWwW6m3K1cz"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<span class="font-bold text-[11px] truncate">@techflow_news</span>
+<span class="text-[9px] text-on-surface-variant">45m</span>
+</div>
+<p class="text-[10px] text-on-surface-variant line-clamp-1 mt-0.5">"The future of SaaS is modular..."</p>
+<div class="mt-1.5 flex items-center gap-2">
+<span class="text-[9px] font-bold text-on-surface-variant">4 New Comments</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Post Item 3 -->
+<div class="p-3 border-b border-outline-variant/5 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex gap-3">
+<img alt="FB post" class="w-10 h-10 rounded-lg object-cover opacity-60 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYP1n1zLxKngL7cGd_aYgA1s1mfxqNEcY0go3ghhYZZyoBBDFq8kwLlCv2mtEdUJbfu1m9lgsL7WzmPenpeEFinEvYkQNGBkw5GW_Gtk2dl2ut3FkURmghU4W2e_ZVtDpmuGSWK947NGuYw18gNU9kzThW6Ee8Gk5maSwx6aXqFPfvCyq6jdvKoWm3s66xMeanCG9jgv-dZdYLane-4hFgzX5Xr0ousu3DdWM40ozrwksgkbCoHxHURkMybnnnXuTQkHgxaKm51ju7"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<span class="font-bold text-[11px] truncate">Postsiva Global</span>
+<span class="text-[9px] text-on-surface-variant">2h</span>
+</div>
+<p class="text-[10px] text-on-surface-variant line-clamp-1 mt-0.5">"We're hiring for 3 new product..."</p>
+<div class="mt-1.5 flex items-center gap-2">
+<span class="text-[9px] font-bold text-on-surface-variant">0 New</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Comment Thread -->
+<div class="flex-1 flex flex-col min-w-0 bg-surface">
+<!-- Detail Header: Selected Post Summary -->
+<div class="p-4 bg-surface-container-low border-b border-outline-variant/10">
+<div class="flex gap-4 items-start">
+<img alt="Post thumbnail" class="w-20 h-20 rounded-lg object-cover shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT7_n4m_kyp27MBjQgeEPcRT1qOT-KmEJjiUFa4OaqHoyd_SLD-Hp0iPRDeO6CEH_tbe8yMsBdV2cXls6JVBMthf3gq-JqC8Os0e5sOUl6LPd74Ap_Eh7Ra6wooOGxzgl_how2zt-r2XGXz_lUcjx1mcDSYWVSuJyQHbHT5LUJV4j_VVnTb3ksQJoSqpsmY2qlbC0fdWJcolBaxvQI1eIrrC-P8vJ9Kq4aXqqJ2zuwn0R7GGAjUtNQ2oXEGUvXLYmhQ9aaq19wAMOv"/>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<img alt="Avatar" class="w-5 h-5 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD97vpTK4Sy7LtZHEFCegGm8Y8NxBUmvweFY-N10-gzxmBGe1pASN2jRuQdppNC9fGSO2uYK4xcoBz4-6ELIgOpbBcTVkT9xGzZ4_ZPUx2B5l_W-QJnxPHVMTIx4tOGbJ88vzm_x4ZuF212civ-dlBO_ZZ7TCzDeOwGBXQIfrqH8VD7ga6WuK6Fg5IPdr2spNW96XKq8ltzvxdix8K59tRz4AEDvunFQM-lrFim_CmrAom0BuhYVHZgip1u9lDtcqYgM7fnJT_oDIQ6"/>
+<span class="font-bold text-xs">design.studio</span>
+<span class="text-[10px] text-on-surface-variant">• Instagram</span>
+</div>
+<p class="text-[11px] text-on-surface leading-normal line-clamp-2">
+                            Our latest brand refresh for 'Nebula'. We focused on high-contrast colors and minimalist topography...
+                        </p>
+<div class="mt-3 flex gap-4">
+<div class="flex flex-col">
+<span class="text-[8px] uppercase tracking-wider text-on-surface-variant font-bold">Impressions</span>
+<span class="text-xs font-extrabold text-secondary">24.8K</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[8px] uppercase tracking-wider text-on-surface-variant font-bold">Engagement</span>
+<span class="text-xs font-extrabold text-primary">12.4%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Comments Thread -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-5 bg-surface pb-32">
+<!-- Comment 1 -->
+<div class="flex gap-4 group">
+<img alt="Sarah" class="w-9 h-9 rounded-lg flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDurIudbDeMkjnoPg_LCcQpYRljxfJbRz2YaTjhQXPoJ6bGKk_Mn-wDveSJhwd_gu6RDAYYO4O54O3mJ4zrxPJ3jVFIQahOsZvdmGCLB5Lrf9z6Z-5Fm57HRZI1NEKk5GTqSYGu3beUvZwOdPL0zYwxxcWcAXag5BvLjPan9uF0iNJ0Zqcs8ATFdv4JCsNDNUpz9FaAqKaa_WedR2z8L1V5GtWE_2-eBN-ozcXeawukwDos3pODbDOsWDbeute7dvzXRG1cpEr9U6q_"/>
+<div class="flex-1">
+<div class="bg-surface-container-high p-4 rounded-xl rounded-tl-none border border-outline-variant/10 shadow-sm transition-all hover:border-primary/30">
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<span class="font-bold text-sm">Sarah Jenkins</span>
+<span class="text-[10px] text-on-surface-variant">5m ago</span>
+</div>
+<button class="flex items-center gap-1 text-[10px] font-bold text-primary px-2 py-1 rounded-md hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[14px]">reply</span>
+                                    REPLY
+                                </button>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">This color palette is incredible! Is that specific purple available in any design kits?</p>
+</div>
+</div>
+</div>
+<!-- Comment 2 (Threaded Reply) -->
+<div class="flex gap-4 ml-12 group">
+<img alt="Marcus" class="w-7 h-7 rounded-lg flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRt_rFgGlcawLRFnmHH-u8x0ceqobLPHpgaI0zBr0OFzPpeo6QKajFG7XKLTcFXlIk9wxZFYtK2E3-hQF7NLEkf369wDZD_N927y-EpVd9jDHJD9ZXyeVmgEaDm3iObfSzGO0d7Msd9ZGABimHhcYXlGcJfJGjFI_Cm0_kzywOgOAvEQgCVZPT3QAosrQltzGzLiW-TMJBGCbaPXbWDMPxKqE0k6mc7NxLtyZqURnKruwlKmwNQeTv0iBaGUzasSd4jofKWooxvpk8"/>
+<div class="flex-1">
+<div class="bg-surface-container p-3 rounded-xl rounded-tl-none border border-outline-variant/5 shadow-sm">
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<span class="font-bold text-xs">Marcus V.</span>
+<span class="text-[10px] text-on-surface-variant">2m ago</span>
+</div>
+<button class="flex items-center gap-1 text-[10px] font-bold text-primary px-2 py-1 rounded-md hover:bg-primary/10 transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-[12px]">reply</span>
+                                    REPLY
+                                </button>
+</div>
+<p class="text-xs text-on-surface-variant">Agreed! It looks very similar to the Postsiva midnight system.</p>
+</div>
+</div>
+</div>
+<!-- Comment 3 -->
+<div class="flex gap-4 group">
+<img alt="Alex" class="w-9 h-9 rounded-lg flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy0-80HavfELF89V2FfAZaQboVznNiuU867qb-k8oI6TH6zJ0CbKAZTCAwsRQraxH1rNZIBpMSFK-7_yQ13VM4g7pPIF9cd7nu9GFfbNrazVZ_GaLoJ8Dvt973zE65F-vPAfCm4vEzLgngH9bO_kFC5To6Asnl7NhP6uXn9FjfB1I-6ctpSLcvPow0mkiQ6l5re0IZWLaegXCRyNK16qDXb4XZIXMJHF-NERJTFrD405W-dVKGKZ9Zsnn60Q1pRKY0uSN90C2Im3A8"/>
+<div class="flex-1">
+<div class="bg-surface-container-high p-4 rounded-xl rounded-tl-none border border-outline-variant/10 shadow-sm transition-all hover:border-primary/30">
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<span class="font-bold text-sm">Alex Chen</span>
+<span class="text-[10px] text-on-surface-variant">15m ago</span>
+</div>
+<button class="flex items-center gap-1 text-[10px] font-bold text-primary px-2 py-1 rounded-md hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[14px]">reply</span>
+                                    REPLY
+                                </button>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Loving the asymmetric layout in the fourth slide. Very bold move.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer: Input Area -->
+<div class="p-4 bg-surface-container-low border-t border-outline-variant/15 pb-24">
+<!-- AI Suggestions -->
+<div class="flex items-center gap-2 mb-3 overflow-x-auto no-scrollbar py-1">
+<div class="flex items-center gap-1.5 px-2 py-1 bg-primary/10 rounded-lg shrink-0">
+<span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter">AI Replies:</span>
+</div>
+<button class="shrink-0 px-4 py-1.5 bg-surface-container-highest border border-outline-variant/20 rounded-full text-xs hover:border-primary transition-all active:scale-95">Thank you!</button>
+<button class="shrink-0 px-4 py-1.5 bg-surface-container-highest border border-outline-variant/20 rounded-full text-xs hover:border-primary transition-all active:scale-95">Checking on that...</button>
+<button class="shrink-0 px-4 py-1.5 bg-surface-container-highest border border-outline-variant/20 rounded-full text-xs hover:border-primary transition-all active:scale-95">Happy to help!</button>
+</div>
+<!-- Input Main -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-3 focus-within:border-primary/50 transition-all shadow-xl">
+<textarea class="w-full bg-transparent border-none resize-none text-sm focus:ring-0 h-16 placeholder:text-outline/40" placeholder="Type a reply..."></textarea>
+<div class="flex items-center justify-between mt-2 pt-2 border-t border-outline-variant/10">
+<div class="flex items-center gap-4">
+<label class="flex items-center gap-2 cursor-pointer group">
+<div class="relative w-7 h-4 bg-surface-container-highest rounded-full transition-colors group-has-[:checked]:bg-primary/30">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="absolute left-0.5 top-0.5 w-3 h-3 bg-outline rounded-full transition-all peer-checked:left-3.5 peer-checked:bg-primary"></div>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tight text-on-surface-variant">AI Enhance</span>
+</label>
+<div class="flex items-center gap-3">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-lg">image</span></button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-lg">mood</span></button>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary-container px-5 py-1.5 rounded-lg text-xs font-bold shadow-lg shadow-primary-container/20 flex items-center gap-2 active:scale-95 transition-all">
+<span>Send</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- New Floating Bottom Navigation -->
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-lg rounded-full px-6 py-3 bg-[#272935]/80 backdrop-blur-2xl border border-[#484554]/15 shadow-[0_20px_50px_rgba(107,73,216,0.1)] flex justify-between items-center z-50">
+<button class="flex flex-col items-center justify-center text-[#CAC3D6] hover:text-[#E1E1F1] transition-all group active:scale-110 duration-300 ease-out">
+<span class="material-symbols-outlined text-xl">home</span>
+<span class="text-[10px] font-semibold uppercase tracking-wider mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#CAC3D6] hover:text-[#E1E1F1] transition-all group active:scale-110 duration-300 ease-out">
+<span class="material-symbols-outlined text-xl">insights</span>
+<span class="text-[10px] font-semibold uppercase tracking-wider mt-1">Stats</span>
+</button>
+<div class="relative -mt-10">
+<button class="w-14 h-14 rounded-full bg-gradient-to-tr from-[#6B49D8] to-[#54DCBF] flex items-center justify-center text-white shadow-lg shadow-[#6B49D8]/40 border-4 border-surface active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-semibold uppercase tracking-wider text-[#CAC3D6]">Create</span>
+</div>
+<button class="flex flex-col items-center justify-center text-[#54DCBF] transition-all group active:scale-110 duration-300 ease-out">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="text-[10px] font-semibold uppercase tracking-wider mt-1">Inbox</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#CAC3D6] hover:text-[#E1E1F1] transition-all group active:scale-110 duration-300 ease-out">
+<span class="material-symbols-outlined text-xl">group</span>
+<span class="text-[10px] font-semibold uppercase tracking-wider mt-1">Audience</span>
+</button>
+</nav>
+</body></html>
